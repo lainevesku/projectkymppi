@@ -1,21 +1,23 @@
+@import '../../assets/styles/_config.scss';
+
 .item {
     display: flex;
-    border-bottom: 1px solid #BADDFE;
-    color: #999999;
+    border-bottom: 1px solid $item-border;
+    color: $item-text;
 }
 
 .item_data {
     flex: 1;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    padding: 0.75rem;
+    padding: $item-padding;
     text-align: center;
 }
 
 .item_name {
     font-size: xx-large;
     font-weight: bold;
-    color: black;
+    color: $item-text-strong;
 }
 
 .item_time{
