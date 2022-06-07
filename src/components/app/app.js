@@ -1,9 +1,9 @@
-import './app.scss';
+import styles from './app.module.scss';
 import Items from '../items/items';
 
 function App() {
   return (
-    <div className="app">
+    <div className={styles.app}>
         <Items />
     </div>
   );
