@@ -1,12 +1,10 @@
 import './app.scss';
-import Item from '../item/item';
+import Items from '../items/items';
 
 function App() {
   return (
     <div className="app">
-        <Item />
-        <Item />
-        <Item />
+        <Items />
     </div>
   );
 }
