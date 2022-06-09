@@ -1,4 +1,5 @@
 import styles from './item.module.scss';
+import {MdNavigateNext} from 'react-icons/md';
 
 function Item(props) {
     return (
@@ -10,7 +11,10 @@ function Item(props) {
                 -
                 <div className={styles.item_end}>13.6.2022</div>
                 </div>
-            </div>
+                </div>
+                <div className={styles.item_seemore}>
+                    <MdNavigateNext />
+                </div>
         </div>
     );
 }

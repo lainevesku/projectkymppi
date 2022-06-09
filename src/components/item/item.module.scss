@@ -27,3 +27,17 @@
     font-size: x-large;
     margin-top: -2px;
 }
+
+.item_seemore {
+    max-width: $item-seemore-width;
+    min-width: $item-seemore-width;
+    background-color: $item-seemore-background;
+    color: $item-seemore-text;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.item:hover .item_seemore {
+    display: flex;
+}
