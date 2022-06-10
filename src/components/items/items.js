@@ -1,5 +1,5 @@
 import Item from '../item';
-import { Button } from '../../shared/uibuttons';
+import Button from '../../shared/uibuttons';
 
 function Items(props) {
     return(
@@ -8,7 +8,7 @@ function Items(props) {
             <Item />
             <Item />
             <Item />
-            <Button>Lisää uusi</Button>
+            <Button secondary>Lisää uusi</Button>
         </div>
     );
 }
