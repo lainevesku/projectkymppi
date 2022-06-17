@@ -2,15 +2,17 @@ import styles from './item.module.scss';
 import {MdNavigateNext} from 'react-icons/md';
 
 function Item(props) {
+
+    const locale = "fi-FI";
+    const start = new Date(props.data.periodStart).toLocaleDateString(locale);
+    const end =  new Date(props.data.periodEnd).toLocaleDateString(locale);
+    const tyomaaNimi = (props.data.nimi) + ", " + (props.data.location)
+
     return (
         <div className={styles.item}>
             <div className={styles.item_data}>
-                <div className={styles.item_name}>Peltonen Taalintehdas</div>
-                <div className={styles.item_time}>
-                <div className={styles.item_start}>4.6.2022</div>
-                -
-                <div className={styles.item_end}>13.6.2022</div>
-                </div>
+                <div className={styles.item_name}>{tyomaaNimi}</div>
+                <div className={styles.item_time}>{start}-{end}</div>
                 </div>
                 <div className={styles.item_seemore}>
                     <MdNavigateNext />

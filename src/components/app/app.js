@@ -7,6 +7,7 @@ import Calculator from '../../routes/calculator/calculator';
 import Settings from '../../routes/settings/settings';
 import Menu from '../menu/menu';
 import { ButtonAppContainer } from '../../shared/uibuttons';
+import testdata from '../../testdata.js';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Header />
           <Content>
             <Route exact path="/">
-              <Items />
+              <Items data={testdata} />
             </Route>
             <Route path="/calculator">
               <Calculator />
