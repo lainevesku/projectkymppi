@@ -33,13 +33,13 @@ const useForm = (callback, initialState={}, resetOnSubmit=true) => {
 
     // Palauttaa luonnin yhteydessä sekä käsittelijät että
     // state-muuttuja
-    return (
+    return {
         handleSubmit,
         handleChange,
         resetValues,
         setValues,
         values
-    );
+    };
 }
 
 export default useForm;
