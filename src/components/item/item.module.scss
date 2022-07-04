@@ -38,6 +38,10 @@
     align-items: center;
 }
 
+.item_seemore a {
+    color: $item-seemore-text;
+}
+
 .item:hover .item_seemore {
     display: flex;
 }
