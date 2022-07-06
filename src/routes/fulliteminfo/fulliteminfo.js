@@ -13,6 +13,40 @@ function FullItemInfo (props) {
     const start = new Date(item.periodStart).toLocaleDateString(locale);
     const end =  new Date(item.periodEnd).toLocaleDateString(locale);
 
+    // koodi löydetty sivulta https://www.techighness.com/post/javascript-get-information-of-week-days-between-two-dates/. Vähän omaa soveltamista tehty,
+    // jotta koodi toimii haluamallani tavalla.
+    const countDaysOfWeekBetweenDates = (
+        sDate = start, 
+        eDate = end
+      ) => {
+      const startDate = new Date(sDate)
+      const endDate = new Date(eDate);
+      
+      endDate.setDate(endDate.getDate() + 1);
+      
+      // initialize each day with 0
+      const daysOfWeekCount = { 
+        0: 0,
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 0,
+        6: 0
+      };
+      
+      while (startDate < endDate) {
+        daysOfWeekCount[startDate.getDay()] = daysOfWeekCount[startDate.getDay()] + 1;
+        startDate.setDate(startDate.getDate() + 1);
+      }
+    
+      return daysOfWeekCount;
+     
+    };
+
+    const weekDaysCount = countDaysOfWeekBetweenDates(item.periodStart, item.periodEnd);
+    const tyopaivat = weekDaysCount[1] + weekDaysCount[2] + weekDaysCount[3] + weekDaysCount[4] + weekDaysCount[5];
+
 
     return (
         <div className={styles.fulliteminfo}>
@@ -20,9 +54,9 @@ function FullItemInfo (props) {
             <div className={styles.fulliteminfo_left}>
                 <div className={styles.fulliteminfo_left_periodstart}>Työmaa aloitettiin: {start}</div>
                 <div className={styles.fulliteminfo_left_periodend}>Työmaa saatiin valmiiksi: {end}</div>
-                <div className={styles.fulliteminfo_left_fulldates}>Tähän työpäivien määrä:!!!</div>
+                <div className={styles.fulliteminfo_left_fulldates}>Työpäivät: {tyopaivat}</div>
                 <div className={styles.fulliteminfo_left_amount}>Urakasta saatu palkka: {item.amount}€</div>
-                <div className={styles.fulliteminfo_left_payperday}>Tähän lasketaan päiväkohtainen palkka: {item.amount / 2} €/päivä</div>
+                <div className={styles.fulliteminfo_left_payperday}>Tähän lasketaan päiväkohtainen palkka: {item.amount / tyopaivat }€/päivä</div>
             </div>
             <div className={styles.fulliteminfo_right}>
                 <div className={styles.fulliteminfo_right_address}>Työmaan osoite: {item.address} {item.location} </div>
