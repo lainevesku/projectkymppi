@@ -13,17 +13,17 @@ function ItemForm(props) {
       storedvalues.amount = parseFloat(storedvalues.amount);
       storedvalues.id = storedvalues.id ? storedvalues.id : uuidv4();
       props.onItemSubmit(storedvalues);
-      history.push("/")
+      history.goBack()
     }
 
     const initialState = props.data ? props.data : {
       nimi: "",
       location: "",
       address: "",
-      amount: 0,
+      amount: null,
       periodStart: "",
       periodEnd: "",
-      roofArea: 0,
+      roofArea: null,
       roofType: "",
       roofColor: "",
       freeWord: ""
@@ -64,7 +64,7 @@ function ItemForm(props) {
                     <input type="text" name='address' onChange={handleChange} value={values.address} />
                 </div>
                 <div>
-                    <label htmlFor='amount'>Urakkapalkka</label>
+                    <label htmlFor='amount'>Urakkapalkka(€)</label>
                     <input type="number" name='amount' step="0.01" onChange={handleChange} value={values.amount} />
                 </div>
               </div>
@@ -107,7 +107,7 @@ function ItemForm(props) {
               <div className={styles.form_row}>
                 <div>
                     <label htmlFor='freeWord'>Kommentteja urakasta</label>
-                    <textarea rows='4' cols='10' onChange={handleChange} value={values.freeWord}/>
+                    <textarea name="freeWord" rows='4' cols='10' onChange={handleChange} value={values.freeWord} />
                 </div>
               </div>
 

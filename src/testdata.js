@@ -32,7 +32,14 @@ const data = [
         nimi:           "Lehtonen", 
         location:       "Turku Kakskerta",
         periodStart:    "2022-07-15",
-        periodEnd:      "2022-07-25"
+        periodEnd:      "2022-07-25",
+        address:        "Jahtilähteenkatu 8e 189",
+        amount:         "12050",
+        roofArea:       "320",
+        roofType:       "Lukkosauma",
+        roofColor:      "Punainen",
+        freeWord:       "Iso kerrostalo, Vaikea kulku, ei sähköjä"
+
     },
     {
         id:             "6",

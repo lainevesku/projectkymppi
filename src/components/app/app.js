@@ -8,6 +8,7 @@ import Calculator from '../../routes/calculator/calculator';
 import Settings from '../../routes/settings/settings';
 import AddItem from '../../routes/additem/additem';
 import EditItem from '../../routes/edititem/edititem';
+import FullItemInfo from '../../routes/fulliteminfo/fulliteminfo';
 import Menu from '../menu/menu';
 import { ButtonAppContainer } from '../../shared/uibuttons';
 import testdata from '../../testdata.js';
@@ -61,6 +62,9 @@ function App() {
             </Route>
             <Route path="/add">
               <AddItem onItemSubmit={handleItemSubmit} />
+            </Route>
+            <Route path="/info/:id">
+              <FullItemInfo data={data} />
             </Route>
             <Route path="/edit/:id">
               <EditItem onItemSubmit={handleItemSubmit} data={data} onItemDelete={handleItemDelete} />
