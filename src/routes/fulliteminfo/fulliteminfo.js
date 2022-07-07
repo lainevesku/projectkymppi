@@ -50,29 +50,32 @@ function FullItemInfo (props) {
 
     return (
         <div className={styles.fulliteminfo}>
+            <div className={styles.fulliteminfo_headline}>
             <h2>{item.nimi + ", " + item.location}</h2>
-            <div className={styles.fulliteminfo_left}>
-                <div className={styles.fulliteminfo_left_periodstart}>Työmaa aloitettiin: {start}</div>
-                <div className={styles.fulliteminfo_left_periodend}>Työmaa saatiin valmiiksi: {end}</div>
-                <div className={styles.fulliteminfo_left_fulldates}>Työpäivät: {tyopaivat}</div>
-                <div className={styles.fulliteminfo_left_amount}>Urakasta saatu palkka: {item.amount}€</div>
-                <div className={styles.fulliteminfo_left_payperday}>Tähän lasketaan päiväkohtainen palkka: {item.amount / tyopaivat }€/päivä</div>
             </div>
-            <div className={styles.fulliteminfo_right}>
-                <div className={styles.fulliteminfo_right_address}>Työmaan osoite: {item.address} {item.location} </div>
-                <div className={styles.fulliteminfo_right_roofarea}>Katon pinta-ala: {item.roofArea} m²</div>
-                <div className={styles.fulliteminfo_right_rooftype}>Uuden katon malli: {item.roofType}</div>
-                <div className={styles.fulliteminfo_right_roofcolor}>Uuden katon väri: {item.roofColor}</div>
-                <div className={styles.fulliteminfo_right_howmuch}>
-                                                                    <h3>Tarvittavan puutavaran määrä</h3>
-                                                                        Kakkoskakkonen:TÄHÄN <br />
-                                                                        Lankku: TÄHÄN <br />
-                                                                        Rima: TÄHÄN
-                                                                        </div>
-                <div className={styles.fulliteminfo_right_freeword}>Kommentteja: {item.freeWord}</div>
+            <div className={styles.fulliteminfo_firstbox}>
+                <div className={styles.fulliteminfo_fb_headline}><h3>TYÖMAA</h3></div>
+                <div className={styles.fulliteminfo_fb_address}>Työmaan osoite: <b>{item.address} <br /> {item.location}</b> </div>
+                <div className={styles.fulliteminfo_fb_periodstart}>Työmaa aloitettiin: <b>{start}</b></div>
+                <div className={styles.fulliteminfo_fb_periodend}>Työmaa saatiin valmiiksi:  <b>{end}</b></div>
+                <div className={styles.fulliteminfo_fb_fulldates}>Työpäivät: <b>{tyopaivat}</b></div>
+                <div className={styles.fulliteminfo_fb_amount}>Urakan hinta: <b>{item.amount}</b>€</div>
+                <div className={styles.fulliteminfo_fb_payperday}>Päiväkohtainen palkka: <b>{Math.round((item.amount / tyopaivat + Number.EPSILON) * 100) / 100 }€/päivä</b></div>
             </div>
-            <div className={styles.fulliteminfo_button}>
-                <Link to={"/edit/"+item.id}><Button primary>Muokkaa</Button></Link>
+            <div className={styles.fulliteminfo_secondbox}>
+                <div className={styles.fulliteminfo_sb_headline}><h3>KATTO</h3></div>               
+                <div className={styles.fulliteminfo_sb_roofarea}>Katon pinta-ala: <b>{item.roofArea} m² </b></div>
+                <div className={styles.fulliteminfo_sb_rooftype}>Uuden katon malli: <b>{item.roofType}</b></div>
+                <div className={styles.fulliteminfo_sb_roofcolor}>Uuden katon väri: <b>{item.roofColor}</b></div>
+                <div className={styles.fulliteminfo_sb_wood}>Puutavaran määrä: <b>YHTEENSÄ</b></div>
+                <div className={styles.fulliteminfo_sb_wood2x2}> Kakkoskakkonen: <b>TÄHÄN</b> </div> 
+                <div className={styles.fulliteminfo_sb_woodlankku}> Lankku: <b>TÄHÄN</b> </div> 
+                <div className={styles.fulliteminfo_sb_woodrima}> Rima: <b>TÄHÄN</b> </div>
+                <div className={styles.fulliteminfo_sb_freeword}>Kommentteja: <b>{item.freeWord} </b></div>
+            </div>
+    
+            <div className={styles.fulliteminfo_button}>  
+                <Link to={"/edit/"+item.id}><Button primary>MUOKKAA</Button></Link>
             </div>
         </div>
     );

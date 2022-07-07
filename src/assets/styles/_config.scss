@@ -6,10 +6,12 @@ $header-height: 4rem;
 $header-fontsize: 1.75rem;
 
 $scrollbar-track: #ffffff;
-$scrollbar-thumb: #e1e1e1;
+// $scrollbar-thumb: #e1e1e1;
+$scrollbar-thumb: #E3A711;
 $scrollbar-width: 0.5rem;
 
-$item-border: #BADDFE;
+//$item-border: #BADDFE;
+$item-border: #E3A711;
 $item-text: #999999;
 $item-text-strong: #282828;
 $item-padding: 0.75rem;
@@ -28,3 +30,7 @@ $form-input-padding: 0.5rem;
 $form-input-fontsize: 1.1rem;
 $form-label-fontsize: 0.95rem;
 $form-label-margin-bottom: 0.3rem;
+
+$fulliteminfo-background: #333333;
+$fulliteminfo-text: #E3A711;
+$fulliteminfo-margin-left: 15%;

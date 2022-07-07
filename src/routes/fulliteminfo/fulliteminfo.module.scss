@@ -1,0 +1,142 @@
+@import '../../assets/styles/_config.scss';
+
+.fulliteminfo_headline {
+    display: flex;
+    justify-content: center;
+    font-size: 2ex;
+    margin: 0.2rem;
+    padding: 0.2rem;
+}
+
+.fulliteminfo_firstbox {
+    display: flex;
+    flex-direction: column;
+    border: solid black 1px;
+    border-radius: 3%;
+    margin-bottom: 1rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    padding-bottom: 1rem;
+    color: $fulliteminfo-background;
+    background-color: $fulliteminfo-text;
+}
+
+.fulliteminfo_fb_headline {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.fulliteminfo_fb_address{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: $fulliteminfo-margin-left
+}
+
+.fulliteminfo_fb_periodstart {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: $fulliteminfo-margin-left
+}
+
+.fulliteminfo_fb_periodend {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: $fulliteminfo-margin-left
+}
+
+.fulliteminfo_fb_fulldates {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: $fulliteminfo-margin-left
+}
+
+.fulliteminfo_fb_amount {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: $fulliteminfo-margin-left
+}
+
+.fulliteminfo_fb_payperday {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: $fulliteminfo-margin-left
+}
+
+.fulliteminfo_secondbox {
+    display: flex;
+    flex-direction: column;
+    border: solid black 1px;
+    border-radius: 3%;
+    margin-bottom: 1rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    padding-bottom: 1rem;
+    color: $fulliteminfo-background;
+    background-color: $fulliteminfo-text;
+}
+
+.fulliteminfo_sb_headline {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.fulliteminfo_sb_roofarea {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: $fulliteminfo-margin-left
+}
+
+.fulliteminfo_sb_rooftype {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: $fulliteminfo-margin-left
+}
+
+.fulliteminfo_sb_roofcolor {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: $fulliteminfo-margin-left
+}
+
+.fulliteminfo_sb_wood {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: $fulliteminfo-margin-left
+}
+
+.fulliteminfo_sb_wood2x2 {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: $fulliteminfo-margin-left
+}
+
+.fulliteminfo_sb_woodlankku {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: $fulliteminfo-margin-left
+}
+
+.fulliteminfo_sb_woodrima {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: $fulliteminfo-margin-left
+}
+
+.fulliteminfo_sb_freeword {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: $fulliteminfo-margin-left
+}
+
+.fulliteminfo_button {
+    display: flex;
+    justify-content: center;
+}
+
+.fulliteminfo_button a {
+    text-decoration: none;
+}
