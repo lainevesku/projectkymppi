@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { useFirestore, useFirestoreCollectionData, useUser } from 'reactfire';
+import 'firebase/firestore';
+import 'firebase/auth';
 import styles from './app.module.scss';
 import Header from '../header/header';
 import Content from '../content/content';
@@ -11,17 +14,27 @@ import EditItem from '../../routes/edititem/edititem';
 import FullItemInfo from '../../routes/fulliteminfo/fulliteminfo';
 import Menu from '../menu/menu';
 import { ButtonAppContainer } from '../../shared/uibuttons';
-import testdata from '../../testdata.js';
+
 
 function App() {
 
   const [data, setData] = useState([]);
 
+  const user = useUser();
+
+  const itemCollectionRef = useFirestore().collection('user').doc(user.data.uid).collection('item');
+  const { data: itemCollection } = useFirestoreCollectionData(itemCollectionRef.orderBy("periodStart", "desc"), {initialData: [], idField: "id"});
+
+  console.log(itemCollection);
+
   useEffect(() => {
-    setData(testdata);
-  }, []);
+    setData(itemCollection);
+  }, [itemCollection]);
 
   const handleItemSubmit = (newitem) => {
+
+    itemCollectionRef.doc(newitem.id).set(newitem);
+    /*
     let storeddata = data.slice();
     const index = storeddata.findIndex(item => item.id === newitem.id);
     if (index >= 0 ) {
@@ -37,12 +50,17 @@ function App() {
     } );
 
     setData(storeddata);
+    */
   }
 
   const handleItemDelete = (id) => {
+
+    itemCollectionRef.doc(id).delete();
+    /*
     let storeddata = data.slice();
     storeddata = storeddata.filter(item => item.id !== id);
     setData(storeddata);
+    */
   }
 
   return (

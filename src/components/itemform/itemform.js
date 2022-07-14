@@ -20,12 +20,16 @@ function ItemForm(props) {
       nimi: "",
       location: "",
       address: "",
+      postal: "",
       amount: null,
       periodStart: "",
       periodEnd: "",
-      roofArea: null,
       roofType: "",
       roofColor: "",
+      korkeus: null,
+      leveys: null,
+      kattotuolijako: null,
+      otsalautakierros: null,
       freeWord: ""
     };
 
@@ -53,19 +57,26 @@ function ItemForm(props) {
                     <input type="text" name='nimi' onChange={handleChange} value={values.nimi} />                            
                 </div>
                 <div>
-                    <label htmlFor='location'>Paikkakunta</label>
-                    <input type="text" name='location' onChange={handleChange} value={values.location} />
+                    <label htmlFor='amount'>Urakkapalkka(€)</label>
+                    <input type="number" name='amount' min="0" step="0.01" onChange={handleChange} value={values.amount} />
                 </div>
               </div>
 
               <div className={styles.form_row}>
                 <div>
-                    <label htmlFor='address'>Osoite</label>
+                    <label htmlFor='address'>Katuosoite</label>
                     <input type="text" name='address' onChange={handleChange} value={values.address} />
                 </div>
+              </div>
+
+              <div className={styles.form_row}>
                 <div>
-                    <label htmlFor='amount'>Urakkapalkka(€)</label>
-                    <input type="number" name='amount' step="0.01" onChange={handleChange} value={values.amount} />
+                    <label htmlFor='postal'>Postinumero</label>
+                    <input type="text" name='postal' onChange={handleChange} value={values.postal} />
+                </div>
+                <div>
+                    <label htmlFor='location'>Paikkakunta</label>
+                    <input type="text" name='location' onChange={handleChange} value={values.location} />
                 </div>
               </div>
 
@@ -82,15 +93,11 @@ function ItemForm(props) {
 
               <div className={styles.form_row}>
                 <div>
-                    <label htmlFor='roofArea'>Katon pinta-ala(m²)</label>
-                    <input type="number" name='roofArea' step="0.01" onChange={handleChange} value={values.roofArea} />
-                </div>
-                <div>
                     <label htmlFor='roofType'>Katon tyyppi</label>
                     <select name='roofType' onChange={handleChange} value={values.roofType}>
-                        <option value="Tiilikuvio">Tiilikuvio</option>
-                        <option value="Lukkosauma">Lukkosauma</option>
-                        <option value="Tiilikatto">Tiilikatto</option>
+                        <option value="10">Tiilikuvio</option>
+                        <option value="100">Lukkosauma</option>
+                        <option value="1000">Tiilikatto</option>
                     </select>
                 </div>
                 <div>
@@ -106,13 +113,35 @@ function ItemForm(props) {
 
               <div className={styles.form_row}>
                 <div>
+                  <label htmlFor='korkeus'>Lappeen korkeus(m)</label>
+                  <input type="number" name='korkeus' step="0.01" onChange={handleChange} value={values.korkeus} />
+                </div>
+                <div>
+                  <label htmlFor='leveys'>Lappeen leveys(m)</label>
+                  <input type="number" name='leveys' step="0.01" onChange={handleChange} value={values.leveys} />
+                </div>
+              </div>
+
+              <div className={styles.form_row}>
+                <div>
+                  <label htmlFor='kattotuolijako'>Kattotuolijako</label>
+                  <input type="number" name='kattotuolijako' step="0.1" onChange={handleChange} value={values.kattotuolijako} />
+                </div>
+                <div>
+                  <label htmlFor='otsalautakierros'>Otsalautakierros</label>
+                  <input type="number" name='otsalautakierros' onChange={handleChange} value={values.otsalautakierros} />
+                </div>
+              </div>
+
+              <div className={styles.form_row}>
+                <div>
                     <label htmlFor='freeWord'>Kommentteja urakasta</label>
                     <textarea name="freeWord" rows='4' cols='10' onChange={handleChange} value={values.freeWord} />
                 </div>
               </div>
 
               <div className={styles.form_row}>
-              <div>
+                <div>
                   <Button onClick={handleCancel}>PERUUTA</Button>
                 </div>
                 <div>

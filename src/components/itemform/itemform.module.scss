@@ -10,9 +10,9 @@
 }
 
 .form_row > div {
-    display: flex;
+    display: flex; 
     flex-direction: column;
-    flex: 1 1 auto;
+    flex: 1 1;
     width: 100%;
     margin: $form-item-margin;
 }
