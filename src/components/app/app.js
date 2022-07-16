@@ -12,6 +12,8 @@ import Settings from '../../routes/settings/settings';
 import AddItem from '../../routes/additem/additem';
 import EditItem from '../../routes/edititem/edititem';
 import FullItemInfo from '../../routes/fulliteminfo/fulliteminfo';
+import AddLape from '../../routes/addlape/addlape';
+import EditLape from '../../routes/editlape/editlape';
 import Menu from '../menu/menu';
 import { ButtonAppContainer } from '../../shared/uibuttons';
 
@@ -19,49 +21,51 @@ import { ButtonAppContainer } from '../../shared/uibuttons';
 function App() {
 
   const [data, setData] = useState([]);
+  const [lapedata, setLapeData] = useState([]);
+  const [nimilista, setNimilista] = useState([]);
 
   const user = useUser();
 
   const itemCollectionRef = useFirestore().collection('user').doc(user.data.uid).collection('item');
   const { data: itemCollection } = useFirestoreCollectionData(itemCollectionRef.orderBy("periodStart", "desc"), {initialData: [], idField: "id"});
 
-  console.log(itemCollection);
+  const lapeCollectionRef = useFirestore().collection('user').doc(user.data.uid).collection('lape');
+  const { data: lapeCollection } = useFirestoreCollectionData(lapeCollectionRef.orderBy("korkeus"), {initialData: [], idField: "id"});
+
 
   useEffect(() => {
     setData(itemCollection);
+    const nimi = itemCollection.map(obj => obj.nimi);
+    // const paikka = itemCollection.map(obj => obj.location);
+    setNimilista(nimi);
   }, [itemCollection]);
+
+  useEffect(() => {
+      setLapeData(lapeCollection);
+  }, [lapeCollection]);
 
   const handleItemSubmit = (newitem) => {
 
-    itemCollectionRef.doc(newitem.id).set(newitem);
-    /*
-    let storeddata = data.slice();
-    const index = storeddata.findIndex(item => item.id === newitem.id);
-    if (index >= 0 ) {
-      storeddata[index] = newitem;
-    } else {
-      storeddata.push(newitem);
-    }
-
-    storeddata.sort( (a,b) => {
-      const aDate = new Date(a.periodStart);
-      const bDate = new Date(b.periodStart);
-      return bDate.getTime() - aDate.getTime();
-    } );
-
-    setData(storeddata);
-    */
+      itemCollectionRef.doc(newitem.id).set(newitem);   
   }
 
   const handleItemDelete = (id) => {
 
     itemCollectionRef.doc(id).delete();
-    /*
-    let storeddata = data.slice();
-    storeddata = storeddata.filter(item => item.id !== id);
-    setData(storeddata);
-    */
+  
   }
+
+// Lisää addlape editlape kohtiin itemsubmitin tilalle. Muuta itemcollectionref -> lapecollectionref ja tee ylös lapecollectionref 
+  const handleLapeSubmit = (newlape) => {
+
+    lapeCollectionRef.doc(newlape.id).set(newlape);   
+}
+
+const handleLapeDelete = (id) => {
+
+  lapeCollectionRef.doc(id).delete();
+
+}
 
   return (
     <ButtonAppContainer>
@@ -82,10 +86,16 @@ function App() {
               <AddItem onItemSubmit={handleItemSubmit} />
             </Route>
             <Route path="/info/:id">
-              <FullItemInfo data={data} />
+              <FullItemInfo data={data} lape={lapedata} />
             </Route>
             <Route path="/edit/:id">
               <EditItem onItemSubmit={handleItemSubmit} data={data} onItemDelete={handleItemDelete} />
+            </Route>
+            <Route path="/addLAPE">
+              <AddLape onLapeSubmit={handleLapeSubmit} nimi={nimilista} />
+            </Route>
+            <Route path="/editLAPE/:id">
+              <EditLape onLapeSubmit={handleLapeSubmit} lape={lapedata} nimi={nimilista} onLapeDelete={handleLapeDelete} />
             </Route>
           </Content>
           <Menu />

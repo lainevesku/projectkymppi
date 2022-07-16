@@ -12,11 +12,13 @@ function Calculator() {
         let e = document.getElementById("kattomalli");
         let kattomalli = e.value;
         let LapePA ="Lappeen pinta-ala: " + korkeus * leveys + "m²";
-        let otsaMaara = "Otsalauta(23*170): " + ((korkeus * 2) + leveys) * otsalauta * kattomalli + " metriä";
-        let pystyruode = "Pystyruode(22*100): " + korkeus * leveys * kattotuoli * 1.05 * kattomalli + " metriä";
+        let otsalautamaara = "Otsalauta(23*170): " + ((korkeus * 2) + leveys) * otsalauta + " metriä";
+        let pystyruode = "Pystyruode(22*100): " + leveys / kattotuoli * korkeus * 1.05 + " metriä"; // pyörustä yksi ylöspäin esim 58.3333 on 59
+        let tuuletusrima = "Tuuletusrima(22*50): " + leveys / kattotuoli * korkeus * 1.05 + " metriä";
+        let vaakaruode = "Vaakaruode(32*100): " + korkeus / kattomalli * leveys * 1.05 + " metriä";
         
         return (
-        document.getElementById("tulos").innerHTML = LapePA + "<br />" + otsaMaara + "<br />" + pystyruode
+        document.getElementById("tulos").innerHTML = LapePA + "<br />" + otsalautamaara + "<br />" + pystyruode + "<br />" + tuuletusrima + "<br />" + vaakaruode
         );       
     }
 
@@ -31,9 +33,9 @@ function Calculator() {
             <div>
             <label htmlFor='kattomalli'>Katon tyyppi</label>
                 <select name='kattomalli' id='kattomalli'>
-                    <option value="1">Tiilikuvio</option>
-                    <option value="10">Lukkosauma</option>
-                    <option value="100">Tiilikatto</option>
+                    <option value="0.35">Tiilikuvio</option>
+                    <option value="0.30">Lukkosauma</option>
+                    <option value="0.35">Tiilikatto</option>
                 </select>
             </div>
             <div>

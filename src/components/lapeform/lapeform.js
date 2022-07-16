@@ -1,37 +1,29 @@
-import styles from './itemform.module.scss';
+import styles from './lapeform.module.scss';
 import Button from '../../shared/uibuttons';
 import useForm from '../../shared/useform/useform';
 import { useHistory } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
-function ItemForm(props) {
+function LapeForm(props) {
 
     const history = useHistory();
 
     const submit = () => {
       let storedvalues = Object.assign({}, values);
-      storedvalues.amount = parseFloat(storedvalues.amount);
       storedvalues.id = storedvalues.id ? storedvalues.id : uuidv4();
-      props.onItemSubmit(storedvalues);
-      history.goBack()
+      props.onLapeSubmit(storedvalues);
+      history.push("/")
     }
 
-    const initialState = props.data ? props.data : {
-      nimi: "",
-      location: "",
-      address: "",
-      postal: "",
-      amount: null,
-      periodStart: "",
-      periodEnd: "",
-      roofType: "",
-      roofColor: "",
-      korkeus: null,
-      leveys: null,
-      kattotuolijako: null,
-      otsalautakierros: null,
-      freeWord: ""
-    };
+    const initialState = props.lape ? props.lape : {
+        tyomaa: "",
+        roofType: "",
+        roofColor: "",
+        korkeus: null,
+        leveys: null,
+        kattotuolijako: null,
+        otsalautakierros: null
+      };
 
     const {values, handleChange, handleSubmit} = useForm(submit, initialState, false);
 
@@ -42,7 +34,7 @@ function ItemForm(props) {
 
     const handleDelete = (event) => {
       event.preventDefault();
-      props.onItemDelete(values.id);
+      props.onLapeDelete(values.id);
       history.push("/");
     }
 
@@ -53,45 +45,11 @@ function ItemForm(props) {
               
               <div className={styles.form_row}>
                 <div>
-                    <label htmlFor='nimi'>Asiakkaan nimi</label>
-                    <input type="text" name='nimi' onChange={handleChange} value={values.nimi} />                            
+                    <label htmlFor='tyomaa'>Valitse työmaa</label>
+                    <select name="tyomaa" onChange={handleChange} value={values.tyomaa}>
+                       { props.nimi.map( (nimi) => <option key={nimi} value={nimi}>{nimi}</option> ) }
+                    </select>                           
                 </div>
-                <div>
-                    <label htmlFor='amount'>Urakkapalkka(€)</label>
-                    <input type="number" name='amount' min="0" step="0.01" onChange={handleChange} value={values.amount} />
-                </div>
-              </div>
-
-              <div className={styles.form_row}>
-                <div>
-                    <label htmlFor='address'>Katuosoite</label>
-                    <input type="text" name='address' onChange={handleChange} value={values.address} />
-                </div>
-              </div>
-
-              <div className={styles.form_row}>
-                <div>
-                    <label htmlFor='postal'>Postinumero</label>
-                    <input type="text" name='postal' onChange={handleChange} value={values.postal} />
-                </div>
-                <div>
-                    <label htmlFor='location'>Paikkakunta</label>
-                    <input type="text" name='location' onChange={handleChange} value={values.location} />
-                </div>
-              </div>
-
-              <div className={styles.form_row}>
-                <div>
-                    <label htmlFor='periodStart'>Aloitus päivämäärä</label>
-                    <input type="date" name='periodStart' onChange={handleChange} value={values.periodStart} />
-                </div>
-                <div>
-                    <label htmlFor='periodEnd'>Lopetus päivämäärä</label>
-                    <input type="date" name='periodEnd' onChange={handleChange} value={values.periodEnd} />
-                </div>
-              </div>
-
-              <div className={styles.form_row}>
                 <div>
                     <label htmlFor='roofType'>Katon tyyppi</label>
                     <select name='roofType' onChange={handleChange} value={values.roofType}>
@@ -133,23 +91,17 @@ function ItemForm(props) {
                 </div>
               </div>
 
-              <div className={styles.form_row}>
-                <div>
-                    <label htmlFor='freeWord'>Kommentteja urakasta</label>
-                    <textarea name="freeWord" rows='4' cols='10' onChange={handleChange} value={values.freeWord} />
-                </div>
-              </div>
 
               <div className={styles.form_row}>
                 <div>
                   <Button onClick={handleCancel}>PERUUTA</Button>
                 </div>
                 <div>
-                  <Button primary type="submit">{ props.data ? "TALLENNA" : "LISÄÄ URAKKA"}</Button>
+                  <Button primary type="submit">{ props.lape ? "TALLENNA" : "LISÄÄ LAPE"}</Button>
                 </div>
               </div>
 
-              { props.onItemDelete ? 
+              { props.onLapeDelete ? 
               <div className={styles.form_row}>
                 <div>
                   <Button onClick={handleDelete}>POISTA</Button>
@@ -163,4 +115,4 @@ function ItemForm(props) {
     );
 }
 
-export default ItemForm;
+export default LapeForm;

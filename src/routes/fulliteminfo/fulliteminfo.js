@@ -1,7 +1,8 @@
 import styles from './fulliteminfo.module.scss';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { Button } from '../../shared/uibuttons';
+import { Button, FloatingButton } from '../../shared/uibuttons';
+import { MdRoofing } from 'react-icons/md';
 
 function FullItemInfo (props) {
 
@@ -88,6 +89,7 @@ function FullItemInfo (props) {
             <div className={styles.fulliteminfo_button}>  
                 <Link to={"/edit/"+item.id}><Button primary>MUOKKAA</Button></Link>
             </div>
+            <Link to="/addLAPE"><FloatingButton secondary><MdRoofing /></FloatingButton></Link>
         </div>
     );
 }
