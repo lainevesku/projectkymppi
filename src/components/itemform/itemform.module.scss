@@ -9,6 +9,21 @@
     display: flex;
 }
 
+.lape1hide, .lape2hide, .lape3hide, .lape4hide, .lape5hide, .lape6hide {
+    display: none;
+}
+
+.lape1show, .lape2show, .lape3show, .lape4show, .lape5show, .lape6show {
+    display: block;
+}
+
+.form h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .form_row > div {
     display: flex; 
     flex-direction: column;
@@ -29,3 +44,4 @@
     font-size: $form-label-fontsize;
     margin-bottom: $form-label-margin-bottom;
 }
+
