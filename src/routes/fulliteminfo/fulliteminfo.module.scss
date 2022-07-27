@@ -3,133 +3,43 @@
 .fulliteminfo_headline {
     display: flex;
     justify-content: center;
-    font-size: 2ex;
+    font-size: 1.5em;
     margin: 0.2rem;
     padding: 0.2rem;
 }
 
-.fulliteminfo_firstbox {
+.fulliteminfo_box {
     display: flex;
     flex-direction: column;
     border: solid black 1px;
-    border-radius: 3%;
+    border-radius: 5%;
     margin-bottom: 1rem;
-    margin-left: 4rem;
-    margin-right: 4rem;
-    padding-bottom: 1rem;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-bottom: 2rem;
     color: $fulliteminfo-background;
     background-color: $fulliteminfo-text;
 }
 
-.fulliteminfo_fb_headline {
+.lape1hide, .lape2hide, .lape3hide, .lape4hide, .lape5hide, .lape6hide {
+    display: none;
+}
+
+.lape1show, .lape2show, .lape3show, .lape4show, .lape5show, .lape6show {
+    display: block;
+}
+
+.fulliteminfo_box > h3 {
     display: flex;
     justify-content: center;
-    font-size: 1.2rem;
-    text-decoration: underline;
+    align-items: center;
+    font-size: 2em;
 }
 
-.fulliteminfo_fb_address{
+.fulliteminfo_box > div {
     display: flex;
     justify-content: flex-start;
-    margin-left: $fulliteminfo-margin-left
-}
-
-.fulliteminfo_fb_periodstart {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: $fulliteminfo-margin-left
-}
-
-.fulliteminfo_fb_periodend {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: $fulliteminfo-margin-left
-}
-
-.fulliteminfo_fb_fulldates {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: $fulliteminfo-margin-left
-}
-
-.fulliteminfo_fb_amount {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: $fulliteminfo-margin-left
-}
-
-.fulliteminfo_fb_payperday {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: $fulliteminfo-margin-left
-}
-
-.fulliteminfo_secondbox {
-    display: flex;
-    flex-direction: column;
-    border: solid black 1px;
-    border-radius: 3%;
-    margin-bottom: 1rem;
-    margin-left: 4rem;
-    margin-right: 4rem;
-    padding-bottom: 1rem;
-    color: $fulliteminfo-background;
-    background-color: $fulliteminfo-text;
-}
-
-.fulliteminfo_sb_headline {
-    display: flex;
-    justify-content: center;
-    font-size: 1.2rem;
-    text-decoration: underline;
-}
-
-.fulliteminfo_sb_roofarea {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: $fulliteminfo-margin-left
-}
-
-.fulliteminfo_sb_rooftype {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: $fulliteminfo-margin-left
-}
-
-.fulliteminfo_sb_roofcolor {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: $fulliteminfo-margin-left
-}
-
-.fulliteminfo_sb_pystyruode {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: $fulliteminfo-margin-left
-}
-
-.fulliteminfo_sb_tuuletusrima {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: $fulliteminfo-margin-left
-}
-
-.fulliteminfo_sb_vaakaruode {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: $fulliteminfo-margin-left
-}
-
-.fulliteminfo_sb_otsalauta {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: $fulliteminfo-margin-left
-}
-
-.fulliteminfo_sb_freeword {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: $fulliteminfo-margin-left
+    margin-left: $fulliteminfo-margin-left;
 }
 
 .fulliteminfo_button {

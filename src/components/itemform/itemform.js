@@ -15,7 +15,7 @@ function ItemForm(props) {
       storedvalues.amount = parseFloat(storedvalues.amount);
       storedvalues.id = storedvalues.id ? storedvalues.id : uuidv4();
       props.onItemSubmit(storedvalues);
-      history.goBack()
+      history.push("/");
     }
 
     const initialState = props.data ? props.data : {
@@ -28,30 +28,30 @@ function ItemForm(props) {
       periodEnd: "",
       roofType: "",
       roofColor: "",
-      korkeus1: "",
-      leveys1: "",
-      kattotuolijako1: "",
-      otsalautakierros1: "",
-      korkeus2: "",
-      leveys2: "",
-      kattotuolijako2: "",
-      otsalautakierros2: "",
-      korkeus3: "",
-      leveys3: "",
-      kattotuolijako3: "",
-      otsalautakierros3: "",
-      korkeus4: "",
-      leveys4: "",
-      kattotuolijako4: "",
-      otsalautakierros4: "",
-      korkeus5: "",
-      leveys5: "",
-      kattotuolijako5: "",
-      otsalautakierros5: "",
-      korkeus6: "",
-      leveys6: "",
-      kattotuolijako6: "",
-      otsalautakierros6: "",
+      korkeus1: 0,
+      leveys1: 0,
+      kattotuolijako1: 1,
+      otsalautakierros1: 0,
+      korkeus2: 0,
+      leveys2: 0,
+      kattotuolijako2: 1,
+      otsalautakierros2: 0,
+      korkeus3: 0,
+      leveys3: 0,
+      kattotuolijako3: 1,
+      otsalautakierros3: 0,
+      korkeus4: 0,
+      leveys4: 0,
+      kattotuolijako4: 1,
+      otsalautakierros4: 0,
+      korkeus5: 0,
+      leveys5: 0,
+      kattotuolijako5: 1,
+      otsalautakierros5: 0,
+      korkeus6: 0,
+      leveys6: 0,
+      kattotuolijako6: 1,
+      otsalautakierros6: 0,
       freeWord: ""
     };
 
