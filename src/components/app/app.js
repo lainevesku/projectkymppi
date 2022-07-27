@@ -68,6 +68,7 @@ const handleLapeDelete = (id) => {
 }
 
   return (
+    <div className={styles.appbgcolor}>
     <ButtonAppContainer>
       <div className={styles.app}>
         <Router>
@@ -102,6 +103,7 @@ const handleLapeDelete = (id) => {
         </Router>
       </div>
     </ButtonAppContainer>
+    </div>
   );
 }
 

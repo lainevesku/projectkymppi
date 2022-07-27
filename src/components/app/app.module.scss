@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
 
+.appbgcolor {
+    // taustaväri esimerkki
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
 .app {
     font-family: 'Roboto Mono', monospace;
-    max-width: 38rem; // lisää leveyttä
+    max-width: 50rem; // lisää leveyttä/ testaa vielä leveyttä
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background: #ffffff;
 }
 
 .app > * {
