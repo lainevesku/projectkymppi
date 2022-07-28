@@ -14,7 +14,7 @@ function Item(props) {
             <div className={styles.item_data}>
                 <div className={styles.item_name}>{tyomaaNimi}</div>
                 <div className={styles.item_time}>{start}-{end}</div>
-                </div>
+            </div>
                 <div className={styles.item_seemore}>
                     <Link to={"/info/"+props.data.id}><MdNavigateNext /></Link>
                 </div>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Item from '../../components/item';
 import { FloatingButton, ButtonContainer } from '../../shared/uibuttons';
+import {MdRoofing} from 'react-icons/md';
 
 function Items(props) {
 
@@ -9,7 +10,7 @@ function Items(props) {
         <ButtonContainer>
             <div>
                 { items }
-                <Link to="/add"><FloatingButton secondary>+</FloatingButton></Link>
+                <Link to="/add"><FloatingButton secondary><MdRoofing /></FloatingButton></Link>
             </div>
         </ButtonContainer> 
     );

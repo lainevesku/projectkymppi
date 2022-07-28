@@ -10,7 +10,7 @@ function EditItem(props) {
 
     return (
         <div className={styles.edititem}>
-            <h2>Merkinnän muokkaaminen</h2>
+            <h2>Työmaan muokkaaminen</h2>
             <ItemForm onItemSubmit={props.onItemSubmit} data={item} onItemDelete={props.onItemDelete} />
         </div>
     );
