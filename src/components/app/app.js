@@ -14,6 +14,8 @@ import EditItem from '../../routes/edititem/edititem';
 import FullItemInfo from '../../routes/fulliteminfo/fulliteminfo';
 import Menu from '../menu/menu';
 import { ButtonAppContainer } from '../../shared/uibuttons';
+import "@animxyz/core";
+import { XyzTransition } from "@animxyz/react";
 
 
 function App() {
@@ -49,7 +51,7 @@ function App() {
           <Content>
             <Route exact path="/">
               <Items data={data} />
-            </Route>
+            </Route>           
             <Route path="/calculator">
               <Calculator />
             </Route>
@@ -60,7 +62,11 @@ function App() {
               <AddItem onItemSubmit={handleItemSubmit} />
             </Route>
             <Route path="/info/:id">
+              <XyzTransition appear duration="auto">
+                <div>
               <FullItemInfo data={data}/>
+              </div>
+              </XyzTransition>
             </Route>
             <Route path="/edit/:id">
               <EditItem onItemSubmit={handleItemSubmit} data={data} onItemDelete={handleItemDelete} />

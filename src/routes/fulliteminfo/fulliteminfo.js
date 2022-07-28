@@ -104,95 +104,97 @@ function FullItemInfo (props) {
 
     return (
         <div className={styles.fulliteminfo}>
-            <div className={styles.fulliteminfo_headline}>
-            <h2>{item.nimi + ", " + item.location}</h2>
+            <div className={styles.fulliteminfo_headline} xyz="fade small stagger ease-out-back duration-30">
+            <h2 className='xyz-nested' >{item.nimi + ", " + item.location}</h2>
             </div>
 
-            <div className={styles.fulliteminfo_box}>
-                <h3>TYÖMAA</h3>
-                <div>Työmaan osoite:&nbsp; <b>{item.address} <br /> {item.postal + " " + item.location}</b> </div>
-                <div>Aloitus päivä:&nbsp; <b>{start}</b></div>
-                <div>Valmistumis päivä:&nbsp; <b>{end}</b></div>
-                <div>Työpäivien määrä:&nbsp;<b>{tyopaivat}</b></div>
-                <div>Urakan hinta:&nbsp; <b>{item.amount}</b>€</div>
-                <div>Päiväkohtainen palkka:&nbsp; <b>{Math.round((item.amount / tyopaivat + Number.EPSILON) * 100) / 100 }€/päivä</b></div>
-                <div>Kommentteja:&nbsp; <b>{item.freeWord} </b></div>
-            </div>
+            
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger">
+                <h3 className='xyz-nested'>TYÖMAA</h3>
+                <div className='xyz-nested'>Työmaan osoite:&nbsp; <b>{item.address} <br /> {item.postal + " " + item.location}</b> </div>
+                <div className='xyz-nested'>Aloituspäivä:&nbsp; <b>{start}</b></div>
+                <div className='xyz-nested'>Valmistumispäivä:&nbsp; <b>{end}</b></div>
+                <div className='xyz-nested'>Työpäivien määrä:&nbsp;<b>{tyopaivat}</b></div>
+                <div className='xyz-nested'>Urakan hinta:&nbsp; <b>{item.amount}</b>€</div>
+                <div className='xyz-nested'>Päiväkohtainen palkka:&nbsp; <b>{Math.round((item.amount / tyopaivat + Number.EPSILON) * 100) / 100 }€/päivä</b></div>
+               { item.freeWord === "" ? " " : <div className='xyz-nested'>Kommentteja:&nbsp; <b>{item.freeWord} </b></div> }
+            </div>         
 
-            <div className={styles.fulliteminfo_box}>
-                <h3>KATTO</h3>              
-                <div>Katon pinta-ala:&nbsp; <b>{roofAreaYHT} m² </b></div>
-                <div>Uuden katon malli:&nbsp; <b>{item.roofType}</b></div>
-                <div>Uuden katon väri:&nbsp; <b>{item.roofColor}</b></div>
-                <div>Pystyruode(22*100):&nbsp; <b>{pystyruodeYHT} Metriä </b> </div> 
-                <div>Tuuletusrima(22*50):&nbsp; <b>{tuuletusYHT} Metriä</b> </div> 
-                <div>Vaakaruode(32*100):&nbsp; <b>{vaakaruodeYHT} Metriä</b> </div>
-                <div>Otsalauta(23*170):&nbsp; <b>{otsalautaYHT} Metriä</b> </div>
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-5">
+                <h3 className='xyz-nested'>KATTO</h3>              
+                <div className='xyz-nested'>Katon pinta-ala:&nbsp; <b>{roofAreaYHT} m² </b></div>
+                <div className='xyz-nested'>Uuden katon malli:&nbsp; <b>{item.roofType}</b></div>
+                <div className='xyz-nested'>Uuden katon väri:&nbsp; <b>{item.roofColor}</b></div>
+                <div className='xyz-nested'>Pystyruode(22*100):&nbsp; <b>{pystyruodeYHT} Metriä </b> </div> 
+                <div className='xyz-nested'>Tuuletusrima(22*50):&nbsp; <b>{tuuletusYHT} Metriä</b> </div> 
+                <div className='xyz-nested'>Vaakaruode(32*100):&nbsp; <b>{vaakaruodeYHT} Metriä</b> </div>
+                <div className='xyz-nested'>Otsalauta(23*170):&nbsp; <b>{otsalautaYHT} Metriä</b> </div>
             </div>
+            
 
             <div className={style1}>
-            <div className={styles.fulliteminfo_box}>
-                <h3>Lape 1</h3>              
-                <div>Lappeen pinta-ala:&nbsp; <b>{roofArea1} m² </b></div>
-                <div>Pystyruode(22*100):&nbsp; <b>{pystyruode1} Metriä </b> </div> 
-                <div>Tuuletusrima(22*50):&nbsp; <b>{tuuletus1} Metriä</b> </div> 
-                <div>Vaakaruode(32*100):&nbsp; <b>{vaakaruode1} Metriä</b> </div>
-                <div>Otsalauta(23*170):&nbsp; <b>{otsalauta1} Metriä</b> </div>
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-10">
+                <h3 className='xyz-nested'>Lape 1</h3>              
+                <div className='xyz-nested'>Lappeen pinta-ala:&nbsp; <b>{roofArea1} m² </b></div>
+                <div className='xyz-nested'>Pystyruode(22*100):&nbsp; <b>{pystyruode1} Metriä </b> </div> 
+                <div className='xyz-nested'>Tuuletusrima(22*50):&nbsp; <b>{tuuletus1} Metriä</b> </div> 
+                <div className='xyz-nested'>Vaakaruode(32*100):&nbsp; <b>{vaakaruode1} Metriä</b> </div>
+                <div className='xyz-nested'>Otsalauta(23*170):&nbsp; <b>{otsalauta1} Metriä</b> </div>
             </div>
             </div>
 
             <div className={style2}>
-            <div className={styles.fulliteminfo_box}>
-                <h3>Lape 2</h3>              
-                <div>Lappeen pinta-ala:&nbsp; <b>{roofArea2} m² </b></div>
-                <div>Pystyruode(22*100):&nbsp; <b>{pystyruode2} Metriä </b> </div> 
-                <div>Tuuletusrima(22*50):&nbsp; <b>{tuuletus2} Metriä</b> </div> 
-                <div>Vaakaruode(32*100):&nbsp; <b>{vaakaruode2} Metriä</b> </div>
-                <div>Otsalauta(23*170):&nbsp; <b>{otsalauta2} Metriä</b> </div>
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-15">
+                <h3 className='xyz-nested'>Lape 2</h3>              
+                <div className='xyz-nested'>Lappeen pinta-ala:&nbsp; <b>{roofArea2} m² </b></div>
+                <div className='xyz-nested'>Pystyruode(22*100):&nbsp; <b>{pystyruode2} Metriä </b> </div> 
+                <div className='xyz-nested'>Tuuletusrima(22*50):&nbsp; <b>{tuuletus2} Metriä</b> </div> 
+                <div className='xyz-nested'>Vaakaruode(32*100):&nbsp; <b>{vaakaruode2} Metriä</b> </div>
+                <div className='xyz-nested'>Otsalauta(23*170):&nbsp; <b>{otsalauta2} Metriä</b> </div>
             </div>
             </div>
 
             <div className={style3}>
-            <div className={styles.fulliteminfo_box}>
-                <h3>Lape 3</h3>              
-                <div>Lappeen pinta-ala:&nbsp; <b>{roofArea3} m² </b></div>
-                <div>Pystyruode(22*100):&nbsp; <b>{pystyruode3} Metriä </b> </div> 
-                <div>Tuuletusrima(22*50):&nbsp; <b>{tuuletus3} Metriä</b> </div> 
-                <div>Vaakaruode(32*100):&nbsp; <b>{vaakaruode3} Metriä</b> </div>
-                <div>Otsalauta(23*170):&nbsp; <b>{otsalauta3} Metriä</b> </div>
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-20">
+                <h3 className='xyz-nested'>Lape 3</h3>              
+                <div className='xyz-nested'>Lappeen pinta-ala:&nbsp; <b>{roofArea3} m² </b></div>
+                <div className='xyz-nested'>Pystyruode(22*100):&nbsp; <b>{pystyruode3} Metriä </b> </div> 
+                <div className='xyz-nested'>Tuuletusrima(22*50):&nbsp; <b>{tuuletus3} Metriä</b> </div> 
+                <div className='xyz-nested'>Vaakaruode(32*100):&nbsp; <b>{vaakaruode3} Metriä</b> </div>
+                <div className='xyz-nested'>Otsalauta(23*170):&nbsp; <b>{otsalauta3} Metriä</b> </div>
             </div>
             </div>
 
             <div className={style4}>
-            <div className={styles.fulliteminfo_box}>
-                <h3>Lape 4</h3>              
-                <div>Lappeen pinta-ala:&nbsp; <b>{roofArea4} m² </b></div>
-                <div>Pystyruode(22*100):&nbsp; <b>{pystyruode4} Metriä </b> </div> 
-                <div>Tuuletusrima(22*50):&nbsp; <b>{tuuletus4} Metriä</b> </div> 
-                <div>Vaakaruode(32*100):&nbsp; <b>{vaakaruode4} Metriä</b> </div>
-                <div>Otsalauta(23*170):&nbsp; <b>{otsalauta4} Metriä</b> </div>
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-25">
+                <h3 className='xyz-nested'>Lape 4</h3>              
+                <div className='xyz-nested'>Lappeen pinta-ala:&nbsp; <b>{roofArea4} m² </b></div>
+                <div className='xyz-nested'>Pystyruode(22*100):&nbsp; <b>{pystyruode4} Metriä </b> </div> 
+                <div className='xyz-nested'>Tuuletusrima(22*50):&nbsp; <b>{tuuletus4} Metriä</b> </div> 
+                <div className='xyz-nested'>Vaakaruode(32*100):&nbsp; <b>{vaakaruode4} Metriä</b> </div>
+                <div className='xyz-nested'>Otsalauta(23*170):&nbsp; <b>{otsalauta4} Metriä</b> </div>
             </div>
             </div>
 
             <div className={style5}>
-            <div className={styles.fulliteminfo_box}>
-                <h3>Lape 5</h3>              
-                <div>Lappeen pinta-ala:&nbsp; <b>{roofArea5} m² </b></div>
-                <div>Pystyruode(22*100):&nbsp; <b>{pystyruode5} Metriä </b> </div> 
-                <div>Tuuletusrima(22*50):&nbsp; <b>{tuuletus5} Metriä</b> </div> 
-                <div>Vaakaruode(32*100):&nbsp; <b>{vaakaruode5} Metriä</b> </div>
-                <div>Otsalauta(23*170):&nbsp; <b>{otsalauta5} Metriä</b> </div>
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-30">
+                <h3 className='xyz-nested'>Lape 5</h3>              
+                <div className='xyz-nested'>Lappeen pinta-ala:&nbsp; <b>{roofArea5} m² </b></div>
+                <div className='xyz-nested'>Pystyruode(22*100):&nbsp; <b>{pystyruode5} Metriä </b> </div> 
+                <div className='xyz-nested'>Tuuletusrima(22*50):&nbsp; <b>{tuuletus5} Metriä</b> </div> 
+                <div className='xyz-nested'>Vaakaruode(32*100):&nbsp; <b>{vaakaruode5} Metriä</b> </div>
+                <div className='xyz-nested'>Otsalauta(23*170):&nbsp; <b>{otsalauta5} Metriä</b> </div>
             </div>
             </div>
 
             <div className={style6}>
-            <div className={styles.fulliteminfo_box}>
-                <h3>Lape 6</h3>              
-                <div>Lappeen pinta-ala:&nbsp; <b>{roofArea6} m² </b></div>
-                <div>Pystyruode(22*100):&nbsp; <b>{pystyruode6} Metriä </b> </div> 
-                <div>Tuuletusrima(22*50):&nbsp; <b>{tuuletus6} Metriä</b> </div> 
-                <div>Vaakaruode(32*100):&nbsp; <b>{vaakaruode6} Metriä</b> </div>
-                <div>Otsalauta(23*170):&nbsp; <b>{otsalauta6} Metriä</b> </div>
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-35">
+                <h3 className='xyz-nested'>Lape 6</h3>              
+                <div className='xyz-nested'>Lappeen pinta-ala:&nbsp; <b>{roofArea6} m² </b></div>
+                <div className='xyz-nested'>Pystyruode(22*100):&nbsp; <b>{pystyruode6} Metriä </b> </div> 
+                <div className='xyz-nested'>Tuuletusrima(22*50):&nbsp; <b>{tuuletus6} Metriä</b> </div> 
+                <div className='xyz-nested'>Vaakaruode(32*100):&nbsp; <b>{vaakaruode6} Metriä</b> </div>
+                <div className='xyz-nested'>Otsalauta(23*170):&nbsp; <b>{otsalauta6} Metriä</b> </div>
             </div>
             </div>
 
