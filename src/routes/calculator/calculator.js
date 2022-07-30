@@ -10,15 +10,42 @@ function Calculator() {
         let kattotuoli = document.getElementById("kattotuoli").value;
         let otsalauta = document.getElementById("otsalauta").value;
         let e = document.getElementById("kattomalli");
-        let kattomalli = e.value;
+        let kattomalliarvo = "";
+            if (e.value === "Tiilikuvio") {
+            kattomalliarvo = 0.35 ;
+            }   if (e.value === "Lukkosauma") {
+            kattomalliarvo = 0.3 ;
+            }   if (e.value === "Tiilikatto") {
+            kattomalliarvo = 0.35 ;
+            }
+        let peltimaaraarvo = "";
+            if (e.value === "Tiilikuvio") {
+                peltimaaraarvo = 1.1 ;
+            }   if (e.value === "Lukkosauma") {
+                peltimaaraarvo = 0.47 ;
+            }
         let LapePA ="Lappeen pinta-ala: " + korkeus * leveys + "m²";
         let otsalautamaara = "Otsalauta(23*170): " + ((korkeus * 2) + leveys) * otsalauta + " metriä";
         let pystyruode = "Pystyruode(22*100): " + Math.ceil(leveys / kattotuoli * korkeus * 1.05) + " metriä"; 
         let tuuletusrima = "Tuuletusrima(22*50): " + Math.ceil(leveys / kattotuoli * korkeus * 1.05) + " metriä";
-        let vaakaruode = "Vaakaruode(32*100): " + Math.ceil(korkeus / kattomalli * leveys * 1.05) + " metriä";
-        
+        let vaakaruode = "Vaakaruode(32*100): " + Math.ceil(korkeus / kattomalliarvo * leveys * 1.05) + " metriä";
+        let peltimaara = e.value === "Tiilikatto" ? "Tiilien määrä: " + Math.ceil((korkeus / 0.35) * (leveys / 0.3) * 10) / 10 + " KPL" : "Pellin määrä: " + Math.ceil(leveys / peltimaaraarvo * 10) / 10 + " KPL" ;
+        let reunapelti = "Reunapelti: " + korkeus * 2 + " metriä" ;
+        let harjapelti = "Harjapelti: " + leveys + " metriä" ;
+        let vetopelti = e.value === "Lukkosauma" ? "Vetopelti: " + leveys : "";
+
+
         return (
-        document.getElementById("tulos").innerHTML = LapePA + "<br />" + otsalautamaara + "<br />" + pystyruode + "<br />" + tuuletusrima + "<br />" + vaakaruode
+        document.getElementById("tulos").innerHTML =    LapePA + "<br />" +
+                                                        otsalautamaara + "<br />" + 
+                                                        pystyruode + "<br />" + 
+                                                        tuuletusrima + "<br />" + 
+                                                        vaakaruode + "<br />" +
+                                                        peltimaara + "<br />" +
+                                                        reunapelti + "<br />" +
+                                                        harjapelti + "<br />" +
+                                                        vetopelti
+
         );       
     }
 
@@ -56,9 +83,9 @@ function Calculator() {
             <div>
                 <label htmlFor='kattomalli'>Katon tyyppi</label>
                 <select name='kattomalli' id='kattomalli'>
-                    <option value="0.35">Tiilikuvio</option>
-                    <option value="0.30">Lukkosauma</option>
-                    <option value="0.35">Tiilikatto</option>
+                    <option value="Tiilikuvio">Tiilikuvio</option>
+                    <option value="Lukkosauma">Lukkosauma</option>
+                    <option value="Tiilikatto">Tiilikatto</option>
                 </select>
             </div>
             <div>
