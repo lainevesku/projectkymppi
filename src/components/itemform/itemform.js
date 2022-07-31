@@ -26,8 +26,8 @@ function ItemForm(props) {
       amount: "",
       periodStart: "",
       periodEnd: "",
-      roofType: "",
-      roofColor: "",
+      roofType: "Tiilikuvio",
+      roofColor: "Musta",
       korkeus1: 0,
       leveys1: 0,
       kattotuolijako1: 1,
@@ -107,7 +107,7 @@ function ItemForm(props) {
               <div className={styles.form_row}>
                 <div>
                     <label htmlFor='nimi'>Asiakkaan nimi</label>
-                    <input type="text" name='nimi' onChange={handleChange} value={values.nimi} />                            
+                    <input type="text" name='nimi' onChange={handleChange} value={values.nimi} required />                            
                 </div>
                 <div>
                     <label htmlFor='amount'>Urakkapalkka(€)</label>
@@ -118,18 +118,18 @@ function ItemForm(props) {
               <div className={styles.form_row}>
                 <div>
                     <label htmlFor='address'>Katuosoite</label>
-                    <input type="text" name='address' onChange={handleChange} value={values.address} />
+                    <input type="text" name='address' onChange={handleChange} value={values.address} required />
                 </div>
               </div>
 
               <div className={styles.form_row}>
                 <div>
                     <label htmlFor='postal'>Postinumero</label>
-                    <input type="text" name='postal' onChange={handleChange} value={values.postal} />
+                    <input type="text" name='postal' onChange={handleChange} value={values.postal} required />
                 </div>
                 <div>
                     <label htmlFor='location'>Paikkakunta</label>
-                    <input type="text" name='location' onChange={handleChange} value={values.location} />
+                    <input type="text" name='location' onChange={handleChange} value={values.location} required />
                 </div>
               </div>
 
