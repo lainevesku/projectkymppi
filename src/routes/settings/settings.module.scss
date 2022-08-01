@@ -6,10 +6,14 @@
 
 .settings h2 {
     margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .settings_profile {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
@@ -24,4 +28,26 @@
     height: 5rem;
     border-radius: 50%;
     margin: 1rem;
+}
+
+.settings_button {
+    padding-bottom: 2rem;
+}
+
+.settings_images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settings_images img {
+    padding-top: 2rem;
+    width: 27rem;
+    height: 30rem;
+}
+
+.settings_images p {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
 }

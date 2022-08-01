@@ -1,3 +1,5 @@
+@import '../../assets/styles/config';
+
 .startupbgc {
     background: rgb(0,0,0);
     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(173,216,230,1) 55%, rgba(42,178,222,1) 100%);
@@ -17,6 +19,7 @@
 .startup_text {
     margin: 1rem;
     flex: 1 1 auto;
+    padding: $container-padding;
 }
 
 .startup_text p {
