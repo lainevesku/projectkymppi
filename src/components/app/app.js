@@ -22,8 +22,10 @@ function App() {
 
   const [data, setData] = useState([]);
 
+  // Haetaan kirjautunut käyttäjä
   const user = useUser();
 
+  // Luodaan Firestoreen item collection
   const itemCollectionRef = useFirestore().collection('user').doc(user.data.uid).collection('item');
   const { data: itemCollection } = useFirestoreCollectionData(itemCollectionRef.orderBy("periodStart", "desc"), {initialData: [], idField: "id"});
 
@@ -31,11 +33,13 @@ function App() {
     setData(itemCollection);
   }, [itemCollection]);
 
+  // Tallentaa uuden itemin item collectioon
   const handleItemSubmit = (newitem) => {
 
       itemCollectionRef.doc(newitem.id).set(newitem);   
   }
 
+  // Poista item id:n perusteella 
   const handleItemDelete = (id) => {
 
     itemCollectionRef.doc(id).delete();

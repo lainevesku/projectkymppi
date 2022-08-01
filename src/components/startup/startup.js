@@ -8,6 +8,7 @@ import Menu from '../menu/menu';
 
 function Startup(props) {
 
+    // Kirjaudutaan sisään Google-tunnuksilla
     const auth = useAuth();
 
     const signIn = async () => {

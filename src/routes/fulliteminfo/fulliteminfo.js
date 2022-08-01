@@ -130,7 +130,7 @@ function FullItemInfo (props) {
 
         endDate.setDate(endDate.getDate() + 1);
 
-        // initialize each day with 0
+        // Joka päivälle alkuarvoksi 0
         const daysOfWeekCount = {
             0: 0,
             1: 0,

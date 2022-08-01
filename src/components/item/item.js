@@ -4,9 +4,13 @@ import { Link } from 'react-router-dom';
 
 function Item(props) {
 
-    const locale = "fi-FI";
+    const locale = "fi-FI"; // Locale asetetaan Suomeksi
+
+    // Alku ja Loppu päivä muutetaan suomalaiseen muotoon
     const start = new Date(props.data.periodStart).toLocaleDateString(locale);
     const end =  new Date(props.data.periodEnd).toLocaleDateString(locale);
+
+    // Työmaan nimi koostuu asikkaan nimestä ja paikkakunnasta
     const tyomaaNimi = (props.data.nimi) + ", " + (props.data.location);
 
     return (

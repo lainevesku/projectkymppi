@@ -9,6 +9,7 @@ function Settings(props) {
     const auth = useAuth();
     const history = useHistory();
 
+    // Kirjaudu ulos
     const signOut = async () => {
         await auth.signOut();
         history.push('.');
