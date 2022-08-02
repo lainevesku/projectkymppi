@@ -22,9 +22,9 @@ function Startup(props) {
             <Header />
             <div className={styles.startup_text}>
                 <p>
-                Tervetuloa käyttämään La'Pete -sovellusta. La'Petestä löytyy 
-                työmaa päiväkirja, mihin voit laittaa itsellesi ylös työmaan
-                yleisimmät tiedot ja voit myös merkitä eri lappeiden tiedot ja 
+                Tervetuloa käyttämään La'Pete -sovellusta. La'Petestä löydät 
+                työmaapäiväkirjan, mihin voit laittaa itsellesi ylös työmaan
+                yleisimmät tiedot. Voit myös merkitä eri lappeiden tiedot ja 
                 La'Pete laskee puolestasi kattoon tarvittavan puutavaran ja 
                 peltien määrän. La'Petessä on myös erillinen lape laskuri, mikä 
                 laskee tarvittavat tavaramäärät yhdelle lappeelle ilman työmaan luontia. 
