@@ -3,23 +3,25 @@
 .fulliteminfo_headline {
     display: flex;
     justify-content: center;
-    font-size: 1.5em;
+    font-size: 18px;
     margin: 0.2rem;
     padding: 0.2rem;
 }
 
-.fulliteminfo_box {
+.fulliteminfo_box, .fulliteminfo_box_tyomaa{
     display: flex;
     flex-direction: column;
-    border: solid black 1px;
+    border: solid black 2.5px;
     border-radius: 5%;
-    margin-bottom: 1rem;
-    margin-left: 20%;
-    margin-right: 20%;
-    padding-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 15px;
+    padding-right: 15px;
     color: $fulliteminfo-background;
     background-color: $fulliteminfo-text;
     white-space: normal;
+    overflow-wrap: break-word;
 }
 
 .lape1hide, .lape2hide, .lape3hide, .lape4hide, .lape5hide, .lape6hide {
@@ -30,22 +32,33 @@
     display: block;
 }
 
-.fulliteminfo_box > h3 {
+.fulliteminfo_box > h3, .fulliteminfo_box_tyomaa > h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
+    font-size: 1.5em;
+    text-decoration: underline solid black 2px;
+}
+
+.fulliteminfo_box_tyomaa > div {
+   display: flex;
+   justify-content: flex-start;
+   align-items: baseline;
+   margin-left: 30%;
 }
 
 .fulliteminfo_box > div {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: baseline;
     margin-left: $fulliteminfo-margin-left;
+    margin-right: $fulliteminfo-margin-left;
 }
 
 .fulliteminfo_button {
     display: flex;
     justify-content: center;
+    margin-bottom: 1rem;
 }
 
 .fulliteminfo_button a {

@@ -162,19 +162,19 @@ function FullItemInfo (props) {
             </div>
 
             
-            <div className={styles.fulliteminfo_box} xyz="fade left stagger">
+            <div className={styles.fulliteminfo_box_tyomaa} xyz="fade left stagger">
                 <h3 className='xyz-nested'>TYÖMAA</h3>
-                <div className='xyz-nested'>Työmaan osoite:&nbsp; <b>{item.address} <br /> {item.postal + " " + item.location}</b> </div>
+                <div className='xyz-nested'>Osoite:&nbsp; <b>{item.address} <br /> {item.postal + " " + item.location}</b> </div>
                 <div className='xyz-nested'>Aloituspäivä:&nbsp; <b>{start}</b></div>
                 <div className='xyz-nested'>Valmistumispäivä:&nbsp; <b>{end}</b></div>
                 <div className='xyz-nested'>Työpäivien määrä:&nbsp;<b>{tyopaivat}</b></div>
                 <div className='xyz-nested'>Urakan hinta:&nbsp; <b>{item.amount}</b>€</div>
-                <div className='xyz-nested'>Päiväkohtainen palkka:&nbsp; <b>{Math.round((item.amount / tyopaivat + Number.EPSILON) * 100) / 100 }€/päivä</b></div>
+                <div className='xyz-nested'>Päiväpalkka:&nbsp; <b>{Math.round((item.amount / tyopaivat + Number.EPSILON) * 100) / 100 }€/päivä</b></div>
                { item.freeWord === "" ? " " : <div className='xyz-nested'>Kommentteja:&nbsp; <b>{item.freeWord} </b></div> }
             </div>         
-
-            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-5">
-                <h3 className='xyz-nested'>KATTO</h3>              
+   
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-5">   
+                <h3 className='xyz-nested'>KATTO</h3>        
                 <div className='xyz-nested'>Katon pinta-ala:&nbsp; <b>{roofAreaYHT} m² </b></div>
                 <div className='xyz-nested'>Uuden katon malli:&nbsp; <b>{item.roofType}</b></div>
                 <div className='xyz-nested'>Uuden katon väri:&nbsp; <b>{item.roofColor}</b></div>
