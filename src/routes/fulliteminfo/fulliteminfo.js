@@ -101,8 +101,8 @@ function FullItemInfo (props) {
     const reunapelti6 = item.korkeus6 * 2 ;
     const reunapeltiYHT = reunapelti1 + reunapelti2 + reunapelti3 + reunapelti4 + reunapelti5 + reunapelti6 ;
 
-        // Harjapelti = leveys (vain yksi mitta)
-    const harjapelti = item.leveys1 ;
+        // Harjapelti = lappeen leveys (joka toisen lappeen leveys ++)
+    const harjapelti = parseInt(item.leveys2) + parseInt(item.leveys4) + parseInt(item.leveys6) ;
 
         // Vetopelti = leveys (jokaiseen lappeeseen)
     const vetopelti1 = item.leveys1 ; 
