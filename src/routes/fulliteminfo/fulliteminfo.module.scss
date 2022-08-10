@@ -64,3 +64,21 @@
 .fulliteminfo_button a {
     text-decoration: none;
 }
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+
+    .fulliteminfo_box_tyomaa > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-left: 5%;
+     }
+
+     .fulliteminfo_box > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-left: 3%;
+        margin-right: 3%;
+     } 
+}
