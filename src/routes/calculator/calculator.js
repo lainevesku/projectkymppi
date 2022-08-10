@@ -31,8 +31,8 @@ function Calculator() {
             }
 
         // Laskimen sisältyvät lakenta kaavat    
-        let LapePA ="Lappeen pinta-ala: " + korkeus * leveys + "m²";
-        let otsalautamaara = "Otsalauta(23*170): " + ((korkeus * 2) + leveys) * otsalauta + " metriä";
+        let LapePA ="Lappeen pinta-ala: " + Math.round(korkeus * leveys * 100) / 100 + "m²";
+        let otsalautamaara = "Otsalauta(23*170): " + Math.ceil(((korkeus * 2) + leveys) * otsalauta) + " metriä";
         let pystyruode = "Pystyruode(22*100): " + Math.ceil(leveys / kattotuoli * korkeus * 1.05) + " metriä"; 
         let tuuletusrima = "Tuuletusrima(22*50): " + Math.ceil(leveys / kattotuoli * korkeus * 1.05) + " metriä";
         let vaakaruode = "Vaakaruode(32*100): " + Math.ceil(korkeus / kattomalliarvo * leveys * 1.05) + " metriä";
@@ -66,11 +66,11 @@ function Calculator() {
 
         <div className={styles.calculator_row}>
             <div>
-                <label htmlFor="korkeus">Lappeen korkeus (m)</label>
+                <label htmlFor="korkeus">Korkeus (m)</label>
                 <input type='number' id='korkeus' name='korkeus' min="0" step="0.01" />
             </div>
             <div>
-                <label htmlFor='leveys'>Lappeen leveys (m)</label>
+                <label htmlFor='leveys'>Leveys (m)</label>
                 <input type='number' id='leveys' name='leveys' min="0" step="0.01" />
             </div>
         </div>

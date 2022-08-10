@@ -37,13 +37,13 @@ function FullItemInfo (props) {
         
         // Laskukaavat
         // Pinta-ala = korkeus * leveys
-    const roofArea1 = item.korkeus1 * item.leveys1;
-    const roofArea2 = item.korkeus2 * item.leveys2;
-    const roofArea3 = item.korkeus3 * item.leveys3;
-    const roofArea4 = item.korkeus4 * item.leveys4;
-    const roofArea5 = item.korkeus5 * item.leveys5;
-    const roofArea6 = item.korkeus6 * item.leveys6;
-    const roofAreaYHT = roofArea1 + roofArea2 + roofArea3 + roofArea4 + roofArea5 + roofArea6 ;
+    const roofArea1 = Math.round(item.korkeus1 * item.leveys1 * 100) / 100;
+    const roofArea2 = Math.round(item.korkeus2 * item.leveys2 * 100) / 100;
+    const roofArea3 = Math.round(item.korkeus3 * item.leveys3 * 100) / 100;
+    const roofArea4 = Math.round(item.korkeus4 * item.leveys4 * 100) / 100;
+    const roofArea5 = Math.round(item.korkeus5 * item.leveys5 * 100) / 100;
+    const roofArea6 = Math.round(item.korkeus6 * item.leveys6 * 100) / 100;
+    const roofAreaYHT = Math.round((roofArea1 + roofArea2 + roofArea3 + roofArea4 + roofArea5 + roofArea6) * 100) / 100 ;
 
         // Pystyruode = leveys / kattotuolijako * korkeus * 1,05
     const pystyruode1 = Math.ceil(item.leveys1 / item.kattotuolijako1 * item.korkeus1 * 1.05) ;
@@ -73,12 +73,12 @@ function FullItemInfo (props) {
     const vaakaruodeYHT = vaakaruode1 + vaakaruode2 + vaakaruode3 + vaakaruode4 + vaakaruode5 + vaakaruode6 ;
 
         // Otsalauta = (korkeus * 2 + leveys) * otsalautakierros
-    const otsalauta1 = ((item.korkeus1 * 2) + parseInt(item.leveys1)) * item.otsalautakierros1;
-    const otsalauta2 = ((item.korkeus2 * 2) + parseInt(item.leveys2)) * item.otsalautakierros2 ;    
-    const otsalauta3 = ((item.korkeus3 * 2) + parseInt(item.leveys3)) * item.otsalautakierros3 ;
-    const otsalauta4 = ((item.korkeus4 * 2) + parseInt(item.leveys4)) * item.otsalautakierros4 ;
-    const otsalauta5 = ((item.korkeus5 * 2) + parseInt(item.leveys5)) * item.otsalautakierros5 ;
-    const otsalauta6 = ((item.korkeus6 * 2) + parseInt(item.leveys6)) * item.otsalautakierros6 ;
+    const otsalauta1 = Math.ceil(((item.korkeus1 * 2) + parseInt(item.leveys1)) * item.otsalautakierros1) ;
+    const otsalauta2 = Math.ceil(((item.korkeus2 * 2) + parseInt(item.leveys2)) * item.otsalautakierros2) ;    
+    const otsalauta3 = Math.ceil(((item.korkeus3 * 2) + parseInt(item.leveys3)) * item.otsalautakierros3) ;
+    const otsalauta4 = Math.ceil(((item.korkeus4 * 2) + parseInt(item.leveys4)) * item.otsalautakierros4) ;
+    const otsalauta5 = Math.ceil(((item.korkeus5 * 2) + parseInt(item.leveys5)) * item.otsalautakierros5) ;
+    const otsalauta6 = Math.ceil(((item.korkeus6 * 2) + parseInt(item.leveys6)) * item.otsalautakierros6) ;
     const otsalautaYHT = otsalauta1 + otsalauta2 + otsalauta3 + otsalauta4 + otsalauta5 + otsalauta6 ;
 
         // Peltien/Tiilien määrä
@@ -168,7 +168,7 @@ function FullItemInfo (props) {
                 <div className='xyz-nested'>Aloituspäivä:&nbsp; <b>{start}</b></div>
                 <div className='xyz-nested'>Valmistumispäivä:&nbsp; <b>{end}</b></div>
                 <div className='xyz-nested'>Työpäivien määrä:&nbsp;<b>{tyopaivat}</b></div>
-                <div className='xyz-nested'>Urakan hinta:&nbsp; <b>{item.amount}</b>€</div>
+                <div className='xyz-nested'>Urakan hinta:&nbsp; <b>{item.amount}€</b></div>
                 <div className='xyz-nested'>Päiväpalkka:&nbsp; <b>{Math.round((item.amount / tyopaivat + Number.EPSILON) * 100) / 100 }€/päivä</b></div>
                { item.freeWord === "" ? " " : <div className='xyz-nested'>Kommentteja:&nbsp; <b>{item.freeWord} </b></div> }
             </div>         
@@ -192,14 +192,18 @@ function FullItemInfo (props) {
             <div className={style1}>
             <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-10">
                 <h3 className='xyz-nested'>Lape 1</h3>              
-                <div className='xyz-nested'>Lappeen pinta-ala:&nbsp; <b>{roofArea1} m² </b></div>
-                <div className='xyz-nested'>Pystyruode(22*100):&nbsp; <b>{pystyruode1} Metriä</b> </div> 
-                <div className='xyz-nested'>Tuuletusrima(22*50):&nbsp; <b>{tuuletus1} Metriä</b> </div> 
-                <div className='xyz-nested'>Vaakaruode(32*100):&nbsp; <b>{vaakaruode1} Metriä</b> </div>
-                <div className='xyz-nested'>Otsalauta(23*170):&nbsp; <b>{otsalauta1} Metriä</b> </div>
-                <div className='xyz-nested'>{item.roofType === "Tiilikatto" ? "Tiilien määrä:" : "Pellin määrä:"}&nbsp; <b>{peltimaara1} KPL</b> </div>
-                <div className='xyz-nested'>Reunapellin määrä:&nbsp; <b>{reunapelti1} Metriä</b></div>
-                { item.roofType === "Lukkosauma" ? <div className='xyz-nested'>Vetopellin määrä:&nbsp; <b>{vetopelti1} Metriä</b></div> : ""}
+                <div className='xyz-nested'>Lappeen korkeus: <b>{item.korkeus1} Metriä </b></div>
+                <div className='xyz-nested'>Lappeen leveys: <b>{item.leveys1} Metriä </b></div>
+                <div className='xyz-nested'>Kattotuolijako: <b>{item.kattotuolijako1} </b></div>
+                <div className='xyz-nested'>Otsalautakierros: <b>{item.otsalautakierros1} </b></div>
+                <div className='xyz-nested'>Lappeen pinta-ala: <b>{roofArea1} m² </b></div>
+                <div className='xyz-nested'>Pystyruode(22*100): <b>{pystyruode1} Metriä</b> </div> 
+                <div className='xyz-nested'>Tuuletusrima(22*50): <b>{tuuletus1} Metriä</b> </div> 
+                <div className='xyz-nested'>Vaakaruode(32*100): <b>{vaakaruode1} Metriä</b> </div>
+                <div className='xyz-nested'>Otsalauta(23*170): <b>{otsalauta1} Metriä</b> </div>
+                <div className='xyz-nested'>{item.roofType === "Tiilikatto" ? "Tiilien määrä:" : "Pellin määrä:"} <b>{peltimaara1} KPL</b> </div>
+                <div className='xyz-nested'>Reunapellin määrä: <b>{reunapelti1} Metriä</b></div>
+                { item.roofType === "Lukkosauma" ? <div className='xyz-nested'>Vetopellin määrä: <b>{vetopelti1} Metriä</b></div> : ""}
 
             </div>
             </div>
@@ -207,70 +211,90 @@ function FullItemInfo (props) {
             <div className={style2}>
             <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-15">
                 <h3 className='xyz-nested'>Lape 2</h3>              
-                <div className='xyz-nested'>Lappeen pinta-ala:&nbsp; <b>{roofArea2} m² </b></div>
-                <div className='xyz-nested'>Pystyruode(22*100):&nbsp; <b>{pystyruode2} Metriä </b> </div> 
-                <div className='xyz-nested'>Tuuletusrima(22*50):&nbsp; <b>{tuuletus2} Metriä</b> </div> 
-                <div className='xyz-nested'>Vaakaruode(32*100):&nbsp; <b>{vaakaruode2} Metriä</b> </div>
-                <div className='xyz-nested'>Otsalauta(23*170):&nbsp; <b>{otsalauta2} Metriä</b> </div>
-                <div className='xyz-nested'>{item.roofType === "Tiilikatto" ? "Tiilien määrä:" : "Pellin määrä:"}&nbsp; <b>{peltimaara2} KPL</b> </div>
-                <div className='xyz-nested'>Reunapellin määrä:&nbsp; <b>{reunapelti2} Metriä</b></div>
-                { item.roofType === "Lukkosauma" ? <div className='xyz-nested'>Vetopellin määrä:&nbsp; <b>{vetopelti2} Metriä</b></div> : ""}
+                <div className='xyz-nested'>Lappeen korkeus: <b>{item.korkeus2} Metriä </b></div>
+                <div className='xyz-nested'>Lappeen leveys: <b>{item.leveys2} Metriä </b></div>
+                <div className='xyz-nested'>Kattotuolijako: <b>{item.kattotuolijako2} </b></div>
+                <div className='xyz-nested'>Otsalautakierros: <b>{item.otsalautakierros2} </b></div>
+                <div className='xyz-nested'>Lappeen pinta-ala: <b>{roofArea2} m² </b></div>
+                <div className='xyz-nested'>Pystyruode(22*100): <b>{pystyruode2} Metriä </b> </div> 
+                <div className='xyz-nested'>Tuuletusrima(22*50): <b>{tuuletus2} Metriä</b> </div> 
+                <div className='xyz-nested'>Vaakaruode(32*100): <b>{vaakaruode2} Metriä</b> </div>
+                <div className='xyz-nested'>Otsalauta(23*170): <b>{otsalauta2} Metriä</b> </div>
+                <div className='xyz-nested'>{item.roofType === "Tiilikatto" ? "Tiilien määrä:" : "Pellin määrä:"} <b>{peltimaara2} KPL</b> </div>
+                <div className='xyz-nested'>Reunapellin määrä: <b>{reunapelti2} Metriä</b></div>
+                { item.roofType === "Lukkosauma" ? <div className='xyz-nested'>Vetopellin määrä: <b>{vetopelti2} Metriä</b></div> : ""}
             </div>
             </div>
 
             <div className={style3}>
             <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-20">
                 <h3 className='xyz-nested'>Lape 3</h3>              
-                <div className='xyz-nested'>Lappeen pinta-ala:&nbsp; <b>{roofArea3} m² </b></div>
-                <div className='xyz-nested'>Pystyruode(22*100):&nbsp; <b>{pystyruode3} Metriä </b> </div> 
-                <div className='xyz-nested'>Tuuletusrima(22*50):&nbsp; <b>{tuuletus3} Metriä</b> </div> 
-                <div className='xyz-nested'>Vaakaruode(32*100):&nbsp; <b>{vaakaruode3} Metriä</b> </div>
-                <div className='xyz-nested'>Otsalauta(23*170):&nbsp; <b>{otsalauta3} Metriä</b> </div>
-                <div className='xyz-nested'>{item.roofType === "Tiilikatto" ? "Tiilien määrä:" : "Pellin määrä:"}&nbsp; <b>{peltimaara3} KPL</b> </div>
-                <div className='xyz-nested'>Reunapellin määrä:&nbsp; <b>{reunapelti3} Metriä</b></div>
-                { item.roofType === "Lukkosauma" ? <div className='xyz-nested'>Vetopellin määrä:&nbsp; <b>{vetopelti3} Metriä</b></div> : ""}
+                <div className='xyz-nested'>Lappeen korkeus: <b>{item.korkeus3} Metriä </b></div>
+                <div className='xyz-nested'>Lappeen leveys: <b>{item.leveys3} Metriä </b></div>
+                <div className='xyz-nested'>Kattotuolijako: <b>{item.kattotuolijako3} </b></div>
+                <div className='xyz-nested'>Otsalautakierros: <b>{item.otsalautakierros3} </b></div>
+                <div className='xyz-nested'>Lappeen pinta-ala: <b>{roofArea3} m² </b></div>
+                <div className='xyz-nested'>Pystyruode(22*100): <b>{pystyruode3} Metriä </b> </div> 
+                <div className='xyz-nested'>Tuuletusrima(22*50): <b>{tuuletus3} Metriä</b> </div> 
+                <div className='xyz-nested'>Vaakaruode(32*100): <b>{vaakaruode3} Metriä</b> </div>
+                <div className='xyz-nested'>Otsalauta(23*170): <b>{otsalauta3} Metriä</b> </div>
+                <div className='xyz-nested'>{item.roofType === "Tiilikatto" ? "Tiilien määrä:" : "Pellin määrä:"} <b>{peltimaara3} KPL</b> </div>
+                <div className='xyz-nested'>Reunapellin määrä: <b>{reunapelti3} Metriä</b></div>
+                { item.roofType === "Lukkosauma" ? <div className='xyz-nested'>Vetopellin määrä: <b>{vetopelti3} Metriä</b></div> : ""}
             </div>
             </div>
 
             <div className={style4}>
             <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-25">
-                <h3 className='xyz-nested'>Lape 4</h3>              
-                <div className='xyz-nested'>Lappeen pinta-ala:&nbsp; <b>{roofArea4} m² </b></div>
-                <div className='xyz-nested'>Pystyruode(22*100):&nbsp; <b>{pystyruode4} Metriä </b> </div> 
-                <div className='xyz-nested'>Tuuletusrima(22*50):&nbsp; <b>{tuuletus4} Metriä</b> </div> 
-                <div className='xyz-nested'>Vaakaruode(32*100):&nbsp; <b>{vaakaruode4} Metriä</b> </div>
-                <div className='xyz-nested'>Otsalauta(23*170):&nbsp; <b>{otsalauta4} Metriä</b> </div>
-                <div className='xyz-nested'>{item.roofType === "Tiilikatto" ? "Tiilien määrä:" : "Pellin määrä:"}&nbsp; <b>{peltimaara4} KPL</b> </div>
-                <div className='xyz-nested'>Reunapellin määrä:&nbsp; <b>{reunapelti4} Metriä</b></div>
-                { item.roofType === "Lukkosauma" ? <div className='xyz-nested'>Vetopellin määrä:&nbsp; <b>{vetopelti4} Metriä</b></div> : ""}
+                <h3 className='xyz-nested'>Lape 4</h3>        
+                <div className='xyz-nested'>Lappeen korkeus: <b>{item.korkeus4} Metriä </b></div>      
+                <div className='xyz-nested'>Lappeen leveys: <b>{item.leveys4} Metriä </b></div>
+                <div className='xyz-nested'>Kattotuolijako: <b>{item.kattotuolijako4} </b></div>
+                <div className='xyz-nested'>Otsalautakierros: <b>{item.otsalautakierros4} </b></div>
+                <div className='xyz-nested'>Lappeen pinta-ala: <b>{roofArea4} m² </b></div>
+                <div className='xyz-nested'>Pystyruode(22*100): <b>{pystyruode4} Metriä </b> </div> 
+                <div className='xyz-nested'>Tuuletusrima(22*50): <b>{tuuletus4} Metriä</b> </div> 
+                <div className='xyz-nested'>Vaakaruode(32*100): <b>{vaakaruode4} Metriä</b> </div>
+                <div className='xyz-nested'>Otsalauta(23*170): <b>{otsalauta4} Metriä</b> </div>
+                <div className='xyz-nested'>{item.roofType === "Tiilikatto" ? "Tiilien määrä:" : "Pellin määrä:"} <b>{peltimaara4} KPL</b> </div>
+                <div className='xyz-nested'>Reunapellin määrä: <b>{reunapelti4} Metriä</b></div>
+                { item.roofType === "Lukkosauma" ? <div className='xyz-nested'>Vetopellin määrä: <b>{vetopelti4} Metriä</b></div> : ""}
             </div>
             </div>
 
             <div className={style5}>
             <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-30">
-                <h3 className='xyz-nested'>Lape 5</h3>              
-                <div className='xyz-nested'>Lappeen pinta-ala:&nbsp; <b>{roofArea5} m² </b></div>
-                <div className='xyz-nested'>Pystyruode(22*100):&nbsp; <b>{pystyruode5} Metriä </b> </div> 
-                <div className='xyz-nested'>Tuuletusrima(22*50):&nbsp; <b>{tuuletus5} Metriä</b> </div> 
-                <div className='xyz-nested'>Vaakaruode(32*100):&nbsp; <b>{vaakaruode5} Metriä</b> </div>
-                <div className='xyz-nested'>Otsalauta(23*170):&nbsp; <b>{otsalauta5} Metriä</b> </div>
-                <div className='xyz-nested'>{item.roofType === "Tiilikatto" ? "Tiilien määrä:" : "Pellin määrä:"}&nbsp; <b>{peltimaara5} KPL</b> </div>
-                <div className='xyz-nested'>Reunapellin määrä:&nbsp; <b>{reunapelti5} Metriä</b></div>
-                { item.roofType === "Lukkosauma" ? <div className='xyz-nested'>Vetopellin määrä:&nbsp; <b>{vetopelti5} Metriä</b></div> : ""}
+                <h3 className='xyz-nested'>Lape 5</h3>      
+                <div className='xyz-nested'>Lappeen korkeus: <b>{item.korkeus5} Metriä </b></div>      
+                <div className='xyz-nested'>Lappeen leveys: <b>{item.leveys5} Metriä </b></div>  
+                <div className='xyz-nested'>Kattotuolijako: <b>{item.kattotuolijako5} </b></div>
+                <div className='xyz-nested'>Otsalautakierros: <b>{item.otsalautakierros5} </b></div>
+                <div className='xyz-nested'>Lappeen pinta-ala: <b>{roofArea5} m² </b></div>
+                <div className='xyz-nested'>Pystyruode(22*100): <b>{pystyruode5} Metriä </b> </div> 
+                <div className='xyz-nested'>Tuuletusrima(22*50): <b>{tuuletus5} Metriä</b> </div> 
+                <div className='xyz-nested'>Vaakaruode(32*100): <b>{vaakaruode5} Metriä</b> </div>
+                <div className='xyz-nested'>Otsalauta(23*170): <b>{otsalauta5} Metriä</b> </div>
+                <div className='xyz-nested'>{item.roofType === "Tiilikatto" ? "Tiilien määrä:" : "Pellin määrä:"} <b>{peltimaara5} KPL</b> </div>
+                <div className='xyz-nested'>Reunapellin määrä: <b>{reunapelti5} Metriä</b></div>
+                { item.roofType === "Lukkosauma" ? <div className='xyz-nested'>Vetopellin määrä: <b>{vetopelti5} Metriä</b></div> : ""}
             </div>
             </div>
 
             <div className={style6}>
             <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-35">
-                <h3 className='xyz-nested'>Lape 6</h3>              
-                <div className='xyz-nested'>Lappeen pinta-ala:&nbsp; <b>{roofArea6} m² </b></div>
-                <div className='xyz-nested'>Pystyruode(22*100):&nbsp; <b>{pystyruode6} Metriä </b> </div> 
-                <div className='xyz-nested'>Tuuletusrima(22*50):&nbsp; <b>{tuuletus6} Metriä</b> </div> 
-                <div className='xyz-nested'>Vaakaruode(32*100):&nbsp; <b>{vaakaruode6} Metriä</b> </div>
-                <div className='xyz-nested'>Otsalauta(23*170):&nbsp; <b>{otsalauta6} Metriä</b> </div>
-                <div className='xyz-nested'>{item.roofType === "Tiilikatto" ? "Tiilien määrä:" : "Pellin määrä:"}&nbsp; <b>{peltimaara6} KPL</b> </div>
-                <div className='xyz-nested'>Reunapellin määrä:&nbsp; <b>{reunapelti6} Metriä</b></div>
-                { item.roofType === "Lukkosauma" ? <div className='xyz-nested'>Vetopellin määrä:&nbsp; <b>{vetopelti6} Metriä</b></div> : ""}
+                <h3 className='xyz-nested'>Lape 6</h3>      
+                <div className='xyz-nested'>Lappeen korkeus: <b>{item.korkeus6} Metriä </b></div>    
+                <div className='xyz-nested'>Lappeen leveys: <b>{item.leveys6} Metriä </b></div>   
+                <div className='xyz-nested'>Kattotuolijako: <b>{item.kattotuolijako6} </b></div> 
+                <div className='xyz-nested'>Otsalautakierros: <b>{item.otsalautakierros6} </b></div>
+                <div className='xyz-nested'>Lappeen pinta-ala: <b>{roofArea6} m² </b></div>
+                <div className='xyz-nested'>Pystyruode(22*100): <b>{pystyruode6} Metriä </b> </div> 
+                <div className='xyz-nested'>Tuuletusrima(22*50): <b>{tuuletus6} Metriä</b> </div> 
+                <div className='xyz-nested'>Vaakaruode(32*100): <b>{vaakaruode6} Metriä</b> </div>
+                <div className='xyz-nested'>Otsalauta(23*170): <b>{otsalauta6} Metriä</b> </div>
+                <div className='xyz-nested'>{item.roofType === "Tiilikatto" ? "Tiilien määrä:" : "Pellin määrä:"} <b>{peltimaara6} KPL</b> </div>
+                <div className='xyz-nested'>Reunapellin määrä: <b>{reunapelti6} Metriä</b></div>
+                { item.roofType === "Lukkosauma" ? <div className='xyz-nested'>Vetopellin määrä: <b>{vetopelti6} Metriä</b></div> : ""}
             </div>
             </div>
 
