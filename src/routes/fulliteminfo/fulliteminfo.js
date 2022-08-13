@@ -99,19 +99,19 @@ function FullItemInfo (props) {
     const reunapelti4 = item.korkeus4 * 2 ;
     const reunapelti5 = item.korkeus5 * 2 ;
     const reunapelti6 = item.korkeus6 * 2 ;
-    const reunapeltiYHT = reunapelti1 + reunapelti2 + reunapelti3 + reunapelti4 + reunapelti5 + reunapelti6 ;
+    const reunapeltiYHT = Math.round((reunapelti1 + reunapelti2 + reunapelti3 + reunapelti4 + reunapelti5 + reunapelti6) * 100) / 100 ;
 
         // Harjapelti = lappeen leveys (joka toisen lappeen leveys ++)
-    const harjapelti = parseInt(item.leveys2) + parseInt(item.leveys4) + parseInt(item.leveys6) ;
-
+    const harjapelti = parseInt(item.leveys2 * 100) / 100 + parseInt(item.leveys4 * 100) / 100 + parseInt(item.leveys6 * 100) / 100 ;
+    
         // Vetopelti = leveys (jokaiseen lappeeseen)
-    const vetopelti1 = item.leveys1 ; 
-    const vetopelti2 = item.leveys2 ;
-    const vetopelti3 = item.leveys3 ;
-    const vetopelti4 = item.leveys4 ;
-    const vetopelti5 = item.leveys5 ;
-    const vetopelti6 = item.leveys6 ;
-    const vetopeltiYHT = parseInt(vetopelti1) + parseInt(vetopelti2) + parseInt(vetopelti3) + parseInt(vetopelti4) + parseInt(vetopelti5) + parseInt(vetopelti6) ;
+    const vetopelti1 = parseInt(item.leveys1 * 100) / 100 ; 
+    const vetopelti2 = parseInt(item.leveys2 * 100) / 100 ;
+    const vetopelti3 = parseInt(item.leveys3 * 100) / 100 ;
+    const vetopelti4 = parseInt(item.leveys4 * 100) / 100 ;
+    const vetopelti5 = parseInt(item.leveys5 * 100) / 100 ;
+    const vetopelti6 = parseInt(item.leveys6 * 100) / 100 ;
+    const vetopeltiYHT = Math.round((vetopelti1 + vetopelti2 + vetopelti3 + vetopelti4 + vetopelti5 + vetopelti6) * 100) / 100 ;
 
         // Piilota/Näytä oikea määrä lappeita
     let [style1] = useState(item.korkeus1 > 0 ? styles.lape1show : styles.lape1hide);
@@ -168,8 +168,8 @@ function FullItemInfo (props) {
                 <div className='xyz-nested'>Aloituspäivä:&nbsp; <b>{start}</b></div>
                 <div className='xyz-nested'>Valmistumispäivä:&nbsp; <b>{end}</b></div>
                 <div className='xyz-nested'>Työpäivien määrä:&nbsp;<b>{tyopaivat}</b></div>
-                <div className='xyz-nested'>Urakan hinta:&nbsp; <b>{item.amount}€</b></div>
-                <div className='xyz-nested'>Päiväpalkka:&nbsp; <b>{Math.round((item.amount / tyopaivat + Number.EPSILON) * 100) / 100 }€/päivä</b></div>
+                {item.amount === 0 ? " " : <div className='xyz-nested'>Urakan hinta:&nbsp; <b>{item.amount}€</b></div>}
+                {item.amount === 0 ? " ": <div className='xyz-nested'>Päiväpalkka:&nbsp; <b>{Math.round((item.amount / tyopaivat + Number.EPSILON) * 100) / 100 }€/päivä</b></div>}
                { item.freeWord === "" ? " " : <div className='xyz-nested'>Kommentteja:&nbsp; <b>{item.freeWord} </b></div> }
             </div>         
    
