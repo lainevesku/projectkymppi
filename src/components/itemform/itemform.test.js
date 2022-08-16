@@ -1,0 +1,30 @@
+import { render, screen } from '@testing-library/react';
+import Itemform from './itemform';
+
+test('renders Itemform', () => {
+  render(<Itemform />);
+  const nimi = screen.getByText(/Asiakkaan nimi/i);
+  expect(nimi).toBeInTheDocument();
+  const amount = screen.getByText(/Urakkapalkka/i);
+  expect(amount).toBeInTheDocument();
+  const katu = screen.getByText(/Katuosoite/i);
+  expect(katu).toBeInTheDocument();
+  const postinumero = screen.getByText(/Postinumero/i);
+  expect(postinumero).toBeInTheDocument();
+  const paikka = screen.getByText(/Paikkakunta/i);
+  expect(paikka).toBeInTheDocument();
+  const aloitus = screen.getByText(/Aloitus päivämäärä/i);
+  expect(aloitus).toBeInTheDocument();
+  const lopetus = screen.getByText(/Lopetus päivämäärä/i);
+  expect(lopetus).toBeInTheDocument();
+  const rooftype = screen.getByText(/Katon tyyppi/i);
+  expect(rooftype).toBeInTheDocument();
+  const roofcolor = screen.getByText(/Katon väri/i);
+  expect(roofcolor).toBeInTheDocument();
+  const freeword = screen.getByText(/Kommentteja urakasta/i);
+  expect(freeword).toBeInTheDocument();
+  const peruutanappi = screen.getByText(/PERUUTA/i);
+  expect(peruutanappi).toBeInTheDocument();
+  const lisaanappi = screen.getByText(/LISÄÄ/i);
+  expect(lisaanappi).toBeInTheDocument();
+});

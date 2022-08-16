@@ -77,11 +77,11 @@ function Calculator() {
 
         <div className={styles.calculator_row}>
             <div>
-                <label for="kattotuoli">Kattotuolijako</label>
+                <label htmlFor="kattotuoli">Kattotuolijako</label>
                 <input type='number' id='kattotuoli' name='kattotuoli' min="0" step="0.1" />
             </div>
             <div>
-                <label for='otsalauta'>Otsalautakierros</label>
+                <label htmlFor='otsalauta'>Otsalautakierros</label>
                 <input type='number' id='otsalauta' name='otsalauta' min="0" />
             </div>
         </div>
