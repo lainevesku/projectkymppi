@@ -115,13 +115,6 @@ function ItemForm(props) {
                     <input type="text" name='nimi' onChange={handleChange} value={values.nimi} required />                            
                 </div>
                 <div>
-                    <label htmlFor='amount'>Urakkapalkka(€)</label>
-                    <input type="number" name='amount' min="0" step="0.01" onChange={handleChange} value={values.amount} />
-                </div>
-              </div>
-
-              <div className={styles.form_row}>
-                <div>
                     <label htmlFor='address'>Katuosoite</label>
                     <input type="text" name='address' onChange={handleChange} value={values.address} required />
                 </div>

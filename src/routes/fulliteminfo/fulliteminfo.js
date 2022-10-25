@@ -168,8 +168,7 @@ function FullItemInfo (props) {
                 <div className='xyz-nested'>Aloituspäivä:&nbsp; <b>{start}</b></div>
                 <div className='xyz-nested'>Valmistumispäivä:&nbsp; <b>{end}</b></div>
                 <div className='xyz-nested'>Työpäivien määrä:&nbsp;<b>{tyopaivat}</b></div>
-                {item.amount === 0 ? " " : <div className='xyz-nested'>Urakan hinta:&nbsp; <b>{item.amount}€</b></div>}
-                {item.amount === 0 ? " ": <div className='xyz-nested'>Päiväpalkka:&nbsp; <b>{Math.round((item.amount / tyopaivat + Number.EPSILON) * 100) / 100 }€/päivä</b></div>}
+                <div className='xyz-nested'>Tavaroiden yhteishinta:&nbsp;<b>300€</b> </div>
                { item.freeWord === "" ? " " : <div className='xyz-nested'>Kommentteja:&nbsp; <b>{item.freeWord} </b></div> }
             </div>         
    
