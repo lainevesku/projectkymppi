@@ -84,34 +84,45 @@ function FullItemInfo (props) {
         // Peltien/Tiilien määrä
         // Lukkosauma/Tiilikuvio = leveys / peltimääräarvo(0,47 tai 1,1)
         // Tiilikatto = (korkeus / 0,35) * (leveys / 0,3)
-    const peltimaara1 = item.roofType === "Tiilikatto" ? Math.ceil((item.korkeus1 / 0.35) * (item.leveys1 / 0.3) * 10) / 10  : Math.ceil(item.leveys1 / peltimaaraarvo * 10) / 10 ; 
-    const peltimaara2 = item.roofType === "Tiilikatto" ? Math.ceil((item.korkeus2 / 0.35) * (item.leveys2 / 0.3) * 10) / 10  : Math.ceil(item.leveys2 / peltimaaraarvo * 10) / 10 ; 
-    const peltimaara3 = item.roofType === "Tiilikatto" ? Math.ceil((item.korkeus3 / 0.35) * (item.leveys3 / 0.3) * 10) / 10  : Math.ceil(item.leveys3 / peltimaaraarvo * 10) / 10 ; 
-    const peltimaara4 = item.roofType === "Tiilikatto" ? Math.ceil((item.korkeus4 / 0.35) * (item.leveys4 / 0.3) * 10) / 10  : Math.ceil(item.leveys4 / peltimaaraarvo * 10) / 10 ; 
-    const peltimaara5 = item.roofType === "Tiilikatto" ? Math.ceil((item.korkeus5 / 0.35) * (item.leveys5 / 0.3) * 10) / 10  : Math.ceil(item.leveys5 / peltimaaraarvo * 10) / 10 ; 
-    const peltimaara6 = item.roofType === "Tiilikatto" ? Math.ceil((item.korkeus6 / 0.35) * (item.leveys6 / 0.3) * 10) / 10  : Math.ceil(item.leveys6 / peltimaaraarvo * 10) / 10 ; 
+    const peltimaara1 = item.roofType === "Tiilikatto" ? Math.ceil((item.korkeus1 / 0.35) * (item.leveys1 / 0.3)) : Math.ceil(item.leveys1 / peltimaaraarvo); 
+    const peltimaara2 = item.roofType === "Tiilikatto" ? Math.ceil((item.korkeus2 / 0.35) * (item.leveys2 / 0.3)) : Math.ceil(item.leveys2 / peltimaaraarvo); 
+    const peltimaara3 = item.roofType === "Tiilikatto" ? Math.ceil((item.korkeus3 / 0.35) * (item.leveys3 / 0.3)) : Math.ceil(item.leveys3 / peltimaaraarvo); 
+    const peltimaara4 = item.roofType === "Tiilikatto" ? Math.ceil((item.korkeus4 / 0.35) * (item.leveys4 / 0.3)) : Math.ceil(item.leveys4 / peltimaaraarvo); 
+    const peltimaara5 = item.roofType === "Tiilikatto" ? Math.ceil((item.korkeus5 / 0.35) * (item.leveys5 / 0.3)) : Math.ceil(item.leveys5 / peltimaaraarvo); 
+    const peltimaara6 = item.roofType === "Tiilikatto" ? Math.ceil((item.korkeus6 / 0.35) * (item.leveys6 / 0.3)) : Math.ceil(item.leveys6 / peltimaaraarvo); 
     const peltimaaraYHT = peltimaara1 + peltimaara2 + peltimaara3 + peltimaara4 + peltimaara5 + peltimaara6  ;
 
         // Reunapellin määrä = korkeus * 2
-    const reunapelti1 = item.korkeus1 * 2 ;
-    const reunapelti2 = item.korkeus2 * 2 ;
-    const reunapelti3 = item.korkeus3 * 2 ;
-    const reunapelti4 = item.korkeus4 * 2 ;
-    const reunapelti5 = item.korkeus5 * 2 ;
-    const reunapelti6 = item.korkeus6 * 2 ;
-    const reunapeltiYHT = Math.round((reunapelti1 + reunapelti2 + reunapelti3 + reunapelti4 + reunapelti5 + reunapelti6) * 100) / 100 ;
+    const reunapelti1 = Math.ceil(item.korkeus1 * 2) ;
+    const reunapelti2 = Math.ceil(item.korkeus2 * 2) ;
+    const reunapelti3 = Math.ceil(item.korkeus3 * 2) ;
+    const reunapelti4 = Math.ceil(item.korkeus4 * 2) ;
+    const reunapelti5 = Math.ceil(item.korkeus5 * 2) ;
+    const reunapelti6 = Math.ceil(item.korkeus6 * 2) ;
+    const reunapeltiYHT = reunapelti1 + reunapelti2 + reunapelti3 + reunapelti4 + reunapelti5 + reunapelti6 ;
 
         // Harjapelti = lappeen leveys (joka toisen lappeen leveys ++)
-    const harjapelti = parseInt(item.leveys2 * 100) / 100 + parseInt(item.leveys4 * 100) / 100 + parseInt(item.leveys6 * 100) / 100 ;
+    const harjapelti = Math.ceil(parseInt(item.leveys2 * 100) / 100 + parseInt(item.leveys4 * 100) / 100 + parseInt(item.leveys6 * 100) / 100) ;
     
         // Vetopelti = leveys (jokaiseen lappeeseen)
-    const vetopelti1 = parseInt(item.leveys1 * 100) / 100 ; 
-    const vetopelti2 = parseInt(item.leveys2 * 100) / 100 ;
-    const vetopelti3 = parseInt(item.leveys3 * 100) / 100 ;
-    const vetopelti4 = parseInt(item.leveys4 * 100) / 100 ;
-    const vetopelti5 = parseInt(item.leveys5 * 100) / 100 ;
-    const vetopelti6 = parseInt(item.leveys6 * 100) / 100 ;
-    const vetopeltiYHT = Math.round((vetopelti1 + vetopelti2 + vetopelti3 + vetopelti4 + vetopelti5 + vetopelti6) * 100) / 100 ;
+    const vetopelti1 = Math.ceil(item.leveys1) ; 
+    const vetopelti2 = Math.ceil(item.leveys2) ;
+    const vetopelti3 = Math.ceil(item.leveys3) ;
+    const vetopelti4 = Math.ceil(item.leveys4) ;
+    const vetopelti5 = Math.ceil(item.leveys5) ;
+    const vetopelti6 = Math.ceil(item.leveys6) ;
+    const vetopeltiYHT = vetopelti1 + vetopelti2 + vetopelti3 + vetopelti4 + vetopelti5 + vetopelti6;
+
+        //HINTOJA
+    const pystyruodeHINTA = Math.round((pystyruodeYHT * 0.97) * 100 ) / 100 ;
+    const tuuletusHINTA = Math.round((tuuletusYHT * 0.73) * 100 ) / 100 ;
+    const vaakaruodeHINTA = Math.round((vaakaruodeYHT * 1.50) * 100 ) / 100 ;
+    const otsalautaHINTA = Math.round((otsalautaYHT * 3.50) * 100 ) / 100;
+    const peltiHINTA = item.roofType === "Tiilikatto" ? Math.round((peltimaaraYHT) * 100 ) / 100 : Math.round((roofAreaYHT * 20) * 100 ) / 100;
+    const reunapeltiHINTA = Math.round((reunapeltiYHT * 8) * 100) / 100;
+    const harjapeltiHinta = Math.round((harjapelti * 8) * 100 ) / 100;
+    const vetopeltiHinta = Math.round((vetopeltiYHT * 8) * 100 ) / 100; 
+    const hintaYHT = pystyruodeHINTA + tuuletusHINTA + vaakaruodeHINTA + otsalautaHINTA + peltiHINTA + reunapeltiHINTA + harjapeltiHinta + vetopeltiHinta ;
 
         // Piilota/Näytä oikea määrä lappeita
     let [style1] = useState(item.korkeus1 > 0 ? styles.lape1show : styles.lape1hide);
@@ -120,6 +131,7 @@ function FullItemInfo (props) {
     let [style4] = useState(item.korkeus4 > 0 ? styles.lape4show : styles.lape4hide);
     let [style5] = useState(item.korkeus5 > 0 ? styles.lape5show : styles.lape5hide);
     let [style6] = useState(item.korkeus6 > 0 ? styles.lape6show : styles.lape6hide);
+
      
     // koodi löydetty sivulta https://www.techighness.com/post/javascript-get-information-of-week-days-between-two-dates/. Vähän omaa soveltamista tehty,
     // jotta koodi toimii haluamallani tavalla.
@@ -168,7 +180,7 @@ function FullItemInfo (props) {
                 <div className='xyz-nested'>Aloituspäivä:&nbsp; <b>{start}</b></div>
                 <div className='xyz-nested'>Valmistumispäivä:&nbsp; <b>{end}</b></div>
                 <div className='xyz-nested'>Työpäivien määrä:&nbsp;<b>{tyopaivat}</b></div>
-                <div className='xyz-nested'>Tavaroiden yhteishinta:&nbsp;<b>300€</b> </div>
+                <div className='xyz-nested'>Tavaroiden yhteishinta:&nbsp;<b>{hintaYHT} €</b> </div>
                { item.freeWord === "" ? " " : <div className='xyz-nested'>Kommentteja:&nbsp; <b>{item.freeWord} </b></div> }
             </div>         
    
@@ -185,6 +197,19 @@ function FullItemInfo (props) {
                 <div className='xyz-nested'>Reunapellin määrä:&nbsp; <b>{reunapeltiYHT} Metriä</b></div>
                 <div className='xyz-nested'>Harjapellin määrä:&nbsp; <b>{harjapelti} Metriä</b></div>
                 { item.roofType === "Lukkosauma" ? <div className='xyz-nested'>Vetopellin määrä:&nbsp; <b>{vetopeltiYHT} Metriä</b></div> : ""}
+            </div>
+
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-5">
+                <h3 className='xyz-nested'>TAVAROIDEN HINNAT</h3>
+                <div className='xyz-nested'>Pystyruode(22*100): <b>{pystyruodeHINTA} €</b></div>
+                <div className='xyz-nested'>Tuuletusrima(22*50): <b>{tuuletusHINTA} €</b></div>
+                <div className='xyz-nested'>Vaakaruode(32*100): <b>{vaakaruodeHINTA} €</b></div>
+                <div className='xyz-nested'>Otsalauta(23*170): <b>{otsalautaHINTA} €</b></div>
+                <div className='xyz-nested'>{item.roofType}: <b>{peltiHINTA} €</b></div>
+                <div className='xyz-nested'>Reunapellit: <b>{reunapeltiHINTA} €</b></div>
+                <div className='xyz-nested'>Harjapellit: <b>{harjapeltiHinta} €</b></div>
+                { item.roofType === "Lukkosauma" ? <div className='xyz-nested'>Vetopellit: <b>{vetopeltiHinta} €</b></div> : ""}
+                <div className='xyz-nested'>Yhteensä: <b>{hintaYHT} €</b></div>
             </div>
             
 
@@ -208,7 +233,7 @@ function FullItemInfo (props) {
             </div>
 
             <div className={style2}>
-            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-15">
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-10">
                 <h3 className='xyz-nested'>Lape 2</h3>              
                 <div className='xyz-nested'>Lappeen korkeus: <b>{item.korkeus2} Metriä </b></div>
                 <div className='xyz-nested'>Lappeen leveys: <b>{item.leveys2} Metriä </b></div>
@@ -226,7 +251,7 @@ function FullItemInfo (props) {
             </div>
 
             <div className={style3}>
-            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-20">
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-15">
                 <h3 className='xyz-nested'>Lape 3</h3>              
                 <div className='xyz-nested'>Lappeen korkeus: <b>{item.korkeus3} Metriä </b></div>
                 <div className='xyz-nested'>Lappeen leveys: <b>{item.leveys3} Metriä </b></div>
@@ -244,7 +269,7 @@ function FullItemInfo (props) {
             </div>
 
             <div className={style4}>
-            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-25">
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-15">
                 <h3 className='xyz-nested'>Lape 4</h3>        
                 <div className='xyz-nested'>Lappeen korkeus: <b>{item.korkeus4} Metriä </b></div>      
                 <div className='xyz-nested'>Lappeen leveys: <b>{item.leveys4} Metriä </b></div>
@@ -262,7 +287,7 @@ function FullItemInfo (props) {
             </div>
 
             <div className={style5}>
-            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-30">
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-20">
                 <h3 className='xyz-nested'>Lape 5</h3>      
                 <div className='xyz-nested'>Lappeen korkeus: <b>{item.korkeus5} Metriä </b></div>      
                 <div className='xyz-nested'>Lappeen leveys: <b>{item.leveys5} Metriä </b></div>  
@@ -280,7 +305,7 @@ function FullItemInfo (props) {
             </div>
 
             <div className={style6}>
-            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-35">
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-20">
                 <h3 className='xyz-nested'>Lape 6</h3>      
                 <div className='xyz-nested'>Lappeen korkeus: <b>{item.korkeus6} Metriä </b></div>    
                 <div className='xyz-nested'>Lappeen leveys: <b>{item.leveys6} Metriä </b></div>   
