@@ -16,6 +16,7 @@ import Menu from '../menu/menu';
 import { ButtonAppContainer } from '../../shared/uibuttons';
 import "@animxyz/core";
 import { XyzTransition } from "@animxyz/react";
+import AddVerho from '../../routes/addverho/addverho';
 
 
 function App() {
@@ -28,22 +29,33 @@ function App() {
   // Luodaan Firestoreen item collection
   const itemCollectionRef = useFirestore().collection('user').doc(user.data.uid).collection('item');
   const { data: itemCollection } = useFirestoreCollectionData(itemCollectionRef.orderBy("periodStart", "desc"), {initialData: [], idField: "id"});
+  const verhoCollectionRef = useFirestore().collection('user').doc(user.data.uid).collection('verho');
+  const { data: verhoCollection } = useFirestoreCollectionData(verhoCollectionRef.orderBy("periodStart", "desc"), {initialData: [], idField: "id"});
 
   useEffect(() => {
     setData(itemCollection);
   }, [itemCollection]);
 
+  useEffect(() => {
+    setData(verhoCollection);
+  }, [verhoCollection]);
+
   // Tallentaa uuden itemin item collectioon
   const handleItemSubmit = (newitem) => {
+    itemCollectionRef.doc(newitem.id).set(newitem);   
+  }
 
-      itemCollectionRef.doc(newitem.id).set(newitem);   
+  const handleVerhoSubmit = (newverho) => {
+    verhoCollectionRef.doc(newverho.id).set(newverho);
   }
 
   // Poista item id:n perusteella 
   const handleItemDelete = (id) => {
-
     itemCollectionRef.doc(id).delete();
-  
+  }
+
+  const handleVerhoDelete = (id) => {
+    verhoCollectionRef.doc(id).delete();
   }
 
   return (
@@ -58,6 +70,9 @@ function App() {
             </Route>           
             <Route path="/calculator">
               <Calculator />
+            </Route>
+            <Route path="/addverho">
+              <AddVerho onItemSubmit={handleVerhoSubmit} />
             </Route>
             <Route path="/settings">
               <Settings />

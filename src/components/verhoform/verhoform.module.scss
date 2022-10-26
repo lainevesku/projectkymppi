@@ -1,0 +1,47 @@
+@import '../../assets/styles/config';
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_row {
+    display: flex;
+}
+
+.wall1hide, .wall2hide, .wall3hide, .wall4hide, .wall5hide, .wall6hide, .wall7hide, .wall8hide {
+    display: none;
+}
+
+.wall1show, .wall2show, .wall3show, .wall4show, .wall5show, .wall6show, .wall7show, .wall8show {
+    display: block;
+}
+
+.form h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.form_row > div {
+    display: flex; 
+    flex-direction: column;
+    flex: 1 1;
+    width: 40%;
+    margin: $form-item-margin;
+}
+
+.form input, .form select, textarea {
+    padding: $form-input-padding;
+    border: 1px solid $form-input-border;
+    border-radius: $form-input-radius;
+    font-size: $form-input-fontsize;
+    outline: none;
+}
+
+.form label {
+    font-size: $form-label-fontsize;
+    margin-bottom: $form-label-margin-bottom;
+}
+

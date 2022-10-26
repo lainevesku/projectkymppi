@@ -25,7 +25,6 @@ function ItemForm(props) {
       location: "",
       address: "",
       postal: "",
-      amount: 0,
       periodStart: "",
       periodEnd: "",
       roofType: "Tiilikuvio",
