@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import styles from './menu.module.scss';
-import { MdViewList } from 'react-icons/md';
-import { ImCalculator } from 'react-icons/im';
 import { MdSettings } from 'react-icons/md'; 
+import { MdRoofing } from 'react-icons/md';
+import { GiBrickWall } from 'react-icons/gi'
 
 function Menu() {
     return(
         <div className={styles.menu}>
-            <div><Link to="/"><MdViewList /></Link></div>
-            <div><Link to="/calculator"><ImCalculator /></Link></div>
+            <div><Link to="/"><MdRoofing /></Link></div>
+            <div><Link to="/calculator"><GiBrickWall /></Link></div>
             <div><Link to="/settings"><MdSettings /></Link></div>
         </div>
     );
