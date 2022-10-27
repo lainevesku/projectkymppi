@@ -164,17 +164,15 @@ function ItemForm(props) {
               <div className={styles.form_row}> 
                 <div>
                   <Button secondary onClick={lapeYksi}>Lape 1</Button>
-                  <Button secondary onClick={lapeKaksi}>Lape 2</Button>
-                </div>
-                <div>
                   <Button secondary onClick={lapeKolme}>Lape 3</Button>
-                  <Button secondary onClick={lapeNelja}>Lape 4</Button>
+                  <Button secondary onClick={lapeViisi}>Lape 5</Button>
                 </div>
                 <div>
-                  <Button secondary onClick={lapeViisi}>Lape 5</Button>
+                  <Button secondary onClick={lapeKaksi}>Lape 2</Button>
+                  <Button secondary onClick={lapeNelja}>Lape 4</Button>
                   <Button secondary onClick={lapeKuusi}>Lape 6</Button>
                 </div>
-                </div>
+              </div>
           
             <div id="lapeyksi" className={style1}>
               <h2>Lape 1</h2>

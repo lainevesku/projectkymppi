@@ -8,7 +8,7 @@ function Menu() {
     return(
         <div className={styles.menu}>
             <div><Link to="/"><MdRoofing /></Link></div>
-            <div><Link to="/calculator"><GiBrickWall /></Link></div>
+            <div><Link to="/verhous"><GiBrickWall /></Link></div>
             <div><Link to="/settings"><MdSettings /></Link></div>
         </div>
     );

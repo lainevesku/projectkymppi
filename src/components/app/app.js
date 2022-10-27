@@ -7,16 +7,17 @@ import styles from './app.module.scss';
 import Header from '../header/header';
 import Content from '../content/content';
 import Items from '../../routes/items/items';
-import Calculator from '../../routes/calculator/calculator';
-import Settings from '../../routes/settings/settings';
 import AddItem from '../../routes/additem/additem';
 import EditItem from '../../routes/edititem/edititem';
 import FullItemInfo from '../../routes/fulliteminfo/fulliteminfo';
+import Verhot from '../../routes/verhot/verhot';
+import AddVerho from '../../routes/addverho/addverho';
+import Settings from '../../routes/settings/settings';
 import Menu from '../menu/menu';
 import { ButtonAppContainer } from '../../shared/uibuttons';
 import "@animxyz/core";
 import { XyzTransition } from "@animxyz/react";
-import AddVerho from '../../routes/addverho/addverho';
+
 
 
 function App() {
@@ -66,30 +67,31 @@ function App() {
           <Header />
           <Content>
             <Route exact path="/">
-              <Items data={data} />
-            </Route>           
-            <Route path="/calculator">
-              <Calculator />
-            </Route>
-            <Route path="/addverho">
-              <AddVerho onItemSubmit={handleVerhoSubmit} />
-            </Route>
-            <Route path="/settings">
-              <Settings />
-            </Route>
+              <Items data={itemCollection} />
+            </Route>   
             <Route path="/add">
               <AddItem onItemSubmit={handleItemSubmit} />
             </Route>
             <Route path="/info/:id">
               <XyzTransition appear duration="auto">
                 <div>
-              <FullItemInfo data={data}/>
+              <FullItemInfo data={itemCollection}/>
               </div>
               </XyzTransition>
             </Route>
             <Route path="/edit/:id">
-              <EditItem onItemSubmit={handleItemSubmit} data={data} onItemDelete={handleItemDelete} />
+              <EditItem onItemSubmit={handleItemSubmit} data={itemCollection} onItemDelete={handleItemDelete} />
             </Route>
+            <Route path="/verhous">
+              <Verhot data={data} />  
+            </Route>        
+            <Route path="/addverho">
+              <AddVerho onItemSubmit={handleVerhoSubmit} />
+            </Route>
+            <Route path="/settings">
+              <Settings />
+            </Route>
+            
           </Content>
           <Menu />
         </Router>
