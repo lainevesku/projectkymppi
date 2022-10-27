@@ -1,0 +1,47 @@
+@import '../../assets/styles/_config.scss';
+
+.verho {
+    display: flex;
+    border-bottom: 1px solid $item-border;
+    color: $item-text;
+}
+
+.verho_data {
+    flex: 1;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding: $item-padding;
+    text-align: center;
+}
+
+.verho_name {
+    font-size: 3ex;
+    font-weight: bold;
+    color: $item-text-strong;
+}
+
+.verho_time{
+    display: flex;
+    justify-content: center;
+    padding: 0.4rem;
+    font-size: 2.5ex;
+    margin-top: -2px;
+}
+
+.verho_seemore {
+    max-width: $item-seemore-width;
+    min-width: $item-seemore-width;
+    background-color: $item-seemore-background;
+    color: $item-seemore-text;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.verho_seemore a {
+    color: $item-seemore-text;
+}
+
+.verho:hover .verho_seemore {
+    display: flex;
+}
