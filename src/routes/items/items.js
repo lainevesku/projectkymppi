@@ -1,3 +1,4 @@
+import styles from './items.module.scss';
 import { Link } from 'react-router-dom';
 import Item from '../../components/item';
 import { FloatingButton, ButtonContainer } from '../../shared/uibuttons';
@@ -8,6 +9,7 @@ function Items(props) {
     return(
         <ButtonContainer>
             <div>
+                <div className={styles.katot}>Katot</div>
                 { items }
                 <Link to="/add"><FloatingButton secondary>+</FloatingButton></Link>
             </div>

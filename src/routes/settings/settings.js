@@ -18,7 +18,7 @@ function Settings(props) {
 
     return (
         <div className={styles.settings}>
-            <h2>Profiili</h2>
+            <div className={styles.profile}>Profiili</div>
             <div className={styles.settings_profile}>
                 <div className={styles.settings_user}>
                     <div><img src={user.data.photoURL} alt="" /></div>
