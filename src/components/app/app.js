@@ -13,6 +13,7 @@ import FullItemInfo from '../../routes/fulliteminfo/fulliteminfo';
 import Verhot from '../../routes/verhot/verhot';
 import AddVerho from '../../routes/addverho/addverho';
 import FullVerhoInfo from '../../routes/fullverhoinfo/fullverhoinfo';
+import EditVerho from '../../routes/editverho/editverho';
 import Settings from '../../routes/settings/settings';
 import Menu from '../menu/menu';
 import { ButtonAppContainer } from '../../shared/uibuttons';
@@ -95,6 +96,9 @@ function App() {
                   <FullVerhoInfo data={data}/>
                 </div>
               </XyzTransition>
+            </Route>
+            <Route path="/editverho/:id">
+              <EditVerho onItemSubmit={handleVerhoSubmit} data={data} onItemDelete={handleVerhoDelete} />
             </Route>
             <Route path="/settings">
               <Settings />
