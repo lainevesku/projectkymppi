@@ -33,7 +33,7 @@ function VerhoForm(props) {
         korkeus1: 0,
         leveys1: 0,
         pystykoolaus1: 0,
-        kulmat1: "suorakulmio",
+        kulmat1: "Suorakulmio",
         wall1window1height: 0,
         wall1window1width: 0,
         wall1window2height: 0,
@@ -49,7 +49,7 @@ function VerhoForm(props) {
         korkeus2: 0,
         leveys2: 0,
         pystykoolaus2: 0,
-        kulmat2: "suorakulmio",
+        kulmat2: "Suorakulmio",
         wall2window1height: 0,
         wall2window1width: 0,
         wall2window2height: 0,
@@ -65,7 +65,7 @@ function VerhoForm(props) {
         korkeus3: 0,
         leveys3: 0,
         pystykoolaus3: 0,
-        kulmat3: "suorakulmio",
+        kulmat3: "Suorakulmio",
         wall3window1height: 0,
         wall3window1width: 0,
         wall3window2height: 0,
@@ -81,7 +81,7 @@ function VerhoForm(props) {
         korkeus4: 0,
         leveys4: 0,
         pystykoolaus4: 0,
-        kulmat4: "suorakulmio",
+        kulmat4: "Suorakulmio",
         wall4window1height: 0,
         wall4window1width: 0,
         wall4window2height: 0,
@@ -97,7 +97,7 @@ function VerhoForm(props) {
         korkeus5: 0,
         leveys5: 0,
         pystykoolaus5: 0,
-        kulmat5: "suorakulmio",
+        kulmat5: "Suorakulmio",
         wall5window1height: 0,
         wall5window1width: 0,
         wall5window2height: 0,
@@ -113,7 +113,7 @@ function VerhoForm(props) {
         korkeus6: 0,
         leveys6: 0,
         pystykoolaus6: 0,
-        kulmat6: "suorakulmio",
+        kulmat6: "Suorakulmio",
         wall6window1height: 0,
         wall6window1width: 0,
         wall6window2height: 0,
@@ -129,7 +129,7 @@ function VerhoForm(props) {
         korkeus7: 0,
         leveys7: 0,
         pystykoolaus7: 0,
-        kulmat7: "suorakulmio",
+        kulmat7: "Suorakulmio",
         wall7window1height: 0,
         wall7window1width: 0,
         wall7window2height: 0,
@@ -145,7 +145,7 @@ function VerhoForm(props) {
         korkeus8: 0,
         leveys8: 0,
         pystykoolaus8: 0,
-        kulmat8: "suorakulmio",
+        kulmat8: "Suorakulmio",
         wall8window1height: 0,
         wall8window1width: 0,
         wall8window2height: 0,
@@ -491,8 +491,8 @@ function VerhoForm(props) {
                 <div>
                   <label htmlFor='kulmat1'>Muoto</label>
                   <select name='kulmat1' onChange={handleChange} value={values.kulmat1}>
-                    <option value="suorakulmio">Suorakulmio</option>
-                    <option value="kolmio">Kolmio</option>
+                    <option value="Suorakulmio">Suorakulmio</option>
+                    <option value="Kolmio">Kolmio</option>
                   </select>
                 </div>
               </div>
@@ -618,8 +618,8 @@ function VerhoForm(props) {
                 <div>
                   <label htmlFor='kulmat2'>Muoto</label>
                   <select name='kulmat2' onChange={handleChange} value={values.kulmat2}>
-                    <option value="suorakulmio">Suorakulmio</option>
-                    <option value="kolmio">Kolmio</option>
+                    <option value="Suorakulmio">Suorakulmio</option>
+                    <option value="Kolmio">Kolmio</option>
                   </select>
                 </div>
               </div>
@@ -744,8 +744,8 @@ function VerhoForm(props) {
                 <div>
                   <label htmlFor='kulmat3'>Muoto</label>
                   <select name='kulmat3' onChange={handleChange} value={values.kulmat3}>
-                    <option value="suorakulmio">Suorakulmio</option>
-                    <option value="kolmio">Kolmio</option>
+                    <option value="Suorakulmio">Suorakulmio</option>
+                    <option value="Kolmio">Kolmio</option>
                   </select>
                 </div>
               </div>
@@ -870,8 +870,8 @@ function VerhoForm(props) {
                 <div>
                   <label htmlFor='kulmat4'>Muoto</label>
                   <select name='kulmat4' onChange={handleChange} value={values.kulmat4}>
-                    <option value="suorakulmio">Suorakulmio</option>
-                    <option value="kolmio">Kolmio</option>
+                    <option value="Suorakulmio">Suorakulmio</option>
+                    <option value="Kolmio">Kolmio</option>
                   </select>
                 </div>
               </div>
@@ -996,8 +996,8 @@ function VerhoForm(props) {
                 <div>
                   <label htmlFor='kulmat5'>Muoto</label>
                   <select name='kulmat5' onChange={handleChange} value={values.kulmat5}>
-                    <option value="suorakulmio">Suorakulmio</option>
-                    <option value="kolmio">Kolmio</option>
+                    <option value="Suorakulmio">Suorakulmio</option>
+                    <option value="Kolmio">Kolmio</option>
                   </select>
                 </div>
               </div>
@@ -1122,8 +1122,8 @@ function VerhoForm(props) {
                 <div>
                   <label htmlFor='kulmat6'>Muoto</label>
                   <select name='kulmat6' onChange={handleChange} value={values.kulmat6}>
-                    <option value="suorakulmio">Suorakulmio</option>
-                    <option value="kolmio">Kolmio</option>
+                    <option value="Suorakulmio">Suorakulmio</option>
+                    <option value="Kolmio">Kolmio</option>
                   </select>
                 </div>
               </div>
@@ -1248,8 +1248,8 @@ function VerhoForm(props) {
                 <div>
                   <label htmlFor='kulmat7'>Muoto</label>
                   <select name='kulmat7' onChange={handleChange} value={values.kulmat7}>
-                    <option value="suorakulmio">Suorakulmio</option>
-                    <option value="kolmio">Kolmio</option>
+                    <option value="Suorakulmio">Suorakulmio</option>
+                    <option value="Kolmio">Kolmio</option>
                   </select>
                 </div>
               </div>
@@ -1374,8 +1374,8 @@ function VerhoForm(props) {
                 <div>
                   <label htmlFor='kulmat8'>Muoto</label>
                   <select name='kulmat8' onChange={handleChange} value={values.kulmat8}>
-                    <option value="suorakulmio">Suorakulmio</option>
-                    <option value="kolmio">Kolmio</option>
+                    <option value="Suorakulmio">Suorakulmio</option>
+                    <option value="Kolmio">Kolmio</option>
                   </select>
                 </div>
               </div>
