@@ -11,7 +11,7 @@ function EditVerho(props) {
 
     return (
         <div className={styles.edititem}>
-            <h2>Työmaan muokkaaminen</h2>
+            <h2>Verhouksen muokkaaminen</h2>
             <VerhoForm onItemSubmit={props.onItemSubmit} data={verho} onItemDelete={props.onItemDelete} />
         </div>
     );
