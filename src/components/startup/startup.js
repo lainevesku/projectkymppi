@@ -26,9 +26,10 @@ function Startup(props) {
                 työmaapäiväkirjan, mihin voit laittaa itsellesi ylös työmaan
                 yleisimmät tiedot. Voit myös merkitä eri lappeiden tiedot ja 
                 La'Pete laskee puolestasi kattoon tarvittavan puutavaran ja 
-                peltien määrän. La'Petessä on myös erillinen lape laskuri, mikä 
-                laskee tarvittavat tavaramäärät yhdelle lappeelle ilman työmaan luontia. 
-                Sinun tulee kirjautua sisään Google-tunnuksillasi, päästäksesi käyttämään La'Peteä. 
+                peltien määrän ja hinnan kuinka paljon tavarat maksavat. Nyt 
+                myös mahdollisuus lisätä verhouksia kattojen lisäksi.
+                Sinun tulee kirjautua sisään Google-tunnuksillasi, 
+                päästäksesi käyttämään La'Peteä. 
                 </p>
                 <div className={styles.startup_button}>
                 <Button secondary onClick={signIn}>Kirjaudu sisään</Button>
