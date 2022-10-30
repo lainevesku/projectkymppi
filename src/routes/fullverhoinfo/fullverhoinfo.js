@@ -37,7 +37,7 @@ function FullVerhoInfo (props) {
     const PK6 = verho.kulmat6 === "Suorakulmio" ? Math.ceil(verho.leveys6 / verho.pystykoolaus6 * verho.korkeus6) : Math.ceil(verho.leveys6 / verho.pystykoolaus6 * verho.korkeus6 / 2) ;
     const PK7 = verho.kulmat7 === "Suorakulmio" ? Math.ceil(verho.leveys7 / verho.pystykoolaus7 * verho.korkeus7) : Math.ceil(verho.leveys7 / verho.pystykoolaus7 * verho.korkeus7 / 2) ;
     const PK8 = verho.kulmat8 === "Suorakulmio" ? Math.ceil(verho.leveys8 / verho.pystykoolaus8 * verho.korkeus8) : Math.ceil(verho.leveys8 / verho.pystykoolaus8 * verho.korkeus8 / 2) ;
-    const PKYHT = PK1 + PK2 + PK3 + PK4 + PK5 + PK6 + PK7 + PK8 ;
+    const PKYHT = Math.ceil(PK1 + PK2 + PK3 + PK4 + PK5 + PK6 + PK7 + PK8) ;
 
     //Nurkkalauta SK = 2 * korkeus K = 0
     const nurkka1 = verho.kulmat1 === "Suorakulmio" ? Math.ceil(2 * verho.korkeus1) : 0 ;
