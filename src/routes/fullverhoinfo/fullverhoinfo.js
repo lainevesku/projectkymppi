@@ -353,8 +353,8 @@ function FullVerhoInfo (props) {
             <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-5">   
                 <h3 className='xyz-nested'>SEINÄT</h3>        
                 <div className='xyz-nested'>Seinien pinta-ala:&nbsp; <b> {wallAreaYHT} m² </b></div>
-                <div className='xyz-nested'>Uuden seinän malli:&nbsp; <b>{verho.wallType}</b></div>
-                <div className='xyz-nested'>Uuden seinän väri:&nbsp; <b>{verho.wallColor}</b></div>
+                <div className='xyz-nested'>Seinän malli:&nbsp; <b>{verho.wallType}</b></div>
+                <div className='xyz-nested'>Seinän väri:&nbsp; <b>{verho.wallColor}</b></div>
                 <div className='xyz-nested'>Tuulensuojat:&nbsp; <b>{wallAreaYHT} m² </b> </div> 
                 <div className='xyz-nested'>Pystykoolaus(22*100):&nbsp; <b>{PKYHT} Metriä</b> </div> 
                 <div className='xyz-nested'>Paneelit:&nbsp; <b>{wallAreaYHT} m²</b> </div>
