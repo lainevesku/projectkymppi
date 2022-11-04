@@ -158,6 +158,70 @@ function VerhoForm(props) {
         wall8window5width: 0,
         wall8window6height: 0,
         wall8window6width: 0,
+        korkeus9: 0,
+        leveys9: 0,
+        pystykoolaus9: 0.6,
+        kulmat9: "Suorakulmio",
+        wall9window1height: 0,
+        wall9window1width: 0,
+        wall9window2height: 0,
+        wall9window2width: 0,
+        wall9window3height: 0,
+        wall9window3width: 0,
+        wall9window4height: 0,
+        wall9window4width: 0,
+        wall9window5height: 0,
+        wall9window5width: 0,
+        wall9window6height: 0,
+        wall9window6width: 0,
+        korkeus10: 0,
+        leveys10: 0,
+        pystykoolaus10: 0.6,
+        kulmat10: "Suorakulmio",
+        wall10window1height: 0,
+        wall10window1width: 0,
+        wall10window2height: 0,
+        wall10window2width: 0,
+        wall10window3height: 0,
+        wall10window3width: 0,
+        wall10window4height: 0,
+        wall10window4width: 0,
+        wall10window5height: 0,
+        wall10window5width: 0,
+        wall10window6height: 0,
+        wall10window6width: 0,
+        korkeus11: 0,
+        leveys11: 0,
+        pystykoolaus11: 0.6,
+        kulmat11: "Suorakulmio",
+        wall11window1height: 0,
+        wall11window1width: 0,
+        wall11window2height: 0,
+        wall11window2width: 0,
+        wall11window3height: 0,
+        wall11window3width: 0,
+        wall11window4height: 0,
+        wall11window4width: 0,
+        wall11window5height: 0,
+        wall11window5width: 0,
+        wall11window6height: 0,
+        wall11window6width: 0,
+        korkeus12: 0,
+        leveys12: 0,
+        pystykoolaus12: 0.6,
+        kulmat12: "Suorakulmio",
+        wall12window1height: 0,
+        wall12window1width: 0,
+        wall12window2height: 0,
+        wall12window2width: 0,
+        wall12window3height: 0,
+        wall12window3width: 0,
+        wall12window4height: 0,
+        wall12window4width: 0,
+        wall12window5height: 0,
+        wall12window5width: 0,
+        wall12window6height: 0,
+        wall12window6width: 0,
         freeWord: ""
       };
 
@@ -185,6 +249,10 @@ function VerhoForm(props) {
     let [style6, setStyle6] = useState(styles.wall6hide);
     let [style7, setStyle7] = useState(styles.wall7hide);
     let [style8, setStyle8] = useState(styles.wall8hide);
+    let [style9, setStyle9] = useState(styles.wall9hide);
+    let [style10, setStyle10] = useState(styles.wall10hide);
+    let [style11, setStyle11] = useState(styles.wall11hide);
+    let [style12, setStyle12] = useState(styles.wall12hide);
     let [style1_1, setStyle1_1] = useState(styles.wall1window1hide);
     let [style1_2, setStyle1_2] = useState(styles.wall1window2hide);
     let [style1_3, setStyle1_3] = useState(styles.wall1window3hide);
@@ -233,6 +301,30 @@ function VerhoForm(props) {
     let [style8_4, setStyle8_4] = useState(styles.wall8window4hide);
     let [style8_5, setStyle8_5] = useState(styles.wall8window5hide);
     let [style8_6, setStyle8_6] = useState(styles.wall8window6hide);
+    let [style9_1, setStyle9_1] = useState(styles.wall9window1hide);
+    let [style9_2, setStyle9_2] = useState(styles.wall9window2hide);
+    let [style9_3, setStyle9_3] = useState(styles.wall9window3hide);
+    let [style9_4, setStyle9_4] = useState(styles.wall9window4hide);
+    let [style9_5, setStyle9_5] = useState(styles.wall9window5hide);
+    let [style9_6, setStyle9_6] = useState(styles.wall9window6hide);
+    let [style10_1, setStyle10_1] = useState(styles.wall10window1hide);
+    let [style10_2, setStyle10_2] = useState(styles.wall10window2hide);
+    let [style10_3, setStyle10_3] = useState(styles.wall10window3hide);
+    let [style10_4, setStyle10_4] = useState(styles.wall10window4hide);
+    let [style10_5, setStyle10_5] = useState(styles.wall10window5hide);
+    let [style10_6, setStyle10_6] = useState(styles.wall10window6hide);
+    let [style11_1, setStyle11_1] = useState(styles.wall11window1hide);
+    let [style11_2, setStyle11_2] = useState(styles.wall11window2hide);
+    let [style11_3, setStyle11_3] = useState(styles.wall11window3hide);
+    let [style11_4, setStyle11_4] = useState(styles.wall11window4hide);
+    let [style11_5, setStyle11_5] = useState(styles.wall11window5hide);
+    let [style11_6, setStyle11_6] = useState(styles.wall11window6hide);
+    let [style12_1, setStyle12_1] = useState(styles.wall12window1hide);
+    let [style12_2, setStyle12_2] = useState(styles.wall12window2hide);
+    let [style12_3, setStyle12_3] = useState(styles.wall12window3hide);
+    let [style12_4, setStyle12_4] = useState(styles.wall12window4hide);
+    let [style12_5, setStyle12_5] = useState(styles.wall12window5hide);
+    let [style12_6, setStyle12_6] = useState(styles.wall12window6hide);
 
   
     const wallYksi = () => {
@@ -258,6 +350,18 @@ function VerhoForm(props) {
     }
     const wallKasi = () => {
       style8 = style8 ? setStyle8(styles.wall8show) : setStyle8(styles.wall8hide); 
+    }
+    const wallYsi = () => {
+      style9 = style9 ? setStyle9(styles.wall9show) : setStyle9(styles.wall9hide); 
+    }
+    const wallKymppi = () => {
+      style10 = style10 ? setStyle10(styles.wall10show) : setStyle10(styles.wall10hide); 
+    }
+    const wallYksitoista = () => {
+      style11 = style11 ? setStyle11(styles.wall11show) : setStyle11(styles.wall11hide); 
+    }
+    const wallKaksitoista = () => {
+      style12 = style12 ? setStyle12(styles.wall12show) : setStyle12(styles.wall12hide); 
     }
     const wallYksiIkkunaYksi = () => {
       style1_1 = style1_1 ? setStyle1_1(styles.wall1window1show) : setStyle1_1(styles.wall1window1hide);
@@ -403,6 +507,78 @@ function VerhoForm(props) {
     const wallKasiIkkunaKuusi = () => {
       style8_6 = style8_6 ? setStyle8_6(styles.wall8window6show) : setStyle8_6(styles.wall8window6hide);
     }
+    const wallYsiIkkunaYksi = () => {
+      style9_1 = style9_1 ? setStyle9_1(styles.wall9window1show) : setStyle9_1(styles.wall9window1hide);
+    }
+    const wallYsiIkkunaKaksi = () => {
+      style9_2 = style9_2 ? setStyle9_2(styles.wall9window2show) : setStyle9_2(styles.wall9window2hide);
+    }
+    const wallYsiIkkunaKolme = () => {
+      style9_3 = style9_3 ? setStyle9_3(styles.wall9window3show) : setStyle9_3(styles.wall9window3hide);
+    }
+    const wallYsiIkkunaNelja = () => {
+      style9_4 = style9_4 ? setStyle9_4(styles.wall9window4show) : setStyle9_4(styles.wall9window4hide);
+    }
+    const wallYsiIkkunaViisi = () => {
+      style9_5 = style9_5 ? setStyle9_5(styles.wall9window5show) : setStyle9_5(styles.wall9window5hide);
+    }
+    const wallYsiIkkunaKuusi = () => {
+      style9_6 = style9_6 ? setStyle9_6(styles.wall9window6show) : setStyle9_6(styles.wall9window6hide);
+    }
+    const wallKymppiIkkunaYksi = () => {
+      style10_1 = style10_1 ? setStyle10_1(styles.wall10window1show) : setStyle10_1(styles.wall10window1hide);
+    }
+    const wallKymppiIkkunaKaksi = () => {
+      style10_2 = style10_2 ? setStyle10_2(styles.wall10window2show) : setStyle10_2(styles.wall10window2hide);
+    }
+    const wallKymppiIkkunaKolme = () => {
+      style10_3 = style10_3 ? setStyle10_3(styles.wall10window3show) : setStyle10_3(styles.wall10window3hide);
+    }
+    const wallKymppiIkkunaNelja = () => {
+      style10_4 = style10_4 ? setStyle10_4(styles.wall10window4show) : setStyle10_4(styles.wall10window4hide);
+    }
+    const wallKymppiIkkunaViisi = () => {
+      style10_5 = style10_5 ? setStyle10_5(styles.wall10window5show) : setStyle10_5(styles.wall10window5hide);
+    }
+    const wallKymppiIkkunaKuusi = () => {
+      style10_6 = style10_6 ? setStyle10_6(styles.wall10window6show) : setStyle10_6(styles.wall10window6hide);
+    }
+    const wallYksitoistaIkkunaYksi = () => {
+      style11_1 = style11_1 ? setStyle11_1(styles.wall11window1show) : setStyle11_1(styles.wall11window1hide);
+    }
+    const wallYksitoistaIkkunaKaksi = () => {
+      style11_2 = style11_2 ? setStyle11_2(styles.wall11window2show) : setStyle11_2(styles.wall11window2hide);
+    }
+    const wallYksitoistaIkkunaKolme = () => {
+      style11_3 = style11_3 ? setStyle11_3(styles.wall11window3show) : setStyle11_3(styles.wall11window3hide);
+    }
+    const wallYksitoistaIkkunaNelja = () => {
+      style11_4 = style11_4 ? setStyle11_4(styles.wall11window4show) : setStyle11_4(styles.wall11window4hide);
+    }
+    const wallYksitoistaIkkunaViisi = () => {
+      style11_5 = style11_5 ? setStyle11_5(styles.wall11window5show) : setStyle11_5(styles.wall11window5hide);
+    }
+    const wallYksitoistaIkkunaKuusi = () => {
+      style11_6 = style11_6 ? setStyle11_6(styles.wall11window6show) : setStyle11_6(styles.wall11window6hide);
+    }
+    const wallKaksitoistaIkkunaYksi = () => {
+      style12_1 = style12_1 ? setStyle12_1(styles.wall12window1show) : setStyle12_1(styles.wall12window1hide);
+    }
+    const wallKaksitoistaIkkunaKaksi = () => {
+      style12_2 = style12_2 ? setStyle12_2(styles.wall12window2show) : setStyle12_2(styles.wall12window2hide);
+    }
+    const wallKaksitoistaIkkunaKolme = () => {
+      style12_3 = style12_3 ? setStyle12_3(styles.wall12window3show) : setStyle12_3(styles.wall12window3hide);
+    }
+    const wallKaksitoistaIkkunaNelja = () => {
+      style12_4 = style12_4 ? setStyle12_4(styles.wall12window4show) : setStyle12_4(styles.wall12window4hide);
+    }
+    const wallKaksitoistaIkkunaViisi = () => {
+      style12_5 = style12_5 ? setStyle12_5(styles.wall12window5show) : setStyle12_5(styles.wall12window5hide);
+    }
+    const wallKaksitoistaIkkunaKuusi = () => {
+      style12_6 = style12_6 ? setStyle12_6(styles.wall12window6show) : setStyle12_6(styles.wall12window6hide);
+    }
 
     return (
         <div>
@@ -461,12 +637,16 @@ function VerhoForm(props) {
                   <Button secondary onClick={wallKolme}>Seinä 3</Button>
                   <Button secondary onClick={wallViisi}>Seinä 5</Button>
                   <Button secondary onClick={wallSeiska}>Seinä 7</Button>
+                  <Button secondary onClick={wallYsi}>Seinä 9</Button>
+                  <Button secondary onClick={wallYksitoista}>Seinä 11</Button>
                 </div>
                 <div>
                   <Button secondary onClick={wallKaksi}>Seinä 2</Button>
                   <Button secondary onClick={wallNelja}>Seinä 4</Button>
                   <Button secondary onClick={wallKuusi}>Seinä 6</Button>
                   <Button secondary onClick={wallKasi}>Seinä 8</Button>
+                  <Button secondary onClick={wallKymppi}>Seinä 10</Button>
+                  <Button secondary onClick={wallKaksitoista}>Seinä 12</Button>
                 </div>
               </div>
           
@@ -1473,6 +1653,514 @@ function VerhoForm(props) {
                   <div>
                     <label htmlFor='wall8window6width'>Leveys(m)</label>
                     <input type="number" name='wall8window6width' step="0.01" onChange={handleChange} value={values.wall8window6width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div id="wallysi" className={style9}>
+              <h2>Seinä 9</h2>
+              <div className={styles.form_row}> 
+                <div>
+                  <label htmlFor='korkeus9'>Korkeus(m)</label>
+                  <input type="number" name='korkeus9' step="0.01" onChange={handleChange} value={values.korkeus9} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='leveys9'>Leveys(m)</label>
+                  <input type="number" name='leveys9' step="0.01" onChange={handleChange} value={values.leveys9} min="0"/>
+                </div>
+              </div>
+
+              <div className={styles.form_row}>
+                <div>
+                  <label htmlFor='pystykoolaus9'>Pystykoolaus</label>
+                  <input type="number" name='pystykoolaus9' step="0.1" onChange={handleChange} value={values.pystykoolaus9} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='kulmat9'>Muoto</label>
+                  <select name='kulmat9' onChange={handleChange} value={values.kulmat9}>
+                    <option value="Suorakulmio">Suorakulmio</option>
+                    <option value="Kolmio">Kolmio</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className={styles.form_row}>
+                <div>
+                  <Button secondary onClick={wallYsiIkkunaYksi}>Ikkuna 1</Button>
+                  <Button secondary onClick={wallYsiIkkunaKolme}>Ikkuna 3</Button>
+                  <Button secondary onClick={wallYsiIkkunaViisi}>Ikkuna 5</Button>
+                  
+                </div>
+                <div>
+                  <Button secondary onClick={wallYsiIkkunaKaksi}>Ikkuna 2</Button>
+                  <Button secondary onClick={wallYsiIkkunaNelja}>Ikkuna 4</Button>
+                  <Button secondary onClick={wallYsiIkkunaKuusi}>Ikkuna 6</Button>
+                </div>
+              </div>
+
+              <div id="wall9window1" className={style9_1}>
+                <h2>Ikkuna 1</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall9window1height'>Korkeus(m)</label>
+                    <input type="number" name='wall9window1height' step="0.01" onChange={handleChange} value={values.wall9window1height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall9window1width'>Leveys(m)</label>
+                    <input type="number" name='wall9window1width' step="0.01" onChange={handleChange} value={values.wall9window1width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall9window2" className={style9_2}>
+                <h2>Ikkuna 2</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall9window2height'>Korkeus(m)</label>
+                    <input type="number" name='wall9window2height' step="0.01" onChange={handleChange} value={values.wall9window2height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall9window2width'>Leveys(m)</label>
+                    <input type="number" name='wall9window2width' step="0.01" onChange={handleChange} value={values.wall9window2width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall9window3" className={style9_3}>
+                <h2>Ikkuna 3</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall9window3height'>Korkeus(m)</label>
+                    <input type="number" name='wall9window3height' step="0.01" onChange={handleChange} value={values.wall9window3height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall9window3width'>Leveys(m)</label>
+                    <input type="number" name='wall9window3width' step="0.01" onChange={handleChange} value={values.wall9window3width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall9window4" className={style9_4}>
+                <h2>Ikkuna 4</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall9window4height'>Korkeus(m)</label>
+                    <input type="number" name='wall9window4height' step="0.01" onChange={handleChange} value={values.wall9window4height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall9window4width'>Leveys(m)</label>
+                    <input type="number" name='wall9window4width' step="0.01" onChange={handleChange} value={values.wall9window4width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall9window5" className={style9_5}>
+                <h2>Ikkuna 5</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall9window5height'>Korkeus(m)</label>
+                    <input type="number" name='wall9window5height' step="0.01" onChange={handleChange} value={values.wall9window5height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall9window5width'>Leveys(m)</label>
+                    <input type="number" name='wall9window5width' step="0.01" onChange={handleChange} value={values.wall9window5width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall9window6" className={style9_6}>
+                <h2>Ikkuna 6</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall9window6height'>Korkeus(m)</label>
+                    <input type="number" name='wall9window6height' step="0.01" onChange={handleChange} value={values.wall9window6height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall9window6width'>Leveys(m)</label>
+                    <input type="number" name='wall9window6width' step="0.01" onChange={handleChange} value={values.wall9window6width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div id="wallkymppi" className={style10}>
+              <h2>Seinä 10</h2>
+              <div className={styles.form_row}> 
+                <div>
+                  <label htmlFor='korkeus10'>Korkeus(m)</label>
+                  <input type="number" name='korkeus10' step="0.01" onChange={handleChange} value={values.korkeus10} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='leveys10'>Leveys(m)</label>
+                  <input type="number" name='leveys10' step="0.01" onChange={handleChange} value={values.leveys10} min="0"/>
+                </div>
+              </div>
+
+              <div className={styles.form_row}>
+                <div>
+                  <label htmlFor='pystykoolaus10'>Pystykoolaus</label>
+                  <input type="number" name='pystykoolaus10' step="0.1" onChange={handleChange} value={values.pystykoolaus10} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='kulmat10'>Muoto</label>
+                  <select name='kulmat10' onChange={handleChange} value={values.kulmat10}>
+                    <option value="Suorakulmio">Suorakulmio</option>
+                    <option value="Kolmio">Kolmio</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className={styles.form_row}>
+                <div>
+                  <Button secondary onClick={wallKymppiIkkunaYksi}>Ikkuna 1</Button>
+                  <Button secondary onClick={wallKymppiIkkunaKolme}>Ikkuna 3</Button>
+                  <Button secondary onClick={wallKymppiIkkunaViisi}>Ikkuna 5</Button>
+                  
+                </div>
+                <div>
+                  <Button secondary onClick={wallKymppiIkkunaKaksi}>Ikkuna 2</Button>
+                  <Button secondary onClick={wallKymppiIkkunaNelja}>Ikkuna 4</Button>
+                  <Button secondary onClick={wallKymppiIkkunaKuusi}>Ikkuna 6</Button>
+                </div>
+              </div>
+
+              <div id="wall10window1" className={style10_1}>
+                <h2>Ikkuna 1</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall10window1height'>Korkeus(m)</label>
+                    <input type="number" name='wall10window1height' step="0.01" onChange={handleChange} value={values.wall10window1height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall10window1width'>Leveys(m)</label>
+                    <input type="number" name='wall10window1width' step="0.01" onChange={handleChange} value={values.wall10window1width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall10window2" className={style10_2}>
+                <h2>Ikkuna 2</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall10window2height'>Korkeus(m)</label>
+                    <input type="number" name='wall10window2height' step="0.01" onChange={handleChange} value={values.wall10window2height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall10window2width'>Leveys(m)</label>
+                    <input type="number" name='wall10window2width' step="0.01" onChange={handleChange} value={values.wall10window2width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall10window3" className={style10_3}>
+                <h2>Ikkuna 3</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall10window3height'>Korkeus(m)</label>
+                    <input type="number" name='wall10window3height' step="0.01" onChange={handleChange} value={values.wall10window3height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall10window3width'>Leveys(m)</label>
+                    <input type="number" name='wall10window3width' step="0.01" onChange={handleChange} value={values.wall10window3width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall10window4" className={style10_4}>
+                <h2>Ikkuna 4</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall10window4height'>Korkeus(m)</label>
+                    <input type="number" name='wall10window4height' step="0.01" onChange={handleChange} value={values.wall10window4height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall10window4width'>Leveys(m)</label>
+                    <input type="number" name='wall10window4width' step="0.01" onChange={handleChange} value={values.wall10window4width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall10window5" className={style10_5}>
+                <h2>Ikkuna 5</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall10window5height'>Korkeus(m)</label>
+                    <input type="number" name='wall10window5height' step="0.01" onChange={handleChange} value={values.wall10window5height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall10window5width'>Leveys(m)</label>
+                    <input type="number" name='wall10window5width' step="0.01" onChange={handleChange} value={values.wall10window5width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall10window6" className={style10_6}>
+                <h2>Ikkuna 6</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall10window6height'>Korkeus(m)</label>
+                    <input type="number" name='wall10window6height' step="0.01" onChange={handleChange} value={values.wall10window6height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall10window6width'>Leveys(m)</label>
+                    <input type="number" name='wall10window6width' step="0.01" onChange={handleChange} value={values.wall10window6width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div id="wallyksitoista" className={style11}>
+              <h2>Seinä 11</h2>
+              <div className={styles.form_row}> 
+                <div>
+                  <label htmlFor='korkeus11'>Korkeus(m)</label>
+                  <input type="number" name='korkeus11' step="0.01" onChange={handleChange} value={values.korkeus11} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='leveys11'>Leveys(m)</label>
+                  <input type="number" name='leveys11' step="0.01" onChange={handleChange} value={values.leveys11} min="0"/>
+                </div>
+              </div>
+
+              <div className={styles.form_row}>
+                <div>
+                  <label htmlFor='pystykoolaus11'>Pystykoolaus</label>
+                  <input type="number" name='pystykoolaus11' step="0.1" onChange={handleChange} value={values.pystykoolaus11} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='kulmat11'>Muoto</label>
+                  <select name='kulmat11' onChange={handleChange} value={values.kulmat11}>
+                    <option value="Suorakulmio">Suorakulmio</option>
+                    <option value="Kolmio">Kolmio</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className={styles.form_row}>
+                <div>
+                  <Button secondary onClick={wallYksitoistaIkkunaYksi}>Ikkuna 1</Button>
+                  <Button secondary onClick={wallYksitoistaIkkunaKolme}>Ikkuna 3</Button>
+                  <Button secondary onClick={wallYksitoistaIkkunaViisi}>Ikkuna 5</Button>
+                  
+                </div>
+                <div>
+                  <Button secondary onClick={wallYksitoistaIkkunaKaksi}>Ikkuna 2</Button>
+                  <Button secondary onClick={wallYksitoistaIkkunaNelja}>Ikkuna 4</Button>
+                  <Button secondary onClick={wallYksitoistaIkkunaKuusi}>Ikkuna 6</Button>
+                </div>
+              </div>
+
+              <div id="wall11window1" className={style11_1}>
+                <h2>Ikkuna 1</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall11window1height'>Korkeus(m)</label>
+                    <input type="number" name='wall11window1height' step="0.01" onChange={handleChange} value={values.wall11window1height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall11window1width'>Leveys(m)</label>
+                    <input type="number" name='wall11window1width' step="0.01" onChange={handleChange} value={values.wall11window1width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall11window2" className={style11_2}>
+                <h2>Ikkuna 2</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall11window2height'>Korkeus(m)</label>
+                    <input type="number" name='wall11window2height' step="0.01" onChange={handleChange} value={values.wall11window2height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall11window2width'>Leveys(m)</label>
+                    <input type="number" name='wall11window2width' step="0.01" onChange={handleChange} value={values.wall11window2width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall11window3" className={style11_3}>
+                <h2>Ikkuna 3</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall11window3height'>Korkeus(m)</label>
+                    <input type="number" name='wall11window3height' step="0.01" onChange={handleChange} value={values.wall11window3height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall11window3width'>Leveys(m)</label>
+                    <input type="number" name='wall11window3width' step="0.01" onChange={handleChange} value={values.wall11window3width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall11window4" className={style11_4}>
+                <h2>Ikkuna 4</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall11window4height'>Korkeus(m)</label>
+                    <input type="number" name='wall11window4height' step="0.01" onChange={handleChange} value={values.wall11window4height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall11window4width'>Leveys(m)</label>
+                    <input type="number" name='wall11window4width' step="0.01" onChange={handleChange} value={values.wall11window4width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall11window5" className={style11_5}>
+                <h2>Ikkuna 5</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall11window5height'>Korkeus(m)</label>
+                    <input type="number" name='wall11window5height' step="0.01" onChange={handleChange} value={values.wall11window5height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall11window5width'>Leveys(m)</label>
+                    <input type="number" name='wall11window5width' step="0.01" onChange={handleChange} value={values.wall11window5width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall11window6" className={style11_6}>
+                <h2>Ikkuna 6</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall11window6height'>Korkeus(m)</label>
+                    <input type="number" name='wall11window6height' step="0.01" onChange={handleChange} value={values.wall11window6height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall11window6width'>Leveys(m)</label>
+                    <input type="number" name='wall11window6width' step="0.01" onChange={handleChange} value={values.wall11window6width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div id="wallkaksitoista" className={style12}>
+              <h2>Seinä 12</h2>
+              <div className={styles.form_row}> 
+                <div>
+                  <label htmlFor='korkeus12'>Korkeus(m)</label>
+                  <input type="number" name='korkeus12' step="0.01" onChange={handleChange} value={values.korkeus12} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='leveys12'>Leveys(m)</label>
+                  <input type="number" name='leveys12' step="0.01" onChange={handleChange} value={values.leveys12} min="0"/>
+                </div>
+              </div>
+
+              <div className={styles.form_row}>
+                <div>
+                  <label htmlFor='pystykoolaus12'>Pystykoolaus</label>
+                  <input type="number" name='pystykoolaus12' step="0.1" onChange={handleChange} value={values.pystykoolaus12} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='kulmat12'>Muoto</label>
+                  <select name='kulmat12' onChange={handleChange} value={values.kulmat12}>
+                    <option value="Suorakulmio">Suorakulmio</option>
+                    <option value="Kolmio">Kolmio</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className={styles.form_row}>
+                <div>
+                  <Button secondary onClick={wallKaksitoistaIkkunaYksi}>Ikkuna 1</Button>
+                  <Button secondary onClick={wallKaksitoistaIkkunaKolme}>Ikkuna 3</Button>
+                  <Button secondary onClick={wallKaksitoistaIkkunaViisi}>Ikkuna 5</Button>
+                  
+                </div>
+                <div>
+                  <Button secondary onClick={wallKaksitoistaIkkunaKaksi}>Ikkuna 2</Button>
+                  <Button secondary onClick={wallKaksitoistaIkkunaNelja}>Ikkuna 4</Button>
+                  <Button secondary onClick={wallKaksitoistaIkkunaKuusi}>Ikkuna 6</Button>
+                </div>
+              </div>
+
+              <div id="wall12window1" className={style12_1}>
+                <h2>Ikkuna 1</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall12window1height'>Korkeus(m)</label>
+                    <input type="number" name='wall12window1height' step="0.01" onChange={handleChange} value={values.wall12window1height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall12window1width'>Leveys(m)</label>
+                    <input type="number" name='wall12window1width' step="0.01" onChange={handleChange} value={values.wall12window1width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall12window2" className={style12_2}>
+                <h2>Ikkuna 2</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall12window2height'>Korkeus(m)</label>
+                    <input type="number" name='wall12window2height' step="0.01" onChange={handleChange} value={values.wall12window2height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall12window2width'>Leveys(m)</label>
+                    <input type="number" name='wall12window2width' step="0.01" onChange={handleChange} value={values.wall12window2width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall12window3" className={style12_3}>
+                <h2>Ikkuna 3</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall12window3height'>Korkeus(m)</label>
+                    <input type="number" name='wall12window3height' step="0.01" onChange={handleChange} value={values.wall12window3height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall12window3width'>Leveys(m)</label>
+                    <input type="number" name='wall12window3width' step="0.01" onChange={handleChange} value={values.wall12window3width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall12window4" className={style12_4}>
+                <h2>Ikkuna 4</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall12window4height'>Korkeus(m)</label>
+                    <input type="number" name='wall12window4height' step="0.01" onChange={handleChange} value={values.wall12window4height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall12window4width'>Leveys(m)</label>
+                    <input type="number" name='wall12window4width' step="0.01" onChange={handleChange} value={values.wall12window4width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall12window5" className={style12_5}>
+                <h2>Ikkuna 5</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall12window5height'>Korkeus(m)</label>
+                    <input type="number" name='wall12window5height' step="0.01" onChange={handleChange} value={values.wall12window5height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall12window5width'>Leveys(m)</label>
+                    <input type="number" name='wall12window5width' step="0.01" onChange={handleChange} value={values.wall12window5width} min="0"/>
+                  </div>
+                </div>
+              </div>
+
+              <div id="wall12window6" className={style12_6}>
+                <h2>Ikkuna 6</h2>
+                <div className={styles.form_row}>
+                  <div>
+                    <label htmlFor='wall12window6height'>Korkeus(m)</label>
+                    <input type="number" name='wall12window6height' step="0.01" onChange={handleChange} value={values.wall12window6height} min="0" />
+                  </div>
+                  <div>
+                    <label htmlFor='wall12window6width'>Leveys(m)</label>
+                    <input type="number" name='wall12window6width' step="0.01" onChange={handleChange} value={values.wall12window6width} min="0"/>
                   </div>
                 </div>
               </div>

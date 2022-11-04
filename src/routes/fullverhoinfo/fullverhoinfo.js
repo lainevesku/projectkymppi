@@ -26,7 +26,11 @@ function FullVerhoInfo (props) {
     const wallArea6 = verho.kulmat6 === "Suorakulmio" ? Math.round(verho.korkeus6 * verho.leveys6 * 100) / 100 : Math.round(verho.korkeus6 * verho.leveys6 / 2 * 100) / 100;
     const wallArea7 = verho.kulmat7 === "Suorakulmio" ? Math.round(verho.korkeus7 * verho.leveys7 * 100) / 100 : Math.round(verho.korkeus7 * verho.leveys7 / 2 * 100) / 100;
     const wallArea8 = verho.kulmat8 === "Suorakulmio" ? Math.round(verho.korkeus8 * verho.leveys8 * 100) / 100 : Math.round(verho.korkeus8 * verho.leveys8 / 2 * 100) / 100;
-    const wallAreaYHT = wallArea1 + wallArea2 + wallArea3 + wallArea4 + wallArea5 + wallArea6 + wallArea7 + wallArea8 ;
+    const wallArea9 = verho.kulmat9 === "Suorakulmio" ? Math.round(verho.korkeus9 * verho.leveys9 * 100) / 100 : Math.round(verho.korkeus9 * verho.leveys9 / 2 * 100) / 100;
+    const wallArea10 = verho.kulmat10 === "Suorakulmio" ? Math.round(verho.korkeus10 * verho.leveys10 * 100) / 100 : Math.round(verho.korkeus10 * verho.leveys10 / 2 * 100) / 100;
+    const wallArea11 = verho.kulmat11 === "Suorakulmio" ? Math.round(verho.korkeus11 * verho.leveys11 * 100) / 100 : Math.round(verho.korkeus11 * verho.leveys11 / 2 * 100) / 100;
+    const wallArea12 = verho.kulmat12 === "Suorakulmio" ? Math.round(verho.korkeus12 * verho.leveys12 * 100) / 100 : Math.round(verho.korkeus12 * verho.leveys12 / 2 * 100) / 100;
+    const wallAreaYHT = wallArea1 + wallArea2 + wallArea3 + wallArea4 + wallArea5 + wallArea6 + wallArea7 + wallArea8 + wallArea9 + wallArea10 + wallArea11 + wallArea12;
 
     //Pystykoolaus SK = leveys/pystykoolaus * korkeus K = leveys/pystykoolaus * korkeus / 2
     const PK1 = verho.kulmat1 === "Suorakulmio" ? Math.ceil(verho.leveys1 / verho.pystykoolaus1 * verho.korkeus1) : Math.ceil(verho.leveys1 / verho.pystykoolaus1 * verho.korkeus1 / 2) ;
@@ -37,7 +41,11 @@ function FullVerhoInfo (props) {
     const PK6 = verho.kulmat6 === "Suorakulmio" ? Math.ceil(verho.leveys6 / verho.pystykoolaus6 * verho.korkeus6) : Math.ceil(verho.leveys6 / verho.pystykoolaus6 * verho.korkeus6 / 2) ;
     const PK7 = verho.kulmat7 === "Suorakulmio" ? Math.ceil(verho.leveys7 / verho.pystykoolaus7 * verho.korkeus7) : Math.ceil(verho.leveys7 / verho.pystykoolaus7 * verho.korkeus7 / 2) ;
     const PK8 = verho.kulmat8 === "Suorakulmio" ? Math.ceil(verho.leveys8 / verho.pystykoolaus8 * verho.korkeus8) : Math.ceil(verho.leveys8 / verho.pystykoolaus8 * verho.korkeus8 / 2) ;
-    const PKYHT = Math.ceil(PK1 + PK2 + PK3 + PK4 + PK5 + PK6 + PK7 + PK8) ;
+    const PK9 = verho.kulmat9 === "Suorakulmio" ? Math.ceil(verho.leveys9 / verho.pystykoolaus9 * verho.korkeus9) : Math.ceil(verho.leveys9 / verho.pystykoolaus9 * verho.korkeus9 / 2) ;
+    const PK10 = verho.kulmat10 === "Suorakulmio" ? Math.ceil(verho.leveys10 / verho.pystykoolaus10 * verho.korkeus10) : Math.ceil(verho.leveys10 / verho.pystykoolaus10 * verho.korkeus10 / 2) ;
+    const PK11 = verho.kulmat11 === "Suorakulmio" ? Math.ceil(verho.leveys11 / verho.pystykoolaus11 * verho.korkeus11) : Math.ceil(verho.leveys11 / verho.pystykoolaus11 * verho.korkeus11 / 2) ;
+    const PK12 = verho.kulmat12 === "Suorakulmio" ? Math.ceil(verho.leveys12 / verho.pystykoolaus12 * verho.korkeus12) : Math.ceil(verho.leveys12 / verho.pystykoolaus12 * verho.korkeus12 / 2) ;
+    const PKYHT = Math.ceil(PK1 + PK2 + PK3 + PK4 + PK5 + PK6 + PK7 + PK8 + PK9 + PK10 + PK11 + PK12) ;
 
     //Nurkkalauta SK = 2 * korkeus K = 0
     const nurkka1 = verho.kulmat1 === "Suorakulmio" ? Math.ceil(2 * verho.korkeus1) : 0 ;
@@ -48,7 +56,11 @@ function FullVerhoInfo (props) {
     const nurkka6 = verho.kulmat6 === "Suorakulmio" ? Math.ceil(2 * verho.korkeus6) : 0 ;
     const nurkka7 = verho.kulmat7 === "Suorakulmio" ? Math.ceil(2 * verho.korkeus7) : 0 ;
     const nurkka8 = verho.kulmat8 === "Suorakulmio" ? Math.ceil(2 * verho.korkeus8) : 0 ;
-    const nurkkaYHT = nurkka1 + nurkka2 + nurkka3 + nurkka4 + nurkka5 + nurkka6 + nurkka7 + nurkka8 ;
+    const nurkka9 = verho.kulmat9 === "Suorakulmio" ? Math.ceil(2 * verho.korkeus9) : 0 ;
+    const nurkka10 = verho.kulmat10 === "Suorakulmio" ? Math.ceil(2 * verho.korkeus10) : 0 ;
+    const nurkka11 = verho.kulmat11 === "Suorakulmio" ? Math.ceil(2 * verho.korkeus11) : 0 ;
+    const nurkka12 = verho.kulmat12 === "Suorakulmio" ? Math.ceil(2 * verho.korkeus12) : 0 ;
+    const nurkkaYHT = nurkka1 + nurkka2 + nurkka3 + nurkka4 + nurkka5 + nurkka6 + nurkka7 + nurkka8 + nurkka9 + nurkka10 + nurkka11 + nurkka12 ;
 
     //Varjolista SK = leveys K = 2 * kolmion hypotenuusa
     const varjo1 = verho.kulmat1 === "Suorakulmio" ? Math.ceil(verho.leveys1) : Math.ceil(Math.sqrt((verho.korkeus1 ** 2) + ((verho.leveys1 / 2)** 2))) * 2;
@@ -59,7 +71,11 @@ function FullVerhoInfo (props) {
     const varjo6 = verho.kulmat6 === "Suorakulmio" ? Math.ceil(verho.leveys6) : Math.ceil(Math.sqrt((verho.korkeus6 ** 2) + ((verho.leveys6 / 2)** 2))) * 2;
     const varjo7 = verho.kulmat7 === "Suorakulmio" ? Math.ceil(verho.leveys7) : Math.ceil(Math.sqrt((verho.korkeus7 ** 2) + ((verho.leveys7 / 2)** 2))) * 2;
     const varjo8 = verho.kulmat8 === "Suorakulmio" ? Math.ceil(verho.leveys8) : Math.ceil(Math.sqrt((verho.korkeus8 ** 2) + ((verho.leveys8 / 2)** 2))) * 2;
-    const varjoYHT = varjo1 + varjo2 + varjo3 + varjo4 + varjo5 + varjo6 + varjo7 + varjo8;
+    const varjo9 = verho.kulmat9 === "Suorakulmio" ? Math.ceil(verho.leveys9) : Math.ceil(Math.sqrt((verho.korkeus9 ** 2) + ((verho.leveys9 / 2)** 2))) * 2;
+    const varjo10 = verho.kulmat10 === "Suorakulmio" ? Math.ceil(verho.leveys10) : Math.ceil(Math.sqrt((verho.korkeus10 ** 2) + ((verho.leveys10 / 2)** 2))) * 2;
+    const varjo11 = verho.kulmat11 === "Suorakulmio" ? Math.ceil(verho.leveys11) : Math.ceil(Math.sqrt((verho.korkeus11 ** 2) + ((verho.leveys11 / 2)** 2))) * 2;
+    const varjo12 = verho.kulmat12 === "Suorakulmio" ? Math.ceil(verho.leveys12) : Math.ceil(Math.sqrt((verho.korkeus12 ** 2) + ((verho.leveys12 / 2)** 2))) * 2;
+    const varjoYHT = varjo1 + varjo2 + varjo3 + varjo4 + varjo5 + varjo6 + varjo7 + varjo8 + varjo9 + varjo10 + varjo11 + varjo12 ;
 
     // Seinän 1 ikkunoiden määrä
     const ikkunat1_1 = verho.wall1window1height === 0 ? 0 : 1;
@@ -133,8 +149,44 @@ function FullVerhoInfo (props) {
     const ikkunat8_6 = verho.wall8window6height === 0 ? 0 : 1;
     const ikkunat8 = ikkunat8_1 + ikkunat8_2 + ikkunat8_3 + ikkunat8_4 + ikkunat8_5 + ikkunat8_6;
 
+    // Seinän 9 ikkunoiden määrä
+    const ikkunat9_1 = verho.wall9window1height === 0 ? 0 : 1;
+    const ikkunat9_2 = verho.wall9window2height === 0 ? 0 : 1;
+    const ikkunat9_3 = verho.wall9window3height === 0 ? 0 : 1;
+    const ikkunat9_4 = verho.wall9window4height === 0 ? 0 : 1;
+    const ikkunat9_5 = verho.wall9window5height === 0 ? 0 : 1;
+    const ikkunat9_6 = verho.wall9window6height === 0 ? 0 : 1;
+    const ikkunat9 = ikkunat9_1 + ikkunat9_2 + ikkunat9_3 + ikkunat9_4 + ikkunat9_5 + ikkunat9_6;
+
+    // Seinän 10 ikkunoiden määrä
+    const ikkunat10_1 = verho.wall10window1height === 0 ? 0 : 1;
+    const ikkunat10_2 = verho.wall10window2height === 0 ? 0 : 1;
+    const ikkunat10_3 = verho.wall10window3height === 0 ? 0 : 1;
+    const ikkunat10_4 = verho.wall10window4height === 0 ? 0 : 1;
+    const ikkunat10_5 = verho.wall10window5height === 0 ? 0 : 1;
+    const ikkunat10_6 = verho.wall10window6height === 0 ? 0 : 1;
+    const ikkunat10 = ikkunat10_1 + ikkunat10_2 + ikkunat10_3 + ikkunat10_4 + ikkunat10_5 + ikkunat10_6;
+
+    // Seinän 11 ikkunoiden määrä
+    const ikkunat11_1 = verho.wall11window1height === 0 ? 0 : 1;
+    const ikkunat11_2 = verho.wall11window2height === 0 ? 0 : 1;
+    const ikkunat11_3 = verho.wall11window3height === 0 ? 0 : 1;
+    const ikkunat11_4 = verho.wall11window4height === 0 ? 0 : 1;
+    const ikkunat11_5 = verho.wall11window5height === 0 ? 0 : 1;
+    const ikkunat11_6 = verho.wall11window6height === 0 ? 0 : 1;
+    const ikkunat11 = ikkunat11_1 + ikkunat11_2 + ikkunat11_3 + ikkunat11_4 + ikkunat11_5 + ikkunat11_6;
+
+    // Seinän 12 ikkunoiden määrä
+    const ikkunat12_1 = verho.wall12window1height === 0 ? 0 : 1;
+    const ikkunat12_2 = verho.wall12window2height === 0 ? 0 : 1;
+    const ikkunat12_3 = verho.wall12window3height === 0 ? 0 : 1;
+    const ikkunat12_4 = verho.wall12window4height === 0 ? 0 : 1;
+    const ikkunat12_5 = verho.wall12window5height === 0 ? 0 : 1;
+    const ikkunat12_6 = verho.wall12window6height === 0 ? 0 : 1;
+    const ikkunat12 = ikkunat12_1 + ikkunat12_2 + ikkunat12_3 + ikkunat12_4 + ikkunat12_5 + ikkunat12_6;
+
     // Kaikkien seinien ikkunat yhteensä
-    const ikkunatYHT = ikkunat1 + ikkunat2 + ikkunat3 + ikkunat4 + ikkunat5 + ikkunat6 + ikkunat7 + ikkunat8 ;
+    const ikkunatYHT = ikkunat1 + ikkunat2 + ikkunat3 + ikkunat4 + ikkunat5 + ikkunat6 + ikkunat7 + ikkunat8 + ikkunat9 + ikkunat10 + ikkunat11 + ikkunat12 ;
 
     // Smyygilaudat = 2 * korkeus + leveys
     // Seinä 1 Smyygit
@@ -209,8 +261,44 @@ function FullVerhoInfo (props) {
     const smyygi8_6 = 2 * verho.wall8window6height + parseFloat(verho.wall8window6width) ;
     const smyygi8 = Math.round((smyygi8_1 + smyygi8_2 + smyygi8_3 + smyygi8_4 + smyygi8_5 + smyygi8_6) * 100) / 100 ;
 
+    // Seinä 9 Smyygit
+    const smyygi9_1 = 2 * verho.wall9window1height + parseFloat(verho.wall9window1width) ;
+    const smyygi9_2 = 2 * verho.wall9window2height + parseFloat(verho.wall9window2width) ;
+    const smyygi9_3 = 2 * verho.wall9window3height + parseFloat(verho.wall9window3width) ;
+    const smyygi9_4 = 2 * verho.wall9window4height + parseFloat(verho.wall9window4width) ;
+    const smyygi9_5 = 2 * verho.wall9window5height + parseFloat(verho.wall9window5width) ;
+    const smyygi9_6 = 2 * verho.wall9window6height + parseFloat(verho.wall9window6width) ;
+    const smyygi9 = Math.round((smyygi9_1 + smyygi9_2 + smyygi9_3 + smyygi9_4 + smyygi9_5 + smyygi9_6) * 100) / 100 ;
+
+    // Seinä 10 Smyygit
+    const smyygi10_1 = 2 * verho.wall10window1height + parseFloat(verho.wall10window1width) ;
+    const smyygi10_2 = 2 * verho.wall10window2height + parseFloat(verho.wall10window2width) ;
+    const smyygi10_3 = 2 * verho.wall10window3height + parseFloat(verho.wall10window3width) ;
+    const smyygi10_4 = 2 * verho.wall10window4height + parseFloat(verho.wall10window4width) ;
+    const smyygi10_5 = 2 * verho.wall10window5height + parseFloat(verho.wall10window5width) ;
+    const smyygi10_6 = 2 * verho.wall10window6height + parseFloat(verho.wall10window6width) ;
+    const smyygi10 = Math.round((smyygi10_1 + smyygi10_2 + smyygi10_3 + smyygi10_4 + smyygi10_5 + smyygi10_6) * 100) / 100 ;
+
+    // Seinä 11 Smyygit
+    const smyygi11_1 = 2 * verho.wall11window1height + parseFloat(verho.wall11window1width) ;
+    const smyygi11_2 = 2 * verho.wall11window2height + parseFloat(verho.wall11window2width) ;
+    const smyygi11_3 = 2 * verho.wall11window3height + parseFloat(verho.wall11window3width) ;
+    const smyygi11_4 = 2 * verho.wall11window4height + parseFloat(verho.wall11window4width) ;
+    const smyygi11_5 = 2 * verho.wall11window5height + parseFloat(verho.wall11window5width) ;
+    const smyygi11_6 = 2 * verho.wall11window6height + parseFloat(verho.wall11window6width) ;
+    const smyygi11 = Math.round((smyygi11_1 + smyygi11_2 + smyygi11_3 + smyygi11_4 + smyygi11_5 + smyygi11_6) * 100) / 100 ;
+
+    // Seinä 12 Smyygit
+    const smyygi12_1 = 2 * verho.wall12window1height + parseFloat(verho.wall12window1width) ;
+    const smyygi12_2 = 2 * verho.wall12window2height + parseFloat(verho.wall12window2width) ;
+    const smyygi12_3 = 2 * verho.wall12window3height + parseFloat(verho.wall12window3width) ;
+    const smyygi12_4 = 2 * verho.wall12window4height + parseFloat(verho.wall12window4width) ;
+    const smyygi12_5 = 2 * verho.wall12window5height + parseFloat(verho.wall12window5width) ;
+    const smyygi12_6 = 2 * verho.wall12window6height + parseFloat(verho.wall12window6width) ;
+    const smyygi12 = Math.round((smyygi12_1 + smyygi12_2 + smyygi12_3 + smyygi12_4 + smyygi12_5 + smyygi12_6) * 100) / 100 ;
+
     //Smyygit yhteensä
-    const smyygiYHT = Math.ceil(smyygi1 + smyygi2 + smyygi3 + smyygi4 + smyygi5 + smyygi6 + smyygi7 + smyygi8) ; 
+    const smyygiYHT = Math.ceil(smyygi1 + smyygi2 + smyygi3 + smyygi4 + smyygi5 + smyygi6 + smyygi7 + smyygi8 + smyygi9 + smyygi10 + smyygi11 + smyygi12) ; 
 
     // Vuorilauta = 2 * korkeus + 2 * leveys
     //Seinä 1 Vuorilaudat
@@ -285,8 +373,44 @@ function FullVerhoInfo (props) {
     const vuori8_6 = 2 * verho.wall8window6height + 2 * verho.wall8window6width ;
     const vuori8 = Math.round((vuori8_1 + vuori8_2 + vuori8_3 + vuori8_4 + vuori8_5 + vuori8_6) * 100) / 100 ;
 
+    //Seinä 9 Vuorilaudat
+    const vuori9_1 = 2 * verho.wall9window1height + 2 * verho.wall9window1width ;
+    const vuori9_2 = 2 * verho.wall9window2height + 2 * verho.wall9window2width ;
+    const vuori9_3 = 2 * verho.wall9window3height + 2 * verho.wall9window3width ;
+    const vuori9_4 = 2 * verho.wall9window4height + 2 * verho.wall9window4width ;
+    const vuori9_5 = 2 * verho.wall9window5height + 2 * verho.wall9window5width ;
+    const vuori9_6 = 2 * verho.wall9window6height + 2 * verho.wall9window6width ;
+    const vuori9 = Math.round((vuori9_1 + vuori9_2 + vuori9_3 + vuori9_4 + vuori9_5 + vuori9_6) * 100) / 100 ;
+
+    //Seinä 10 Vuorilaudat
+    const vuori10_1 = 2 * verho.wall10window1height + 2 * verho.wall10window1width ;
+    const vuori10_2 = 2 * verho.wall10window2height + 2 * verho.wall10window2width ;
+    const vuori10_3 = 2 * verho.wall10window3height + 2 * verho.wall10window3width ;
+    const vuori10_4 = 2 * verho.wall10window4height + 2 * verho.wall10window4width ;
+    const vuori10_5 = 2 * verho.wall10window5height + 2 * verho.wall10window5width ;
+    const vuori10_6 = 2 * verho.wall10window6height + 2 * verho.wall10window6width ;
+    const vuori10 = Math.round((vuori10_1 + vuori10_2 + vuori10_3 + vuori10_4 + vuori10_5 + vuori10_6) * 100) / 100 ;
+
+    //Seinä 11 Vuorilaudat
+    const vuori11_1 = 2 * verho.wall11window1height + 2 * verho.wall11window1width ;
+    const vuori11_2 = 2 * verho.wall11window2height + 2 * verho.wall11window2width ;
+    const vuori11_3 = 2 * verho.wall11window3height + 2 * verho.wall11window3width ;
+    const vuori11_4 = 2 * verho.wall11window4height + 2 * verho.wall11window4width ;
+    const vuori11_5 = 2 * verho.wall11window5height + 2 * verho.wall11window5width ;
+    const vuori11_6 = 2 * verho.wall11window6height + 2 * verho.wall11window6width ;
+    const vuori11 = Math.round((vuori11_1 + vuori11_2 + vuori11_3 + vuori11_4 + vuori11_5 + vuori11_6) * 100) / 100 ;
+
+    //Seinä 12 Vuorilaudat
+    const vuori12_1 = 2 * verho.wall12window1height + 2 * verho.wall12window1width ;
+    const vuori12_2 = 2 * verho.wall12window2height + 2 * verho.wall12window2width ;
+    const vuori12_3 = 2 * verho.wall12window3height + 2 * verho.wall12window3width ;
+    const vuori12_4 = 2 * verho.wall12window4height + 2 * verho.wall12window4width ;
+    const vuori12_5 = 2 * verho.wall12window5height + 2 * verho.wall12window5width ;
+    const vuori12_6 = 2 * verho.wall12window6height + 2 * verho.wall12window6width ;
+    const vuori12 = Math.round((vuori12_1 + vuori12_2 + vuori12_3 + vuori12_4 + vuori12_5 + vuori12_6) * 100) / 100 ;
+
     // Vuorilaudat yhteensä
-    const vuoriYHT = Math.ceil(vuori1 + vuori2 + vuori3 + vuori4 + vuori5 + vuori6 + vuori7 + vuori8) ;
+    const vuoriYHT = Math.ceil(vuori1 + vuori2 + vuori3 + vuori4 + vuori5 + vuori6 + vuori7 + vuori8 + vuori9 + vuori10 + vuori11 + vuori12) ;
 
         // Piilota/Näytä oikea määrä lappeita
     let [style1] = useState(verho.korkeus1 > 0 ? styles.wall1show : styles.wall1hide);
@@ -297,6 +421,10 @@ function FullVerhoInfo (props) {
     let [style6] = useState(verho.korkeus6 > 0 ? styles.wall6show : styles.wall6hide);
     let [style7] = useState(verho.korkeus7 > 0 ? styles.wall7show : styles.wall7hide);
     let [style8] = useState(verho.korkeus8 > 0 ? styles.wall8show : styles.wall8hide);
+    let [style9] = useState(verho.korkeus9 > 0 ? styles.wall9show : styles.wall9hide);
+    let [style10] = useState(verho.korkeus10 > 0 ? styles.wall10show : styles.wall10hide);
+    let [style11] = useState(verho.korkeus11 > 0 ? styles.wall11show : styles.wall11hide);
+    let [style12] = useState(verho.korkeus12 > 0 ? styles.wall12show : styles.wall12hide);
 
      
     // koodi löydetty sivulta https://www.techighness.com/post/javascript-get-information-of-week-days-between-two-dates/. Vähän omaa soveltamista tehty,
@@ -356,7 +484,7 @@ function FullVerhoInfo (props) {
                 <div className='xyz-nested'>Seinän malli:&nbsp; <b>{verho.wallType}</b></div>
                 <div className='xyz-nested'>Seinän väri:&nbsp; <b>{verho.wallColor}</b></div>
                 <div className='xyz-nested'>Tuulensuojat:&nbsp; <b>{wallAreaYHT} m² </b> </div> 
-                <div className='xyz-nested'>Pystykoolaus(22*100):&nbsp; <b>{PKYHT} Metriä</b> </div> 
+                <div className='xyz-nested'>Koolaus(22*100):&nbsp; <b>{PKYHT} Metriä</b> </div> 
                 <div className='xyz-nested'>Paneelit:&nbsp; <b>{wallAreaYHT} m²</b> </div>
                 <div className='xyz-nested'>Nurkkalauta:&nbsp; <b>{nurkkaYHT} Metriä</b> </div>
                 <div className='xyz-nested'>Varjolista:&nbsp; <b>{varjoYHT} Metriä</b> </div>
@@ -794,6 +922,222 @@ function FullVerhoInfo (props) {
                 <div className='xyz-nested'>Korkeus: <b>{verho.wall8window6height} Metriä</b></div> }
                 { verho.wall8window6height === 0 ? "" :
                 <div className='xyz-nested'>Leveys: <b>{verho.wall8window6width} Metriä</b></div> }
+            </div>
+            </div>
+
+            <div className={style9}>
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-10">
+                <h3 className='xyz-nested'>Seinä 9</h3>              
+                <div className='xyz-nested'>Seinän korkeus: <b>{verho.korkeus9} Metriä </b></div>
+                <div className='xyz-nested'>Seinän leveys: <b>{verho.leveys9} Metriä </b></div>
+                <div className='xyz-nested'>Seinän muoto: <b>{verho.kulmat9} </b></div>
+                <div className='xyz-nested'>Seinän pinta-ala: <b>{wallArea9} m² </b></div>
+                <div className='xyz-nested'>Tuulensuoja: <b>{wallArea9} m² </b></div>
+                <div className='xyz-nested'>Pystykoolaus(22*100): <b>{PK9} Metriä</b> </div> 
+                <div className='xyz-nested'>Paneelit: <b>{wallArea9} m²</b> </div>   
+                { verho.kulmat9 === "Suorakulmio" ? <div className='xyz-nested'>Nurkkalauta: <b>{nurkka9} Metriä</b> </div> : "" }
+                <div className='xyz-nested'>Varjolista: <b>{varjo9} Metriä</b> </div>
+                <div className='xyz-nested'>Ikkunoiden määrä: <b>{ikkunat9} kpl</b></div>
+                { smyygi9 > 0 ? <div className='xyz-nested'>Smyygilauta: <b>{smyygi9} Metriä</b></div> : "" }
+                { vuori9 > 0 ? <div className='xyz-nested'>Vuorilauta: <b>{vuori9} Metriä</b></div> : "" }
+                { verho.wall9window1height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 1</h4> }
+                { verho.wall9window1height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall9window1height} Metriä</b></div> }
+                { verho.wall9window1height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall9window1width} Metriä</b></div> }
+                { verho.wall9window2height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 2</h4> }
+                { verho.wall9window2height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall9window2height} Metriä</b></div> }
+                { verho.wall9window2height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall9window2width} Metriä</b></div> }
+                { verho.wall9window3height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 3</h4> }
+                { verho.wall9window3height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall9window3height} Metriä</b></div> }
+                { verho.wall9window3height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall9window3width} Metriä</b></div> }
+                { verho.wall9window4height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 4</h4> }
+                { verho.wall9window4height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall9window4height} Metriä</b></div> }
+                { verho.wall9window4height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall9window4width} Metriä</b></div> }
+                { verho.wall9window5height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 5</h4> }
+                { verho.wall9window5height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall9window5height} Metriä</b></div> }
+                { verho.wall9window5height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall9window5width} Metriä</b></div> }
+                { verho.wall9window6height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 6</h4> }
+                { verho.wall9window6height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall9window6height} Metriä</b></div> }
+                { verho.wall9window6height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall9window6width} Metriä</b></div> }
+            </div>
+            </div>
+
+            <div className={style10}>
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-10">
+                <h3 className='xyz-nested'>Seinä 10</h3>              
+                <div className='xyz-nested'>Seinän korkeus: <b>{verho.korkeus10} Metriä </b></div>
+                <div className='xyz-nested'>Seinän leveys: <b>{verho.leveys10} Metriä </b></div>
+                <div className='xyz-nested'>Seinän muoto: <b>{verho.kulmat10} </b></div>
+                <div className='xyz-nested'>Seinän pinta-ala: <b>{wallArea10} m² </b></div>
+                <div className='xyz-nested'>Tuulensuoja: <b>{wallArea10} m² </b></div>
+                <div className='xyz-nested'>Pystykoolaus(22*100): <b>{PK10} Metriä</b> </div> 
+                <div className='xyz-nested'>Paneelit: <b>{wallArea10} m²</b> </div>   
+                { verho.kulmat10 === "Suorakulmio" ? <div className='xyz-nested'>Nurkkalauta: <b>{nurkka10} Metriä</b> </div> : "" }
+                <div className='xyz-nested'>Varjolista: <b>{varjo10} Metriä</b> </div>
+                <div className='xyz-nested'>Ikkunoiden määrä: <b>{ikkunat10} kpl</b></div>
+                { smyygi10 > 0 ? <div className='xyz-nested'>Smyygilauta: <b>{smyygi10} Metriä</b></div> : "" }
+                { vuori10 > 0 ? <div className='xyz-nested'>Vuorilauta: <b>{vuori10} Metriä</b></div> : "" }
+                { verho.wall10window1height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 1</h4> }
+                { verho.wall10window1height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall10window1height} Metriä</b></div> }
+                { verho.wall10window1height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall10window1width} Metriä</b></div> }
+                { verho.wall10window2height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 2</h4> }
+                { verho.wall10window2height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall10window2height} Metriä</b></div> }
+                { verho.wall10window2height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall10window2width} Metriä</b></div> }
+                { verho.wall10window3height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 3</h4> }
+                { verho.wall10window3height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall10window3height} Metriä</b></div> }
+                { verho.wall10window3height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall10window3width} Metriä</b></div> }
+                { verho.wall10window4height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 4</h4> }
+                { verho.wall10window4height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall10window4height} Metriä</b></div> }
+                { verho.wall10window4height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall10window4width} Metriä</b></div> }
+                { verho.wall10window5height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 5</h4> }
+                { verho.wall10window5height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall10window5height} Metriä</b></div> }
+                { verho.wall10window5height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall10window5width} Metriä</b></div> }
+                { verho.wall10window6height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 6</h4> }
+                { verho.wall10window6height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall10window6height} Metriä</b></div> }
+                { verho.wall10window6height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall10window6width} Metriä</b></div> }
+            </div>
+            </div>
+
+            <div className={style11}>
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-10">
+                <h3 className='xyz-nested'>Seinä 11</h3>              
+                <div className='xyz-nested'>Seinän korkeus: <b>{verho.korkeus11} Metriä </b></div>
+                <div className='xyz-nested'>Seinän leveys: <b>{verho.leveys11} Metriä </b></div>
+                <div className='xyz-nested'>Seinän muoto: <b>{verho.kulmat11} </b></div>
+                <div className='xyz-nested'>Seinän pinta-ala: <b>{wallArea11} m² </b></div>
+                <div className='xyz-nested'>Tuulensuoja: <b>{wallArea11} m² </b></div>
+                <div className='xyz-nested'>Pystykoolaus(22*100): <b>{PK11} Metriä</b> </div> 
+                <div className='xyz-nested'>Paneelit: <b>{wallArea11} m²</b> </div>   
+                { verho.kulmat11 === "Suorakulmio" ? <div className='xyz-nested'>Nurkkalauta: <b>{nurkka11} Metriä</b> </div> : "" }
+                <div className='xyz-nested'>Varjolista: <b>{varjo11} Metriä</b> </div>
+                <div className='xyz-nested'>Ikkunoiden määrä: <b>{ikkunat11} kpl</b></div>
+                { smyygi11 > 0 ? <div className='xyz-nested'>Smyygilauta: <b>{smyygi11} Metriä</b></div> : "" }
+                { vuori11 > 0 ? <div className='xyz-nested'>Vuorilauta: <b>{vuori11} Metriä</b></div> : "" }
+                { verho.wall11window1height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 1</h4> }
+                { verho.wall11window1height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall11window1height} Metriä</b></div> }
+                { verho.wall11window1height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall11window1width} Metriä</b></div> }
+                { verho.wall11window2height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 2</h4> }
+                { verho.wall11window2height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall11window2height} Metriä</b></div> }
+                { verho.wall11window2height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall11window2width} Metriä</b></div> }
+                { verho.wall11window3height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 3</h4> }
+                { verho.wall11window3height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall11window3height} Metriä</b></div> }
+                { verho.wall11window3height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall11window3width} Metriä</b></div> }
+                { verho.wall11window4height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 4</h4> }
+                { verho.wall11window4height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall11window4height} Metriä</b></div> }
+                { verho.wall11window4height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall11window4width} Metriä</b></div> }
+                { verho.wall11window5height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 5</h4> }
+                { verho.wall11window5height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall11window5height} Metriä</b></div> }
+                { verho.wall11window5height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall11window5width} Metriä</b></div> }
+                { verho.wall11window6height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 6</h4> }
+                { verho.wall11window6height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall11window6height} Metriä</b></div> }
+                { verho.wall11window6height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall11window6width} Metriä</b></div> }
+            </div>
+            </div>
+
+            <div className={style12}>
+            <div className={styles.fulliteminfo_box} xyz="fade left stagger delay-10">
+                <h3 className='xyz-nested'>Seinä 12</h3>              
+                <div className='xyz-nested'>Seinän korkeus: <b>{verho.korkeus12} Metriä </b></div>
+                <div className='xyz-nested'>Seinän leveys: <b>{verho.leveys12} Metriä </b></div>
+                <div className='xyz-nested'>Seinän muoto: <b>{verho.kulmat12} </b></div>
+                <div className='xyz-nested'>Seinän pinta-ala: <b>{wallArea12} m² </b></div>
+                <div className='xyz-nested'>Tuulensuoja: <b>{wallArea12} m² </b></div>
+                <div className='xyz-nested'>Pystykoolaus(22*100): <b>{PK12} Metriä</b> </div> 
+                <div className='xyz-nested'>Paneelit: <b>{wallArea12} m²</b> </div>   
+                { verho.kulmat12 === "Suorakulmio" ? <div className='xyz-nested'>Nurkkalauta: <b>{nurkka12} Metriä</b> </div> : "" }
+                <div className='xyz-nested'>Varjolista: <b>{varjo12} Metriä</b> </div>
+                <div className='xyz-nested'>Ikkunoiden määrä: <b>{ikkunat12} kpl</b></div>
+                { smyygi12 > 0 ? <div className='xyz-nested'>Smyygilauta: <b>{smyygi12} Metriä</b></div> : "" }
+                { vuori12 > 0 ? <div className='xyz-nested'>Vuorilauta: <b>{vuori12} Metriä</b></div> : "" }
+                { verho.wall12window1height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 1</h4> }
+                { verho.wall12window1height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall12window1height} Metriä</b></div> }
+                { verho.wall12window1height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall12window1width} Metriä</b></div> }
+                { verho.wall12window2height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 2</h4> }
+                { verho.wall12window2height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall12window2height} Metriä</b></div> }
+                { verho.wall12window2height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall12window2width} Metriä</b></div> }
+                { verho.wall12window3height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 3</h4> }
+                { verho.wall12window3height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall12window3height} Metriä</b></div> }
+                { verho.wall12window3height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall12window3width} Metriä</b></div> }
+                { verho.wall12window4height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 4</h4> }
+                { verho.wall12window4height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall12window4height} Metriä</b></div> }
+                { verho.wall12window4height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall12window4width} Metriä</b></div> }
+                { verho.wall12window5height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 5</h4> }
+                { verho.wall12window5height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall12window5height} Metriä</b></div> }
+                { verho.wall12window5height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall12window5width} Metriä</b></div> }
+                { verho.wall12window6height === 0 ? "" : 
+                <h4 className='xyz-nested'>Ikkuna 6</h4> }
+                { verho.wall12window6height === 0 ? "" :
+                <div className='xyz-nested'>Korkeus: <b>{verho.wall12window6height} Metriä</b></div> }
+                { verho.wall12window6height === 0 ? "" :
+                <div className='xyz-nested'>Leveys: <b>{verho.wall12window6width} Metriä</b></div> }
             </div>
             </div>
 
