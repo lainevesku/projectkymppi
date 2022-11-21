@@ -53,6 +53,30 @@ function ItemForm(props) {
       leveys6: 0,
       kattotuolijako6: 1,
       otsalautakierros6: 0,
+      korkeus7: 0,
+      leveys7: 0,
+      kattotuolijako7: 1,
+      otsalautakierros7: 0,
+      korkeus8: 0,
+      leveys8: 0,
+      kattotuolijako8: 1,
+      otsalautakierros8: 0,
+      korkeus9: 0,
+      leveys9: 0,
+      kattotuolijako9: 1,
+      otsalautakierros9: 0,
+      korkeus10: 0,
+      leveys10: 0,
+      kattotuolijako10: 1,
+      otsalautakierros10: 0,
+      korkeus11: 0,
+      leveys11: 0,
+      kattotuolijako11: 1,
+      otsalautakierros11: 0,
+      korkeus12: 0,
+      leveys12: 0,
+      kattotuolijako12: 1,
+      otsalautakierros12: 0,
       freeWord: ""
     };
 
@@ -78,6 +102,12 @@ function ItemForm(props) {
     let [style4, setStyle4] = useState(styles.lape4hide);
     let [style5, setStyle5] = useState(styles.lape5hide);
     let [style6, setStyle6] = useState(styles.lape6hide);
+    let [style7, setStyle7] = useState(styles.lape7hide);
+    let [style8, setStyle8] = useState(styles.lape8hide);
+    let [style9, setStyle9] = useState(styles.lape9hide);
+    let [style10, setStyle10] = useState(styles.lape10hide);
+    let [style11, setStyle11] = useState(styles.lape11hide);
+    let [style12, setStyle12] = useState(styles.lape12hide);
   
     const lapeYksi = () => {
        style1 = style1 ? setStyle1(styles.lape1show) : setStyle1(styles.lape1hide) ;
@@ -85,11 +115,11 @@ function ItemForm(props) {
 
     const lapeKaksi = () => {
       style2 = style2 ? setStyle2(styles.lape2show) : setStyle2(styles.lape2hide);
-    }
+    };
 
     const lapeKolme = () => {
       style3 = style3 ? setStyle3(styles.lape3show) : setStyle3(styles.lape3hide);
-    }
+    };
 
     const lapeNelja = () => {
        style4 = style4 ? setStyle4(styles.lape4show) : setStyle4(styles.lape4hide) ;
@@ -97,11 +127,35 @@ function ItemForm(props) {
 
     const lapeViisi = () => {
       style5 = style5 ? setStyle5(styles.lape5show) : setStyle5(styles.lape5hide);
-    }
+    };
 
     const lapeKuusi = () => {
       style6 = style6 ? setStyle6(styles.lape6show) : setStyle6(styles.lape6hide);
-    }
+    };
+
+    const lapeSeiska = () => {
+      style7 = style7 ? setStyle7(styles.lape7show) : setStyle7(styles.lape7hide) ;
+    };
+
+    const lapeKasi = () => {
+    style8 = style8 ? setStyle8(styles.lape8show) : setStyle8(styles.lape8hide) ;
+    };
+
+    const lapeYsi = () => {
+    style9 = style9 ? setStyle9(styles.lape9show) : setStyle9(styles.lape9hide) ;
+    };
+
+    const lapeKymppi = () => {
+    style10 = style10 ? setStyle10(styles.lape10show) : setStyle10(styles.lape10hide) ;
+    };
+
+    const lapeYksiToista = () => {
+    style11 = style11 ? setStyle11(styles.lape11show) : setStyle11(styles.lape11hide) ;
+    };
+
+    const lapeKaksiToista = () => {
+    style12 = style12 ? setStyle12(styles.lape12show) : setStyle12(styles.lape12hide) ;
+    };
     
     return (
         <div>
@@ -166,11 +220,17 @@ function ItemForm(props) {
                   <Button secondary onClick={lapeYksi}>Lape 1</Button>
                   <Button secondary onClick={lapeKolme}>Lape 3</Button>
                   <Button secondary onClick={lapeViisi}>Lape 5</Button>
+                  <Button secondary onClick={lapeSeiska}>Lape 7</Button>
+                  <Button secondary onClick={lapeYsi}>Lape 9</Button>
+                  <Button secondary onClick={lapeYksiToista}>Lape 11</Button>
                 </div>
                 <div>
                   <Button secondary onClick={lapeKaksi}>Lape 2</Button>
                   <Button secondary onClick={lapeNelja}>Lape 4</Button>
                   <Button secondary onClick={lapeKuusi}>Lape 6</Button>
+                  <Button secondary onClick={lapeKasi}>Lape 8</Button>
+                  <Button secondary onClick={lapeKymppi}>Lape 10</Button>
+                  <Button secondary onClick={lapeKaksiToista}>Lape 12</Button>
                 </div>
               </div>
           
@@ -320,6 +380,156 @@ function ItemForm(props) {
                 <div>
                   <label htmlFor='otsalautakierros6'>Otsalautakierros</label>
                   <input type="number" name='otsalautakierros6' onChange={handleChange} value={values.otsalautakierros6} min="0" />
+                </div>
+              </div>
+            </div>
+
+            <div id="lapeseiska" className={style7}>
+              <h2>Lape 7</h2>
+              <div className={styles.form_row}> 
+                <div>
+                  <label htmlFor='korkeus7'>Korkeus(m)</label>
+                  <input type="number" name='korkeus7' step="0.01" onChange={handleChange} value={values.korkeus7} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='leveys7'>Leveys(m)</label>
+                  <input type="number" name='leveys7' step="0.01" onChange={handleChange} value={values.leveys7} min="0"/>
+                </div>
+              </div>
+
+              <div className={styles.form_row}>
+                <div>
+                  <label htmlFor='kattotuolijako7'>Kattotuolijako</label>
+                  <input type="number" name='kattotuolijako7' step="0.1" onChange={handleChange} value={values.kattotuolijako7} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='otsalautakierros7'>Otsalautakierros</label>
+                  <input type="number" name='otsalautakierros7' onChange={handleChange} value={values.otsalautakierros7} min="0" />
+                </div>
+              </div>
+            </div>
+
+            <div id="lapekasi" className={style8}>
+              <h2>Lape 8</h2>
+              <div className={styles.form_row}> 
+                <div>
+                  <label htmlFor='korkeus8'>Korkeus(m)</label>
+                  <input type="number" name='korkeus8' step="0.01" onChange={handleChange} value={values.korkeus8} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='leveys8'>Leveys(m)</label>
+                  <input type="number" name='leveys8' step="0.01" onChange={handleChange} value={values.leveys8} min="0"/>
+                </div>
+              </div>
+
+              <div className={styles.form_row}>
+                <div>
+                  <label htmlFor='kattotuolijako8'>Kattotuolijako</label>
+                  <input type="number" name='kattotuolijako8' step="0.1" onChange={handleChange} value={values.kattotuolijako8} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='otsalautakierros8'>Otsalautakierros</label>
+                  <input type="number" name='otsalautakierros8' onChange={handleChange} value={values.otsalautakierros8} min="0" />
+                </div>
+              </div>
+            </div>
+
+            <div id="lapeysi" className={style9}>
+              <h2>Lape 9</h2>
+              <div className={styles.form_row}> 
+                <div>
+                  <label htmlFor='korkeus9'>Korkeus(m)</label>
+                  <input type="number" name='korkeus9' step="0.01" onChange={handleChange} value={values.korkeus9} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='leveys9'>Leveys(m)</label>
+                  <input type="number" name='leveys9' step="0.01" onChange={handleChange} value={values.leveys9} min="0"/>
+                </div>
+              </div>
+
+              <div className={styles.form_row}>
+                <div>
+                  <label htmlFor='kattotuolijako9'>Kattotuolijako</label>
+                  <input type="number" name='kattotuolijako9' step="0.1" onChange={handleChange} value={values.kattotuolijako9} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='otsalautakierros9'>Otsalautakierros</label>
+                  <input type="number" name='otsalautakierros9' onChange={handleChange} value={values.otsalautakierros9} min="0" />
+                </div>
+              </div>
+            </div>
+
+            <div id="lapekymppi" className={style10}>
+              <h2>Lape 10</h2>
+              <div className={styles.form_row}> 
+                <div>
+                  <label htmlFor='korkeus10'>Korkeus(m)</label>
+                  <input type="number" name='korkeus10' step="0.01" onChange={handleChange} value={values.korkeus10} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='leveys10'>Leveys(m)</label>
+                  <input type="number" name='leveys10' step="0.01" onChange={handleChange} value={values.leveys10} min="0"/>
+                </div>
+              </div>
+
+              <div className={styles.form_row}>
+                <div>
+                  <label htmlFor='kattotuolijako10'>Kattotuolijako</label>
+                  <input type="number" name='kattotuolijako10' step="0.1" onChange={handleChange} value={values.kattotuolijako10} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='otsalautakierros10'>Otsalautakierros</label>
+                  <input type="number" name='otsalautakierros10' onChange={handleChange} value={values.otsalautakierros10} min="0" />
+                </div>
+              </div>
+            </div>
+
+            <div id="lapeyksitoista" className={style11}>
+              <h2>Lape 11</h2>
+              <div className={styles.form_row}> 
+                <div>
+                  <label htmlFor='korkeus11'>Korkeus(m)</label>
+                  <input type="number" name='korkeus11' step="0.01" onChange={handleChange} value={values.korkeus11} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='leveys11'>Leveys(m)</label>
+                  <input type="number" name='leveys11' step="0.01" onChange={handleChange} value={values.leveys11} min="0"/>
+                </div>
+              </div>
+
+              <div className={styles.form_row}>
+                <div>
+                  <label htmlFor='kattotuolijako11'>Kattotuolijako</label>
+                  <input type="number" name='kattotuolijako11' step="0.1" onChange={handleChange} value={values.kattotuolijako11} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='otsalautakierros11'>Otsalautakierros</label>
+                  <input type="number" name='otsalautakierros11' onChange={handleChange} value={values.otsalautakierros11} min="0" />
+                </div>
+              </div>
+            </div>
+
+            <div id="lapekaksitoista" className={style12}>
+              <h2>Lape 12</h2>
+              <div className={styles.form_row}> 
+                <div>
+                  <label htmlFor='korkeus12'>Korkeus(m)</label>
+                  <input type="number" name='korkeus12' step="0.01" onChange={handleChange} value={values.korkeus12} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='leveys12'>Leveys(m)</label>
+                  <input type="number" name='leveys12' step="0.01" onChange={handleChange} value={values.leveys12} min="0"/>
+                </div>
+              </div>
+
+              <div className={styles.form_row}>
+                <div>
+                  <label htmlFor='kattotuolijako12'>Kattotuolijako</label>
+                  <input type="number" name='kattotuolijako12' step="0.1" onChange={handleChange} value={values.kattotuolijako12} min="0" />
+                </div>
+                <div>
+                  <label htmlFor='otsalautakierros12'>Otsalautakierros</label>
+                  <input type="number" name='otsalautakierros12' onChange={handleChange} value={values.otsalautakierros12} min="0" />
                 </div>
               </div>
             </div>
